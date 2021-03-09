@@ -11,7 +11,7 @@ var player = {
 function Bin() { 
     this.bins = [];
     this.currGoal = [];
-    this.randforce = function() {
+    this.randforce = function() { 
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
