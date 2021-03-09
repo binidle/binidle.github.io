@@ -8,7 +8,7 @@ var player = {
     randForcers: new Decimal(0)
 }
 
-function Bin() {
+function Bin() { 
     this.bins = [];
     this.currGoal = [];
     this.randforce = function() {
