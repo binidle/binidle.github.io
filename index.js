@@ -12,6 +12,8 @@ var player = {
 function Bin() {  
     this.bins = [];
     this.currGoal = [];
+    this.randForcers = 0;
+    this.bruteForcers= 0;
     this.randforce = function() { 
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
@@ -31,11 +33,12 @@ function Bin() {
     this.randForcing = false;
 }
 
-function buyRandforcer() {
+function buyRandforcer(i=0) {
     if(player.solves>=10){
         player.solves-=10;
         player.randForcers++;
-        player.bins[0].randForcing=true;
+        player.bins[i].randForcing=true;
+        player.bins[i].randForcers++;
         document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
     }
     else {
@@ -43,11 +46,12 @@ function buyRandforcer() {
     }
 }
 
-function buyBruteforcer() {
+function buyBruteforcer(i=0) {
     if(player.solves>=100){
         player.solves-=100;
         player.bruteForcers++;
-        player.bins[0].bruteForcing=true;
+        player.bins[i].bruteForcing=true;
+        player.bins[i].bruteForcers++;
         document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
     }
     else {
@@ -131,10 +135,14 @@ function loop(timestamp) {
 
     player.bins.forEach(function(b,i){
         if(b.randForcing){
-            b.randforce();
+            for(i=0;i<b.randForcers;i++){
+                b.randforce();
+            }
         }
         if(b.bruteForcing){
-            b.bruteForce();
+            for(i=0;i<b.bruteForcers;i++){
+                b.bruteForce();
+            }
         }
     },this);
 
