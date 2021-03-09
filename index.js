@@ -4,7 +4,8 @@ var lastRender = 0
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
-    bins: [new Bin()]
+    bins: [new Bin()],
+    randForcers: new Decimal(0)
 }
 
 function Bin() {
@@ -27,6 +28,12 @@ function Bin() {
     }
     this.bruteForcing = false;
     this.randForcing = false;
+}
+
+function buyRandforcer() {
+    player.randForcers++;
+    player.bins[0].randForcing=true;
+    document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
 }
 
 function d(e) {
