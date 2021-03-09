@@ -11,13 +11,16 @@
 <body>
     <ul class="nav">
         <li
-            onclick="(document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none')">
+            onclick="(document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
             Solver</li>
         <li
-            onclick="(document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#save').style.display='none')">
+            onclick="(document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
             Upgrades</li>
         <li
-            onclick="(document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#solver').style.display='none')">
+            onclick="(document.querySelector('#prestige').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#solver').style.display='none')">
+            Save</li>
+        <li
+            onclick="(document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
             Save</li>
         <li class="stats">Solves (⚛): </li>
         <li class="stats" >Randforcers: </li>
@@ -33,6 +36,10 @@
     </div>
     <div id="upgrades" style="display: none;">
         <button onclick="buyBrute()">Buy Randforce</button>10⚛<br>
+    </div>
+    <div id="prestige" style="display: none;">
+        <h2>Prestige</h2>
+        <h3>Soon</h3>
     </div>
     <div id="save" style="display: none;">
 
