@@ -50,6 +50,8 @@ li:hover {
 
 .presb {
     animation: glowing 500ms infinite;
+    width: 400px;
+    height: 200px;
 }
 
 body {
