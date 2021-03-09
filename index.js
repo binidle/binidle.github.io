@@ -31,7 +31,7 @@ function Bin() {
 }
 
 function buyRandforcer() {
-    if(player.solves>10){
+    if(player.solves>=10){
         player.randForcers++;
         player.bins[0].randForcing=true;
         document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
