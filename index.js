@@ -35,7 +35,7 @@ function Bin() {
 
 function buyRandforcer(i=0) {
     if(player.solves>=10){
-        player.solves-=10;
+        player.solves=player.solves.sub(10);
         player.randForcers++;
         player.bins[i].randForcing=true;
         player.bins[i].randForcers++;
@@ -48,7 +48,7 @@ function buyRandforcer(i=0) {
 
 function buyBruteforcer(i=0) {
     if(player.solves>=100){
-        player.solves-=100;
+        player.solves=player.solves.sub(100);
         player.bruteForcers++;
         player.bins[i].bruteForcing=true;
         player.bins[i].bruteForcers++;
