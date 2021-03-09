@@ -41,6 +41,17 @@ function buyRandforcer() {
     }
 }
 
+function buyBruteforcer() {
+    if(player.solves>=100){
+        player.randForcers++;
+        player.bins[0].bruteForcing=true;
+        document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
+    }
+    else {
+        alert("You need at least 100⚛ to buy a randforcer! You currently have "+player.solves+"⚛")
+    }
+}
+
 function d(e) {
     try {
         if (e.innerText == "0") {
