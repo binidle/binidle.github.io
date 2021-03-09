@@ -48,7 +48,7 @@ function buyBruteforcer() {
         document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
     }
     else {
-        alert("You need at least 100⚛ to buy a randforcer! You currently have "+player.solves+"⚛")
+        alert("You need at least 100⚛ to buy a bruteforcer! You currently have "+player.solves+"⚛")
     }
 }
 
