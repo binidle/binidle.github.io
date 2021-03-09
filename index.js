@@ -6,7 +6,7 @@ var player = {
     digits: new Decimal(1),
     bins: [new Bin()],
     randForcers: new Decimal(0)
-}
+} 
 
 function Bin() {  
     this.bins = [];
