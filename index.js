@@ -40,7 +40,7 @@ function buyRandforcer(i=0) {
         player.bins[i].randForcing=true;
         player.bins[i].randForcers++;
         document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
-        d();
+        
     }
     else {
         alert("You need at least 10⚛ to buy a randforcer! You currently have "+player.solves+"⚛")
@@ -54,7 +54,6 @@ function buyBruteforcer(i=0) {
         player.bins[i].bruteForcing=true;
         player.bins[i].bruteForcers++;
         document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
-        d();
     }
     else {
         alert("You need at least 100⚛ to buy a bruteforcer! You currently have "+player.solves+"⚛")
@@ -147,7 +146,7 @@ function loop(timestamp) {
             }
         }
     },this);
-
+    updateSolves();
     lastRender = timestamp
     window.requestAnimationFrame(loop)
 }
