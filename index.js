@@ -5,7 +5,8 @@ var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
     bins: [new Bin()], 
-    randForcers: new Decimal(0)
+    randForcers: new Decimal(0),
+    bruteForcers: new Decimal(0)
 } 
 
 function Bin() {  
@@ -32,6 +33,7 @@ function Bin() {
 
 function buyRandforcer() {
     if(player.solves>=10){
+        player.solves-=10;
         player.randForcers++;
         player.bins[0].randForcing=true;
         document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
@@ -43,7 +45,8 @@ function buyRandforcer() {
 
 function buyBruteforcer() {
     if(player.solves>=100){
-        player.randForcers++;
+        player.solves-=100;
+        player.bruteForcers++;
         player.bins[0].bruteForcing=true;
         document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
     }
