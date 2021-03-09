@@ -31,9 +31,14 @@ function Bin() {
 }
 
 function buyRandforcer() {
-    player.randForcers++;
-    player.bins[0].randForcing=true;
-    document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
+    if(player.solves>10){
+        player.randForcers++;
+        player.bins[0].randForcing=true;
+        document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
+    }
+    else {
+        alert("You need at least 10⚛ to buy a randforcer! You currently have "+player.solves+"⚛")
+    }
 }
 
 function d(e) {
