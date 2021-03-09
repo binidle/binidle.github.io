@@ -52,7 +52,7 @@ li:hover {
     animation: glowing 500ms infinite;
     width: 200px;
     height: 100px;
-    font-weight: 30px;
+    font-size: 30px;
 }
 
 body {
