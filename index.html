@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>binidle</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./break_infinity.min.js"></script>
+    <script src="./binary.js"></script>
+    <script src="http://cdn.rawgit.com/erosson/swarm-numberformat/v0.1.0/dist/swarm-numberformat.min.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li
+            onclick="(document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none')">
+            Solver</li>
+        <li
+            onclick="(document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#save').style.display='none')">
+            Upgrades</li>
+        <li
+            onclick="(document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#solver').style.display='none')">
+            Save</li>
+        <li class="stats">Solves (⚛): </li>
+        <li class="stats" >Randforcers: </li>
+        <li class="stats" id="perf">Performance: </li>
+    </ul>
+    <h2>binidle</h2>
+    <hr>
+    <div id="solver">
+
+        <p>Click the bits to solve it</p>
+        <ul id="bits" class="bins">
+        </ul>
+    </div>
+    <div id="upgrades" style="display: none;">
+        <button onclick="buyBrute()">Buy Randforce</button>10⚛<br>
+    </div>
+    <div id="save" style="display: none;">
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
