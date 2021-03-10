@@ -5,7 +5,7 @@ var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
     qlavrams: new Decimal(0),
-    cracks: new Decimal(0),
+    cracks: new Decimal(0), 
     bins: [new Bin()],  
     randForcers: new Decimal(0),   
     bruteForcers: new Decimal(0)   
