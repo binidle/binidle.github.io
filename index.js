@@ -75,9 +75,10 @@ function buyBin() {
         document.querySelector("#lines").appendChild(t);
         addBin(0,player.bins.length-1);
         player.bins[player.bins.length-1].currGoal = genBinary(1);
+    	document.querySelector("#burh").innerText = "Buy another line "+(25+(5*5^player.bins.length))+"β"
     }
     else{
-        alert("You need at least 50β to buy a new line! You currently have "+player.qlavrams+"β")
+        alert("You need at least "+(25+(5*5^player.bins.length))+"β to buy a new line! You currently have "+player.qlavrams+"β")
     }
 }
 
