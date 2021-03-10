@@ -66,7 +66,7 @@ function buyBin() {
     t.class = "bins";
     t.id = "bits"+(player.bins.length-1);
     t.className = "bins";
-    t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split("bits")[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split("bits")[1]))">Buy Bruteforcer 100⚛</li>`
+    t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
     document.querySelector("#lines").appendChild(t);
     addBin(0,player.bins.length-1);
     player.bins[player.bins.length-1].currGoal = genBinary(1);
