@@ -138,6 +138,7 @@ function updateSolves() {
     document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
+    document.querySelector("#qlavramps").innerText = "QPS: " + (Math.sqrt(player.randForcers)*0.001 * (1000/progress).toFixed(2));
 }
 
 updateSolves();
