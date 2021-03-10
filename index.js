@@ -148,7 +148,7 @@ function loop(timestamp) {
     var progress = timestamp - lastRender
 
     // console.log(progress);
-    document.querySelector("#perf").innerText="Performance: "+Math.round(1000/progress)+"tps";
+    document.querySelector("#perf").innerText="Performance: "+1000/progress.toFixed(2)+"tps";
 
     player.bins.forEach(function(b,i){
         if(b.randForcing){
