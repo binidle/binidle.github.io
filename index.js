@@ -10,7 +10,7 @@ var player = {
 }
 
 function Bin() {  
-    this.bins = []; 
+    this.bins = [];  
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers= 0;
