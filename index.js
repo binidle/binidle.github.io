@@ -65,7 +65,7 @@ function buyBin() {
     t = document.createElement("ul");
     t.class = "bins";
     t.id = "bits"+player.bins.length;
-    t.class="bins";
+    t.className = "bins";
     t.innerHTML = `<li class="stats" onclick="buyRandforcer()">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer()">Buy Bruteforcer 100⚛</li>`
     document.querySelector("#lines").appendChild(t);
 }
