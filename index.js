@@ -64,7 +64,7 @@ function buyBruteforcer(i=0) {
 }
 
 function buyBin() {
-    if(player.qlavrams>25){
+    if(player.qlavrams>50){
         player.bins.push(new Bin());
         t = document.createElement("ul");
         t.class = "bins";
@@ -76,7 +76,7 @@ function buyBin() {
         player.bins[player.bins.length-1].currGoal = genBinary(1);
     }
     else{
-        alert("You need at least 25β to buy a new line! You currently have "+player.qlavrams+"β")
+        alert("You need at least 50β to buy a new line! You currently have "+player.qlavrams+"β")
     }
 }
 
