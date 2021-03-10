@@ -8,7 +8,7 @@ var player = {
     cracks: new Decimal(0), 
     bins: [new Bin()],   
     randForcers: new Decimal(0),    
-    bruteForcers: new Decimal(0)   
+    bruteForcers: new Decimal(0)
 }  
      
 function Bin() {  
@@ -64,7 +64,7 @@ function buyBruteforcer(i=0) {
 }
 
 function buyBin() {
-    if(player.qlavrams>50){
+    if(player.qlavrams>(25+(5*5^player.bins.length))){
         player.qlavrams=player.qlavrams.sub(50);
         player.bins.push(new Bin());
         t = document.createElement("ul");
