@@ -111,9 +111,9 @@ function seqToStr(o) {
 }
 
 function updateSolves() {
-    document.querySelector(".stats").innerText = "Solves (⚛): " + numberformat.format(player.solves);
-    document.querySelector(".stats").innerText = "Qlavrams (ﷺ): " + numberformat.format(player.qlavrams);
-    document.querySelector(".stats").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
+    document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
+    document.querySelector("#qlavram").innerText = "Qlavrams (ﷺ): " + numberformat.format(player.qlavrams);
+    document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
 }
 
 updateSolves();
