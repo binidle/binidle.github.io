@@ -60,12 +60,11 @@ function buyBruteforcer(i=0) {
     }
 }
 
-function addBin() {
+function buyBin() {
     player.bins.push(new Bin());
     t = document.createElement("ul");
     t.class = "bins";
     t.id = "bits"+player.bins.length;
-    
 }
 
 function d(e) {
@@ -118,10 +117,10 @@ function genBinary(len) {
     return n;
 }
 
-function addBin(v = 0) {
+function addBin(v = 0,z = 0) {
     t = document.createElement("li");
     t.innerText = v;
-    binbar.appendChild(t);
+    document.querySelector("#bits"+z).appendChild(t);
     t.onclick = function () {
         d(this)
     };
