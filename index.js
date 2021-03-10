@@ -10,7 +10,8 @@ var player = {
     cracks: new Decimal(0), 
     bins: [new Bin()],   
     randForcers: new Decimal(0),    
-    bruteForcers: new Decimal(0)
+    bruteForcers: new Decimal(0),
+	sMultiplier: new Decimal(1)
 }   
       
 function Bin() {  
@@ -84,6 +85,15 @@ function buyBin() {
     }
 }
 
+function sMult() {
+	if(player.qlavrams>150){
+		player.sMultiplier=player.sMultiplier.add(1);
+	}
+	else {
+		alert("You need at least 150β to buy a multiplier! You currently have "+player.qlavrams+"β")
+	}
+}
+
 function d(e) {
     try {
         if (e.innerText == "0") {
@@ -97,7 +107,7 @@ function d(e) {
     
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            player.solves = player.solves.add(player.bins[i].bins.length);
+            player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
 //             for(i=0;i<player.bins[i].bins.length;i++){
