@@ -65,6 +65,7 @@ function buyBin() {
     t = document.createElement("ul");
     t.class = "bins";
     t.id = "bits"+player.bins.length;
+    document.querySelector("#lines").appendChild(t);
 }
 
 function d(e) {
