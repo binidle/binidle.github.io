@@ -38,10 +38,10 @@ function Bin() {
 function buyRandforcer(i=0) {
     if(player.solves>=10){
         player.solves=player.solves.sub(10);
-        player.randForcers++;
+        player.randForcers=player.randForcers.add(1);
         player.bins[i].randForcing=true;
         player.bins[i].randForcers++;
-        document.querySelector("#rforcers").innerHTML="Randforcers: "+player.randForcers;
+        document.querySelector("#rforcers").innerHTML="Randforcers: "+numberformat.format(player.randForcers);
         
     }
     else {
@@ -52,10 +52,10 @@ function buyRandforcer(i=0) {
 function buyBruteforcer(i=0) {
     if(player.solves>=100){
         player.solves=player.solves.sub(100);
-        player.bruteForcers++;
+        player.bruteForcers=player.bruteForcers.add(1);
         player.bins[i].bruteForcing=true;
         player.bins[i].bruteForcers++;
-        document.querySelector("#bforcers").innerHTML="Bruteforcers: "+player.randForcers;
+        document.querySelector("#bforcers").innerHTML="Bruteforcers: "+numberformat.format(player.bruteForcers);
     }
     else {
         alert("You need at least 100⚛ to buy a bruteforcer! You currently have "+player.solves+"⚛")
