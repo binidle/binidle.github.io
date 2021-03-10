@@ -7,7 +7,7 @@ var player = {
     qlavrams: new Decimal(0),
     cracks: new Decimal(0), 
     bins: [new Bin()],  
-    randForcers: new Decimal(0),   
+    randForcers: new Decimal(0),    
     bruteForcers: new Decimal(0)   
 } 
      
