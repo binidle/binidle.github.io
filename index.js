@@ -1,6 +1,6 @@
 // binbar = document.querySelector("#bits");
 var lastRender = 0
-
+ 
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
