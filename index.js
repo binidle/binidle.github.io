@@ -64,15 +64,20 @@ function buyBruteforcer(i=0) {
 }
 
 function buyBin() {
-    player.bins.push(new Bin());
-    t = document.createElement("ul");
-    t.class = "bins";
-    t.id = "bits"+(player.bins.length-1);
-    t.className = "bins";
-    t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
-    document.querySelector("#lines").appendChild(t);
-    addBin(0,player.bins.length-1);
-    player.bins[player.bins.length-1].currGoal = genBinary(1);
+    if(player.qlavrams>25){
+        player.bins.push(new Bin());
+        t = document.createElement("ul");
+        t.class = "bins";
+        t.id = "bits"+(player.bins.length-1);
+        t.className = "bins";
+        t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
+        document.querySelector("#lines").appendChild(t);
+        addBin(0,player.bins.length-1);
+        player.bins[player.bins.length-1].currGoal = genBinary(1);
+    }
+    else{
+        alert("You need at least 25⚛ to buy a new line! You currently have "+player.qlavrams+"⚛")
+    }
 }
 
 function d(e) {
