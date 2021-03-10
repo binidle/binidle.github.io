@@ -16,7 +16,8 @@ function Bin() {
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers= 0;
-    this.randforce = function() { 
+    this.randforce = function() {
+        player.qlavrams=player.qlavrams.add(0.01);
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
