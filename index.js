@@ -76,7 +76,7 @@ function buyBin() {
         player.bins[player.bins.length-1].currGoal = genBinary(1);
     }
     else{
-        alert("You need at least 25⚛ to buy a new line! You currently have "+player.qlavrams+"⚛")
+        alert("You need at least 25β to buy a new line! You currently have "+player.qlavrams+"β")
     }
 }
 
