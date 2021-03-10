@@ -29,7 +29,7 @@ function Bin() {
         }
         d();
     }
-    this.bruteForcing = false;
+    this.bruteForcing = false; 
     this.randForcing = false;
 }
 
