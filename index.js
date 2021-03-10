@@ -1,4 +1,4 @@
-binbar = document.querySelector("#bits");
+// binbar = document.querySelector("#bits");
 var lastRender = 0
 
 var player = {
@@ -58,6 +58,14 @@ function buyBruteforcer(i=0) {
     else {
         alert("You need at least 100⚛ to buy a bruteforcer! You currently have "+player.solves+"⚛")
     }
+}
+
+function addBin() {
+    player.bins.push(new Bin());
+    t = document.createElement("ul");
+    t.class = "bins";
+    t.id = "bits"+player.bins.length;
+    
 }
 
 function d(e) {
