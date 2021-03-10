@@ -4,6 +4,8 @@ var lastRender = 0
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
+    qlavrams: new Decimal(0),
+    cracks: new Decimal(0),
     bins: [new Bin()],  
     randForcers: new Decimal(0),   
     bruteForcers: new Decimal(0)   
@@ -110,6 +112,8 @@ function seqToStr(o) {
 
 function updateSolves() {
     document.querySelector(".stats").innerText = "Solves (⚛): " + numberformat.format(player.solves);
+    document.querySelector(".stats").innerText = "Qlavrams (ﷺ): " + numberformat.format(player.qlavrams);
+    document.querySelector(".stats").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
 }
 
 updateSolves();
