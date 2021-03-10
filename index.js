@@ -88,9 +88,9 @@ function d(e) {
             player.solves = player.solves.add(player.bins[i].bins.length);
             updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
-            for(i=0;i<player.bins[i].bins.length;i++){
-                player.bins[i].bins[i].innerText=0;
-            }
+//             for(i=0;i<player.bins[i].bins.length;i++){
+//                 player.bins[i].bins[i].innerText=0;
+//             }
             addBin(0,i);
         }
     }
