@@ -88,6 +88,7 @@ function buyBin() {
 function sMult() {
 	if(player.qlavrams>150){
 		player.sMultiplier=player.sMultiplier.add(1);
+		player.qlavrams=player.qlavrams.sub(150);
 	}
 	else {
 		alert("You need at least 150β to buy a multiplier! You currently have "+player.qlavrams+"β")
