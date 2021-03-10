@@ -2,7 +2,7 @@
 var lastRender = 0
 
 window.oncontextmenu = function() {return false} // prevent right clicking coz its a pain in the ass
- 
+
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1), 
@@ -11,7 +11,8 @@ var player = {
     bins: [new Bin()],   
     randForcers: new Decimal(0),     
     bruteForcers: new Decimal(0),
-	sMultiplier: new Decimal(1)
+	sMultiplier: new Decimal(1),
+	lowp: false
 }   
       
 function Bin() {  
@@ -97,11 +98,13 @@ function sMult() {
 
 function d(e) {
     try {
-        if (e.innerText == "0") {
-            e.innerText = "1";
-        } else {
-            e.innerText = "0";
-        }
+		if(!player.lowp){
+			if (e.innerText == "0") {
+				e.innerText = "1";
+			} else {
+				e.innerText = "0";
+			}
+		}
     } catch (error) {
         // Do nothing, this is for when it is being called by the bruteforce function  in the Bin() class
     }
