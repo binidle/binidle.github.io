@@ -65,6 +65,7 @@ function buyBruteforcer(i=0) {
 
 function buyBin() {
     if(player.qlavrams>50){
+        player.qlavrams=player.qlavrams.sub(50);
         player.bins.push(new Bin());
         t = document.createElement("ul");
         t.class = "bins";
