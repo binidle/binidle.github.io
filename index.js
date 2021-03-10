@@ -98,12 +98,10 @@ function sMult() {
 
 function d(e) {
     try {
-		if(!player.lowp){
-			if (e.innerText == "0") {
-				e.innerText = "1";
-			} else {
-				e.innerText = "0";
-			}
+		if (e.innerText == "0") {
+			e.innerText = "1";
+		} else {
+			e.innerText = "0";
 		}
     } catch (error) {
         // Do nothing, this is for when it is being called by the bruteforce function  in the Bin() class
@@ -174,7 +172,11 @@ function loop(timestamp) {
 
     // console.log(progress);
     document.querySelector("#perf").innerText="Performance: "+(1000/progress).toFixed(2)+"tps";
-
+	
+	if(player.lowp){
+		document.querySelector(".bins").style="display: none;";
+	}
+	
     player.bins.forEach(function(b,i){
         if(b.randForcing){
             for(i=0;i<b.randForcers;i++){
