@@ -4,7 +4,7 @@ var lastRender = 0
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
-    bins: [new Bin()], 
+    bins: [new Bin()],  
     randForcers: new Decimal(0),  
     bruteForcers: new Decimal(0) 
 }
