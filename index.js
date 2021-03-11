@@ -152,6 +152,7 @@ function genBinary(len) {
 function addBin(v = 0,z = 0) {
     t = document.createElement("li");
     t.innerText = v;
+	t.id="perfbad"
     document.querySelector("#bits"+z).appendChild(t);
     t.onclick = function () {
         d(this)
@@ -174,7 +175,7 @@ function loop(timestamp) {
     document.querySelector("#perf").innerText="Performance: "+(1000/progress).toFixed(2)+"tps";
 	
 	if(player.lowp){
-		document.querySelector(".bins").style="display: none;";
+		document.querySelector("#perfbad").style="display: none;";
 	}
 	
     player.bins.forEach(function(b,i){
