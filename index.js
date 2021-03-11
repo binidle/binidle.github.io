@@ -82,7 +82,7 @@ function buyBin() {
     	document.querySelector("#burh").innerText = "Buy another line "+(25+(5*5**player.bins.length))+"β"
     }
     else if(player.bins.length >= 5){
-	    null;
+	 alert("lol")
     }
     else if(player.bins <= 5){
         alert("You need at least "+(25+(5*5**player.bins.length))+"β to buy a new line! You currently have "+player.qlavrams+"β")
