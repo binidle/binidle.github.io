@@ -84,7 +84,7 @@ function buyBin() {
     else if(player.bins.length >= 5){
 	 alert("You cannot buy another line. For now!!!!!")
     }
-    else if(player.bins <= 5){
+    else if(player.bins.length <= 5){
         alert("You need at least "+(25+(5*5**player.bins.length))+"β to buy a new line! You currently have "+player.qlavrams+"β")
     }
     else{
