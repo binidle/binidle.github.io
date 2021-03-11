@@ -175,7 +175,10 @@ function loop(timestamp) {
     document.querySelector("#perf").innerText="Performance: "+(1000/progress).toFixed(2)+"tps";
 	
 	if(player.lowp){
-		document.querySelector("#perfbad").style="display: none;";
+		x=document.querySelectorAll("#perfbad");
+		for(i=0;i<x.length;i++){
+			x[i].style="display: none;";
+		}
 	}
 	
     player.bins.forEach(function(b,i){
