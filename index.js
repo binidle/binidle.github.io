@@ -21,7 +21,7 @@ function Bin() {
     this.randForcers = 0;
     this.bruteForcers= 0;
     this.randforce = function() {
-        player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*0.001);
+        player.qlavrams=player.qlavrams + (Math.sqrt(player.randForcers)*0.001);
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
