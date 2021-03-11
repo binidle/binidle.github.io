@@ -68,7 +68,7 @@ function buyBruteforcer(i=0) {
 }
 
 function buyBin() {
-    if(player.qlavrams>(25+(5*5**player.bins.length))){
+    if(player.qlavrams>(25+(5*5**player.bins.length))) or (player.bins.length <= 5){
         player.qlavrams=player.qlavrams.sub((25+(5*5**player.bins.length)));
         player.bins.push(new Bin());
         t = document.createElement("ul");
@@ -81,8 +81,14 @@ function buyBin() {
         player.bins[player.bins.length-1].currGoal = genBinary(1);
     	document.querySelector("#burh").innerText = "Buy another line "+(25+(5*5**player.bins.length))+"β"
     }
-    else{
+    else if(player.bins.length >= 5){
+	    null
+    }
+    else if(player.bins <= 5){
         alert("You need at least "+(25+(5*5**player.bins.length))+"β to buy a new line! You currently have "+player.qlavrams+"β")
+    }
+    else{
+   	alert("You cannot buy another line")
     }
 }
 
