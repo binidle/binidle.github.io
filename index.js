@@ -21,7 +21,7 @@ function Bin() {
     this.randForcers = 0;
     this.bruteForcers= 0;
     this.randforce = function() {
-        add(player.qlavrams,Math.sqrt(player.randForcers)*0.001);
+        player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*0.001);
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
@@ -43,7 +43,7 @@ function Bin() {
 function buyRandforcer(i=0) {
     if(player.solves>=10){
         player.solves=player.solves.sub(10);
-        add(player.randForcers,1);
+        player.randForcers=player.randForcers.add(1);
         player.bins[i].randForcing=true;
         player.bins[i].randForcers++;
         document.querySelector("#rforcers").innerHTML="Randforcers: "+numberformat.format(player.randForcers);
@@ -57,7 +57,7 @@ function buyRandforcer(i=0) {
 function buyBruteforcer(i=0) {
     if(player.solves>=100){
         player.solves=player.solves.sub(100);
-        add(player.bruteForcers,1);
+        player.bruteForcers=player.bruteForcers.add(1);
         player.bins[i].bruteForcing=true;
         player.bins[i].bruteForcers++;
         document.querySelector("#bforcers").innerHTML="Bruteforcers: "+numberformat.format(player.bruteForcers);
@@ -94,7 +94,7 @@ function buyBin() {
 
 function sMult() {
 	if(player.qlavrams>150){
-		add(player.sMultiplier,1);
+		player.sMultiplier=player.sMultiplier.add(1);
 		player.qlavrams=player.qlavrams.sub(150);
 	}
 	else {
@@ -115,7 +115,7 @@ function d(e) {
     
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            add(player.solves,player.sMultiplier.mul(player.bins[i].bins.length));
+            player.solves=player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
 //             for(i=0;i<player.bins[i].bins.length;i++){
