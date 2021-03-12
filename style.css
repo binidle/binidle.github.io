@@ -33,6 +33,42 @@ ul.bins1 {
     user-select: none;
 }
 
+ul.bins2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f71602;
+    margin-top: -10px;
+    margin-right: -8px;
+    margin-left: -10px;
+    user-select: none;
+}
+
+ul.bins3 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f702f3;
+    margin-top: -10px;
+    margin-right: -8px;
+    margin-left: -10px;
+    user-select: none;
+}
+
+ul.bins4 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f7f302;
+    margin-top: -10px;
+    margin-right: -8px;
+    margin-left: -10px;
+    user-select: none;
+}
+
 li {
     display: block;
     color: white;
