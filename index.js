@@ -12,6 +12,7 @@ var player = {
     randForcers: new Decimal(0),     
     bruteForcers: new Decimal(0), 
 	sMultiplier: new Decimal(1), 
+	qMultiplier: new Decimal(1),
 	lowp: false
 }   
       
@@ -102,6 +103,19 @@ function sMult() {
 	}
 	else {
 		alert("You need at least "+temp+"β to buy a multiplier! You currently have "+player.qlavrams+"β")
+	}
+}
+
+function qMult() {
+	temp=(150 * player.qMultiplier)
+	if(player.cracks>temp){
+		player.qMultiplier=player.qMultiplier.add(1);
+		player.cracks=player.cracks.sub(temp);
+		temp=(150 * player.qMultiplier)
+		document.querySelector("#qlavmultQOL").innerText = "Buy a Qlavram Multiplier ("+numberformat.format(player.qMultiplier)+"x -> "+numberformat.format(player.qMultiplier.add(1))+"x) "+temp+"Փ"
+	}
+	else {
+		alert("You need at least "+temp+"Փ to buy a Qlavram multiplier! You currently have "+player.cracks+"Փ")
 	}
 }
 
