@@ -97,6 +97,7 @@ function sMult() {
 	if(player.qlavrams>temp){
 		player.sMultiplier=player.sMultiplier.add(1);
 		player.qlavrams=player.qlavrams.sub(temp);
+		temp=(150 * player.sMultiplier)
 		document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier ("+numberformat.format(player.sMultiplier)+"x -> "+numberformat.format(player.sMultiplier.add(1))+"x) "+temp+"β"
 	}
 	else {
