@@ -1,4 +1,4 @@
-// binbar = document.querySelector("#bits"); 
+// binbar = document.querySelector("#bits");  
 var lastRender = 0
 var lineVal=0;
 
