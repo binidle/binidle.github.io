@@ -22,7 +22,7 @@ function Bin() {
     this.randForcers = 0;
     this.bruteForcers= 0;
     this.randforce = function() {
-        player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*0.001);
+        player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*(0.001*player.qMultiplier));
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
@@ -168,7 +168,7 @@ function updateSolves() {
     document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
-    document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers)*0.001).toFixed(5);
+    document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers)*(0.001*player.qMultiplier)).toFixed(5);
 	document.querySelector("#smlt").innerText = "Multipliers: " + numberformat.format(player.sMultiplier)+"x";
 }
 
