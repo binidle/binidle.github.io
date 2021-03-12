@@ -89,6 +89,16 @@ li {
     float: right;
 }
 
+.stats1 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    float: right;
+}
+
 li:hover {
     background-color: rgb(255, 183, 75);
 }
