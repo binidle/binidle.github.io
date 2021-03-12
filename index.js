@@ -22,8 +22,11 @@ function Bin() {
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers= 0;
+	this.currency=0;
+	this.currencies=[player.qlavrams,player.cracks];
+	this.multipliers=[player.qMultiplier];
     this.randforce = function() {
-        player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*(0.001*player.qMultiplier));
+        this.currencies[this.currency]=this.currencies[this.currency].add(Math.sqrt(player.randForcers)*(0.001*this.multipliers[this.currency]));
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
@@ -83,14 +86,11 @@ function buyBin() {
         player.bins[player.bins.length-1].currGoal = genBinary(1);
     	document.querySelector("#burh").innerText = "Buy another line "+(25+(5*5**player.bins.length))+"β"
     }
-    else if(player.bins.length >= 5){
-	 alert("You cannot buy another line. For now!!!!!")
-    }
-    else if(player.bins.length <= 5){
+    else if(true){
         alert("You need at least "+(25+(5*5**player.bins.length))+"β to buy a new line! You currently have "+player.qlavrams+"β")
     }
     else{
-   	alert("You cannot buy another line")
+   		alert("weedmart calls: this is useless/unreachable code, that fact that it is here in fact, makes the game slower")
     }
 }
 
