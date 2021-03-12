@@ -18,6 +18,7 @@ ul.bins0 {
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
+    user-select: none;
 }
 
 ul.bins1 {
@@ -29,9 +30,6 @@ ul.bins1 {
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
-}
-
-.bins {
     user-select: none;
 }
 
