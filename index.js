@@ -178,6 +178,7 @@ function updateSolves() {
     document.querySelector("#smlt").innerText = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
     document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
+    document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
 }
 
 updateSolves();
