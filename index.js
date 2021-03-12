@@ -93,13 +93,14 @@ function buyBin() {
 }
 
 function sMult() {
-	if(player.qlavrams>150){
+	temp=(150 * player.sMultiplier)
+	if(player.qlavrams>temp){
 		player.sMultiplier=player.sMultiplier.add(1);
-		player.qlavrams=player.qlavrams.sub(150);
-		document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier ("+numberformat.format(player.sMultiplier)+"x -> "+numberformat.format(player.sMultiplier.add(1))+"x) 150β"
+		player.qlavrams=player.qlavrams.sub(temp);
+		document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier ("+numberformat.format(player.sMultiplier)+"x -> "+numberformat.format(player.sMultiplier.add(1))+"x) "+temp+"β"
 	}
 	else {
-		alert("You need at least 150β to buy a multiplier! You currently have "+player.qlavrams+"β")
+		alert("You need at least "+temp+"β to buy a multiplier! You currently have "+player.qlavrams+"β")
 	}
 }
 
