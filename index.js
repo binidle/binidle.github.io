@@ -30,7 +30,7 @@ function Bin() {
     this.currencies = [player.qlavrams, player.cracks];
     this.multipliers = [player.qMultiplier, player.cMultiplier];
     this.randforce = function () {
-        player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
+        this.currencies[this.currency] = this.currencies[this.currency].add(Math.sqrt(player.randForcers) * (0.001 * this.multipliers[this.currency]));
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].innerText = Math.round(Math.random());
         }
