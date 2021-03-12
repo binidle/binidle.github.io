@@ -110,6 +110,11 @@ li {
     float: right;
 }
 
+.generlist {
+    text-align: left;
+}
+
+
 li:hover {
     background-color: rgb(255, 183, 75);
 }
