@@ -27,10 +27,16 @@ function Bin() {
     this.randForcers = 0;
     this.bruteForcers = 0;
     this.currency = 0;
-    this.currencies = [player.qlavrams, player.cracks];
-    this.multipliers = [player.qMultiplier, player.cMultiplier];
     this.randforce = function () {
-        this.currencies[this.currency] = this.currencies[this.currency].add(Math.sqrt(player.randForcers) * (0.001 * this.multipliers[this.currency]));
+        switch(this.currency) {
+          case 0:
+            player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
+            break;
+          case 1:
+            player.cracks = player.cracks.add(Math.sqrt(player.randForcers) * (0.001 * player.cMultiplier));
+            break;
+        }
+        
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].innerText = Math.round(Math.random());
         }
