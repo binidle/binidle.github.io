@@ -141,6 +141,15 @@ function seqToStr(o) {
     return o.join('');
 }
 
+function prestige(){
+    if(player.solves >= 100000) {
+    	alert("weedmart calls: not done yet lol")
+    }
+    else {
+	  alert("You need at least 100000⚛ to prestige!! You currently have "+player.solves+"⚛")
+	 }
+}
+
 function updateSolves() {
     document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
