@@ -23,9 +23,9 @@ function Bin() {
     this.currGoal = []; 
     this.randForcers = 0;
     this.bruteForcers= 0;
-// 	this.currency=0;
-// 	this.currencies=[player.qlavrams,player.cracks];
-// 	this.multipliers=[player.qMultiplier,player.cMultiplier];
+	this.currency=0;
+	this.currencies=[player.qlavrams,player.cracks];
+	this.multipliers=[player.qMultiplier,player.cMultiplier];
     this.randforce = function() {
         player.qlavrams=player.qlavrams.add(Math.sqrt(player.randForcers)*(0.001*player.qMultiplier));
         for(i=0;i<this.bins.length;i++){
