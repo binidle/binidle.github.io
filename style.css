@@ -9,12 +9,23 @@ ul.nav {
     margin-left: -10px;
 }
 
-ul.bins {
+ul.bins0 {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgb(73, 0, 190);
+    margin-top: -10px;
+    margin-right: -8px;
+    margin-left: -10px;
+}
+
+ul.bins1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #02f712;
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
