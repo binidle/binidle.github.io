@@ -22,7 +22,7 @@ function Bin() {
     this.bins = [];  
     this.currGoal = []; 
     this.randForcers = 0;
-    this.bruteForcers= 0;
+    this.bruteForcers= 0; 
 	this.currency=0;
 	this.currencies=[player.qlavrams,player.cracks];
 	this.multipliers=[player.qMultiplier,player.cMultiplier];
