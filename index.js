@@ -16,6 +16,7 @@ var player = {
     sMultiplier: new Decimal(1),
     qMultiplier: new Decimal(1), 
     cMultiplier: new Decimal(1),
+    bcracks: new Decimal(0),
     lowp: false,
     bins: []
 }
@@ -176,6 +177,7 @@ function updateSolves() {
     document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier)).toFixed(5);
     document.querySelector("#smlt").innerText = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
     document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
+    document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
 }
 
 updateSolves();
