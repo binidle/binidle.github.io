@@ -10,7 +10,7 @@ var player = {
     cracks: new Decimal(0), 
     bins: [new Bin()],   
     randForcers: new Decimal(0),     
-    bruteForcers: new Decimal(0),
+    bruteForcers: new Decimal(0), 
 	sMultiplier: new Decimal(1), 
 	lowp: false
 }   
