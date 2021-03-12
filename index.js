@@ -20,7 +20,7 @@ var player = {
       
 function Bin() {  
     this.bins = [];  
-    this.currGoal = [];
+    this.currGoal = []; 
     this.randForcers = 0;
     this.bruteForcers= 0;
 // 	this.currency=0;
