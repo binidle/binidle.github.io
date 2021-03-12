@@ -17,8 +17,9 @@ var player = {
     qMultiplier: new Decimal(1),
     cMultiplier: new Decimal(1),
     lowp: false,
-    bins: [new Bin()]
+    bins: []
 }
+player.bins=[new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
 function Bin() {
     this.bins = [];
