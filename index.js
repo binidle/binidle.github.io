@@ -14,6 +14,7 @@ var player = {
     bruteForcers: new Decimal(0), 
 	sMultiplier: new Decimal(1),  
 	qMultiplier: new Decimal(1),
+	cMultiplier: new Decimal(1),
 	lowp: false
 }   
       
@@ -24,7 +25,7 @@ function Bin() {
     this.bruteForcers= 0;
 	this.currency=0;
 	this.currencies=[player.qlavrams,player.cracks];
-	this.multipliers=[player.qMultiplier];
+	this.multipliers=[player.qMultiplier,player.cMultiplier];
     this.randforce = function() {
         this.currencies[this.currency]=this.currencies[this.currency].add(Math.sqrt(player.randForcers)*(0.001*this.multipliers[this.currency]));
         for(i=0;i<this.bins.length;i++){
