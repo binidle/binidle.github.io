@@ -143,6 +143,7 @@ function updateSolves() {
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
     document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers)*0.001).toFixed(5);
+	document.querySelector("#smlt").innerText = "Multipliers: " + numberformat.format(player.sMultiplier);
 }
 
 updateSolves();
