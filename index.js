@@ -1,5 +1,6 @@
 // binbar = document.querySelector("#bits"); 
 var lastRender = 0
+var lineVal=0;
 
 window.oncontextmenu = function() {return false} // prevent right clicking coz its a pain in the ass 
 
@@ -73,7 +74,7 @@ function buyBin() {
         player.qlavrams=player.qlavrams.sub((25+(5*5**player.bins.length)));
         player.bins.push(new Bin());
         t = document.createElement("ul");
-        t.class = "bins";
+        t.class = "bins" + lineVal;
         t.id = "bits"+(player.bins.length-1);
         t.className = "bins";
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
