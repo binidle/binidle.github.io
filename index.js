@@ -26,14 +26,15 @@ function Bin() {
 	this.currency=0;
 	this.currencies=[player.qlavrams,player.cracks];
 	this.multipliers=[player.qMultiplier,player.cMultiplier];
-    this.randforce = function() {
+    this.randforce = function(j) {
+		this.currency = Math.floor(j/5);
         this.currencies[this.currency]=this.currencies[this.currency].add(Math.sqrt(player.randForcers)*(0.001*this.multipliers[this.currency]));
         for(i=0;i<this.bins.length;i++){
             this.bins[i].innerText=Math.round(Math.random());
         }
         d();
     }
-    this.bruteForce = function() {
+    this.bruteForce = function(j) {
         this.state = currSeq(0,this.bins);
         n = addBinary(this.state,"1").split('');
         // console.log(n);
@@ -217,15 +218,15 @@ function loop(timestamp) {
 		}
 	}
 	
-    player.bins.forEach(function(b,i){
+    player.bins.forEach(function(b,j){
         if(b.randForcing){
             for(i=0;i<b.randForcers;i++){
-                b.randforce();
+                b.randforce(j);
             }
         }
         if(b.bruteForcing){
             for(i=0;i<b.bruteForcers;i++){
-                b.bruteForce();
+                b.bruteForce(j);
             }
         }
     },this);
