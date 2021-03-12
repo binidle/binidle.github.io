@@ -12,7 +12,7 @@ var player = {
     qlavrams: new Decimal(0), 
     cracks: new Decimal(0),
     randForcers: new Decimal(0),
-    bruteForcers: new Decimal(0),
+    bruteForcers: new Decimal(0), 
     sMultiplier: new Decimal(1),
     qMultiplier: new Decimal(1), 
     cMultiplier: new Decimal(1),
