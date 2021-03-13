@@ -136,6 +136,11 @@ body {
     color: black;
 }
 
+.tcolor th {
+    height:100px;
+    width:100px;
+}
+
 @keyframes glowing {
   0% {
     background-color: #2ba805;
