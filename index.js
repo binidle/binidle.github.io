@@ -126,6 +126,18 @@ function qMult() {
     }
 }
 
+function cMult() {
+  temp = (7500 * player.cMultiplier)
+    if (player.solves > temp) {
+        player.cMultiplier = player.cMultiplier.add(1);
+        player.solves = player.solves.sub(temp);
+        temp = (7500 * player.cMultiplier)
+        document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
+    } else {
+        alert("You need at least " + temp + "⚛ to buy a Qlavram multiplier! You currently have " + player.solves + "⚛")
+    }
+}
+
 function d(e) {
     try {
         if (e.innerText == "0") {
