@@ -132,6 +132,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.tcolor {
+    color: black;
+}
+
 @keyframes glowing {
   0% {
     background-color: #2ba805;
