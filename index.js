@@ -1,7 +1,7 @@
 // binbar = document.querySelector("#bits");  
 var lastRender = 0
 var lineVal = 0;
-
+ 
 window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
