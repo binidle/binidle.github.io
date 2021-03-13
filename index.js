@@ -35,7 +35,7 @@ function Bin() {
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
             break;
           case 1:
-            player.cracks = player.cracks.add((((player.bcracks * 0.005)/(1+(player.cracks/player.bcracks)))) * player.cMultiplier);
+            player.cracks = player.cracks.add((((player.bcracks * 0.005)/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
             break;
         }
         
@@ -191,6 +191,7 @@ function updateSolves() {
     document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
+    document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * 0.005)/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
 }
 
 updateSolves();
