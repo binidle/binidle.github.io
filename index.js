@@ -134,7 +134,7 @@ function cMult() {
         temp = (7500 * player.cMultiplier)
         document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
     } else {
-        alert("You need at least " + temp + "⚛ to buy a Qlavram multiplier! You currently have " + player.solves + "⚛")
+        alert("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
     }
 }
 
