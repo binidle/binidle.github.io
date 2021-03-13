@@ -1,6 +1,7 @@
 // binbar = document.querySelector("#bits");  
 var lastRender = 0
 var lineVal = 0;
+var prestiged = 0;
   
 window.oncontextmenu = function () {
     return false
@@ -176,6 +177,7 @@ function seqToStr(o) {
 
 function prestige() {
     if (player.solves >= 100000) {
+        prestiged = 1;
         alert("weedmart calls: not done yet lol")
     } else {
         alert("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
