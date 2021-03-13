@@ -17,6 +17,7 @@ var player = {
     sMultiplier: new Decimal(1),
     qMultiplier: new Decimal(1), 
     cMultiplier: new Decimal(1),
+    cFormula: new Decimal(1),
     bcracks: new Decimal(0),
     lowp: false,
     bins: []
@@ -36,7 +37,7 @@ function Bin() {
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
             break;
           case 1:
-            player.cracks = player.cracks.add((((player.bcracks * 0.005)/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
+            player.cracks = player.cracks.add((((player.bcracks * (0.005 + (0.001 * (cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
             break;
         }
         
@@ -136,6 +137,18 @@ function cMult() {
         document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
     } else {
         alert("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
+    }
+}
+
+function cForm() {
+  temp = (500 * player.cFormula)
+    if (player.cracks > temp) {
+        player.cFormula = player.cFormula.add(1);
+        player.cracks = player.cracks.sub(temp);
+        temp = (7500 * player.cFormula)
+        document.querySelector("#crackform").innerText = "Buy a Crack Formula Boost (" + numberformat.format(0.005 + (0.001 * (cFormula - 1))) + " -> " + numberformat.format(0.005 + (0.001 * (cFormula))) + ") " + temp + "Փ"
+    } else {
+        alert("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
 }
 
