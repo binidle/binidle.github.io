@@ -2,7 +2,8 @@
 var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
- 
+var version = 0.0.1;
+
 window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
@@ -207,6 +208,7 @@ function updateSolves() {
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
     document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * 0.005)/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
+    document.querySelecotr("#version").innerText = "Version: " + version
 }
 
 updateSolves();
