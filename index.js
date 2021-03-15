@@ -256,7 +256,7 @@ function loop(timestamp) {
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
-                b.randforce(1);
+                b.randforce(0);
             }
         }
         if (b.bruteForcing) {
