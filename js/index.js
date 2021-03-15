@@ -131,17 +131,6 @@ function d(e) {
     }
 }
 
-function addBin(v = 0, z = 0) {
-    t = document.createElement("li");
-    t.innerText = v;
-    t.id = "perfbad"
-    document.querySelector("#bits" + z).appendChild(t);
-    t.onclick = function () {
-        d(this)
-    };
-    player.bins[z].bins.push(t);
-}
-
 updateSolves();
 function init() {
     for (i = 0; i < player.digits; i++) {
