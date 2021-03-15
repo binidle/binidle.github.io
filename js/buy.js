@@ -4,7 +4,7 @@ function buyRandforcer(i = 0) {
         player.randForcers = player.randForcers.add(1);
         player.bins[i].randForcing = true;
         player.bins[i].randForcers++;
-        document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
+        
 
     } else {
         alert("You need at least 10⚛ to buy a randforcer! You currently have " + player.solves + "⚛")
@@ -17,7 +17,6 @@ function buyBruteforcer(i = 0) {
         player.bruteForcers = player.bruteForcers.add(1);
         player.bins[i].bruteForcing = true;
         player.bins[i].bruteForcers++;
-        document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
     } else {
         alert("You need at least 100⚛ to buy a bruteforcer! You currently have " + player.solves + "⚛")
     }

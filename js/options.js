@@ -40,5 +40,5 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
             tar[keys[i]] = a[keys[i]];
         }
     }
-    
+    player=tar
 }

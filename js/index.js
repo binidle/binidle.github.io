@@ -120,7 +120,6 @@ function d(e) {
                 player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + 1))) * player.cMultiplier);
             }
 
-            updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
             //             for(i=0;i<player.bins[i].bins.length;i++){
             //                 player.bins[i].bins[i].innerText=0;
@@ -165,6 +164,7 @@ function loop(timestamp) {
             }
         }
     }, this);
+    
     updateSolves();
     lastRender = timestamp
     window.requestAnimationFrame(loop)

@@ -30,6 +30,8 @@ function updateSolves() {
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
     document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + (player.cracks + player.bcracks) / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
     document.querySelector("#version").innerText = "Version: 0.0.1"
+    document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
+    document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
 }
  
 function genBinary(len) {
