@@ -2,27 +2,27 @@
 var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
-  
-window.oncontextmenu = function () { 
+
+window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
-  
+
 var player = {
     solves: new Decimal(0),
-    digits: new Decimal(1),   
-    qlavrams: new Decimal(0), 
+    digits: new Decimal(1),
+    qlavrams: new Decimal(0),
     cracks: new Decimal(0),
     randForcers: new Decimal(0),
-    bruteForcers: new Decimal(0), 
+    bruteForcers: new Decimal(0),
     sMultiplier: new Decimal(1),
-    qMultiplier: new Decimal(1), 
+    qMultiplier: new Decimal(1),
     cMultiplier: new Decimal(1),
     cFormula: new Decimal(1),
     bcracks: new Decimal(0),
     lowp: false,
     bins: []
 }
-player.bins=[new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
+player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
 function Bin() {
     this.bins = [];
@@ -30,9 +30,9 @@ function Bin() {
     this.randForcers = 0;
     this.bruteForcers = 0;
     this.randforce = function () {
-            player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
-        
-        
+        player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
+
+
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].innerText = Math.round(Math.random());
         }
@@ -78,7 +78,7 @@ function qMult() {
 }
 
 function cMult() {
-  temp = (7500 * player.cMultiplier)
+    temp = (7500 * player.cMultiplier)
     if (player.solves > temp) {
         player.cMultiplier = player.cMultiplier.add(1);
         player.solves = player.solves.sub(temp);
@@ -90,7 +90,7 @@ function cMult() {
 }
 
 function cForm() {
-  temp = (500 * player.cFormula)
+    temp = (500 * player.cFormula)
     if (player.cracks > temp) {
         player.cFormula = player.cFormula.add(1);
         player.cracks = player.cracks.sub(temp);
@@ -114,13 +114,12 @@ function d(e) {
 
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            if(i<4){
+            if (i < 4) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+            } else {
+                player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + 1))) * player.cMultiplier);
             }
-            else {
-              player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + 1))) * player.cMultiplier);  
-            }
-           
+
             updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
             //             for(i=0;i<player.bins[i].bins.length;i++){
@@ -132,6 +131,7 @@ function d(e) {
 }
 
 updateSolves();
+
 function init() {
     for (i = 0; i < player.digits; i++) {
         addBin();
