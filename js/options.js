@@ -15,7 +15,7 @@ function download(filename, text) {
 // download("hello.txt", "This is the content of my file :)");
 
 function toggleLowP() {
-    player.lowp = !playerlowp;
+    player.lowp = !player.lowp;
 }
 
 function rainbow() {
@@ -29,10 +29,15 @@ function save(local = true) {
 }
 
 function load() { // weedmart calls: THIS DOES NOT WORK YEt
-    a = JSON.stringify(player)
-    keys = Object.keys(JSON.parse(a));
+    a = JSON.stringify(player);
+    a = JSON.parse(a);
+    keys = Object.keys(a);
     t = [];
     for(i=0;i<keys.length;i++){
-        
+        if(parseFloat(a[keys[i]])){
+            t.push(new Decimal(parseFloat(a[keys[i]])));
+        }else{
+            t.push(a[keys[i]]);
+        }
     }
 }
