@@ -95,7 +95,7 @@ function cForm() {
         player.cFormula = player.cFormula.add(1);
         player.cracks = player.cracks.sub(temp);
         temp = (500 * player.cFormula)
-        document.querySelector("#crackform").innerText = "Buy a Crack Formula Boost (" + numberformat.format(0.005 + (0.001 * (player.cFormula.sub(1)))) + " -> " + numberformat.format(0.005 + (0.001 * (player.cFormula))) + ") " + temp + "Փ" // broken but idc we'll do it later
+        document.querySelector("#crackForm").innerText = "Buy a Crack Formula Boost (" + numberformat.format(0.005 + (0.001 * (player.cFormula.sub(1)))) + " -> " + numberformat.format(0.005 + (0.001 * (player.cFormula))) + ") " + temp + "Փ" // broken but idc we'll do it later
     } else {
         alert("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
