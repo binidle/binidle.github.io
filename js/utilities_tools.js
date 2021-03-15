@@ -28,7 +28,7 @@ function updateSolves() {
     document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
-    document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.015 + (0.001 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
+    document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
     document.querySelector("#version").innerText = "Version: 0.0.1"
 }
 
