@@ -31,7 +31,7 @@ function Bin() {
     this.bruteForcers = 0;
     this.currency = 0;
     this.randforce = function (j) {
-        this.currency=j;
+        this.currency=1;
         switch(this.currency) {
           case 0:
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
