@@ -152,7 +152,7 @@ function loop(timestamp) {
             x[i].style = "display: none;";
         }
     }
-    player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.001 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
+    player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
