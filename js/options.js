@@ -34,9 +34,9 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
     keys = Object.keys(a);
     tar = [];
     for(i=0;i<keys.length;i++){
-        try {
+        if(typeof parseFloat(a[keys[i]])) {
             tar.push(new Decimal(parseFloat(a[keys[i]])));
-        } catch (error) {
+        } else {
             tar.push(a[keys[i]]);
         }
     }
