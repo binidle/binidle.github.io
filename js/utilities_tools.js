@@ -31,7 +31,7 @@ function updateSolves() {
     document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + (player.cracks + player.bcracks) / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
     document.querySelector("#version").innerText = "Version: 0.0.1"
 }
-
+ 
 function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
