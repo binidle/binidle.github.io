@@ -143,14 +143,6 @@ function loop(timestamp) {
     var progress = timestamp - lastRender
 
     // console.log(progress);
-    document.querySelector("#perf").innerText = "Performance: " + (1000 / progress).toFixed(2) + "tps";
-
-    if (player.lowp) {
-        x = document.querySelectorAll("#perfbad");
-        for (i = 0; i < x.length; i++) {
-            x[i].style = "display: none;";
-        }
-    }
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
@@ -166,8 +158,16 @@ function loop(timestamp) {
     }, this);
     
     updateSolves();
-    lastRender = timestamp
-    window.requestAnimationFrame(loop)
+    document.querySelector("#perf").innerText = "Performance: " + (1000 / progress).toFixed(2) + "tps";
+    if (player.lowp) {
+        player.lowp=false;
+        x = document.querySelectorAll("#perfbad");
+        for (i = 0; i < x.length; i++) {
+            x[i].style = "display: none;";
+        }
+    }
+    lastRender = timestamp;
+    window.requestAnimationFrame(loop);
 }
 
 init();
