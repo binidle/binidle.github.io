@@ -207,7 +207,7 @@ function updateSolves() {
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
     document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * 0.005)/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
-    document.querySelecotr("#version").innerText = "Version: 0.0.1"
+    document.querySelector("#version").innerText = "Version: 0.0.1"
 }
 
 updateSolves();
