@@ -1,4 +1,3 @@
-
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
         player.solves = player.solves.sub(10);
@@ -42,4 +41,15 @@ function buyBin() {
     } else {
         alert("weedmart calls: this is useless/unreachable code, that fact that it is here in fact, makes the game slower")
     }
+}
+
+function addBin(v = 0, z = 0) {
+    t = document.createElement("li");
+    t.innerText = v;
+    t.id = "perfbad"
+    document.querySelector("#bits" + z).appendChild(t);
+    t.onclick = function () {
+        d(this)
+    };
+    player.bins[z].bins.push(t);
 }
