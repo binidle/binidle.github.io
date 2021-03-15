@@ -37,7 +37,7 @@ function Bin() {
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
             break;
           case 1:
-            player.cracks = player.cracks.add((((player.bcracks * (0.005 + (0.001 * (cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
+            player.cracks = player.cracks.add((((player.bcracks * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
             break;
         }
         
