@@ -157,7 +157,7 @@ function d(e) {
 
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            if(i>4){
+            if(i<4){
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             }
             else {
