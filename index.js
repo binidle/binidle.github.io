@@ -38,6 +38,7 @@ function Bin() {
             break;
           case 1:
             player.cracks = player.cracks.add((((player.bcracks * (0.005 + (0.001 * (cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
+          console.log("a");
             break;
         }
         
@@ -252,6 +253,7 @@ function loop(timestamp) {
     }
 
     player.bins.forEach(function (b, j) {
+      console.log(j);
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
                 b.randforce(j);
