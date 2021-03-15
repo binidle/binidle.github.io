@@ -24,6 +24,6 @@ function rainbow() {
 
 function save(local = true) {
     if (local) {
-
+        download("save.json","weedmart calls: wow! another easter egg! aaaaaaaaaaa problem?")
     }
 }
