@@ -27,3 +27,12 @@ function save(local = true) {
         download("save.json","weedmart calls: wow! another easter egg! aaaaaaaaaaa problem?")
     }
 }
+
+function load() { // weedmart calls: THIS DOES NOT WORK YEt
+    a = JSON.stringify(player)
+    keys = Object.keys(JSON.parse(a));
+    t = [];
+    for(i=0;i<keys.length;i++){
+        
+    }
+}
