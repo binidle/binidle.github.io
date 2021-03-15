@@ -29,16 +29,8 @@ function Bin() {
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers = 0;
-    this.currency = 0;
-    this.randforce = function (j) {
-        this.currency=j;
-        switch(this.currency) {
-          case 0:
+    this.randforce = function () {
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
-            break;
-          case 1:
-            player.bcracks = player.bcracks.add((((player.bcracks * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
-            break;1
         }
         
         for (i = 0; i < this.bins.length; i++) {
@@ -46,7 +38,7 @@ function Bin() {
         }
         d();
     }
-    this.bruteForce = function (j) {
+    this.bruteForce = function () {
         this.state = currSeq(0, this.bins);
         n = addBinary(this.state, "1").split('');
         // console.log(n);
@@ -165,7 +157,13 @@ function d(e) {
 
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+            if(i>4){
+                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+            }
+            else {
+              player.bcracks = player.bcracks.add((((player.bcracks * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);  
+            }
+           
             updateSolves();
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
             //             for(i=0;i<player.bins[i].bins.length;i++){
@@ -255,12 +253,12 @@ function loop(timestamp) {
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
-                b.randforce(0);
+                b.randforce();
             }
         }
         if (b.bruteForcing) {
             for (i = 0; i < b.bruteForcers; i++) {
-                b.bruteForce(0);
+                b.bruteForce();
             }
         }
     }, this);
