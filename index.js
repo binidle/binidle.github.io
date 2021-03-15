@@ -31,13 +31,13 @@ function Bin() {
     this.bruteForcers = 0;
     this.currency = 0;
     this.randforce = function (j) {
-        this.currency=1;
+        this.currency=j;
         switch(this.currency) {
           case 0:
             player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier));
             break;
           case 1:
-            player.cracks = player.cracks.add((((1 * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + 1))) * player.cMultiplier);
+            player.bcracks = player.bcracks.add((((player.bcracks * (0.005 + (0.001 * (player.cFormula - 1))))/(1 + player.cracks/ 1 + player.bcracks))) * player.cMultiplier);
             break;1
         }
         
@@ -251,7 +251,7 @@ function loop(timestamp) {
             x[i].style = "display: none;";
         }
     }
-
+    player.cracks = player.cracks.add();
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
