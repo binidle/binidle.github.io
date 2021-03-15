@@ -150,10 +150,10 @@ hi
   </div>
   <div id="save" style="display: none;">
     <h3> none of these do anything right now. </h3>
-    <button> Manually save </button> <br>
-    <button> Export save to clipboard </button> <br>
-    <button> cool rainbow background theme(DON'T USE IF EPILEPTIC, FAST CHANGING COLOURS) </button> <br>
-    <button> Beter performance </button>
+    <button onclick="save()"> Manually save </button> <br>
+    <button onclick="save()"> Export save to clipboard </button> <br>
+    <button onclick="rainbow()"> cool rainbow background theme(DON'T USE IF EPILEPTIC, FAST CHANGING COLOURS) </button> <br>
+    <button onclick="toggleLowP()"> Beter performance </button>
     <h2> General Help </h2>
     <ul>
       <br>
@@ -244,6 +244,7 @@ hi
   <!-- =================== LOAD UTILITY FILES BEFORE INDEX.JS FOR EVERTHING TO WORK ======================= -->
   <script src="./js/buy.js"></script>
   <script src="./js/utilities_tools.js"></script>
+  <script src="./js/options.js"></script>
   <!-- ==================================================================================================== -->
 
   <script src="./js/index.js"></script>
