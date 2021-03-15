@@ -6,7 +6,7 @@ var prestiged = 0;
 window.oncontextmenu = function () { 
     return false
 } // prevent right clicking coz its a pain in the ass 
- 
+  
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),   
