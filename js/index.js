@@ -2,7 +2,7 @@
 var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
-// can you please update github I beg you23444
+// can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
