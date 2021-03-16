@@ -96,7 +96,7 @@ function cForm() {
         player.cFormula = player.cFormula.add(1);
         player.cracks = player.cracks.sub(temp);
         temp = (500 * player.cFormula)
-        document.querySelector("#crackForm").innerText = "Buy a Crack Formula Boost (" + numberformat.format(0.005 + (0.001 * (player.cFormula.sub(1)))) + " -> " + numberformat.format(0.005 + (0.001 * (player.cFormula))) + ") " + temp + "Փ" // broken but idc we'll do it later
+        document.querySelector("#crackFormUPG").innerText = "Buy a Crack Formula Boost (" + numberformat.format(0.005 + (0.001 * (player.cFormula.sub(1)))) + " -> " + numberformat.format(0.005 + (0.001 * (player.cFormula))) + ") " + temp + "Փ" // broken but idc we'll do it later
     } else {
         alert("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
@@ -117,7 +117,7 @@ function d() {
             if (i < 4) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             } else {
-                player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + 1))) * player.cMultiplier);
+                player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + 1))) * player.cMultiplier);
             }
 
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
@@ -140,7 +140,7 @@ function loop(timestamp) {
     var progress = timestamp - lastRender
 
     // console.log(progress);
-    player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula - 1)))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
+    player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             for (i = 0; i < b.randForcers; i++) {
