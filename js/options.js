@@ -32,13 +32,7 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
     a = JSON.stringify(player);
     a = JSON.parse(a);
     keys = Object.keys(a);
-    tar = player;
-    for(i=0;i<keys.length;i++){
-        if(typeof a[keys[i]]=="string") {
-            tar[keys[i]] = new Decimal(parseFloat(a[keys[i]]));
-        } else {
-            tar[keys[i]] = a[keys[i]];
-        }
-    }
-    player=tar
+    document.querySelector("#lines").innerHTML="";
+    buyBin(true);
+    addBin(0,0);
 }

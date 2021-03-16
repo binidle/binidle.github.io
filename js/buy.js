@@ -22,13 +22,14 @@ function buyBruteforcer(i = 0) {
     }
 }
 
-function buyBin() {
-    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length))) {
+function buyBin(load=false) {
+    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length))||load) {
         lineVal += 0.2;
-        player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
+        if(!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
         player.bins.push(new Bin());
         t = document.createElement("ul");
-        t.id = "bits" + (player.bins.length - 1);
+        if(!load)t.id = "bits" + (player.bins.length - 1);
+        else t.id = "bits0";
         t.className = "bins" + Math.floor(lineVal + 0.1);
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
         document.querySelector("#lines").appendChild(t);
