@@ -26,6 +26,7 @@ player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i canno
 
 function Bin() {
     this.bins = [];
+    this.state= [];
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers = 0;
