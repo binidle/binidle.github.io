@@ -34,5 +34,4 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
     keys = Object.keys(a);
     document.querySelector("#lines").innerHTML="";
     buyBin(true);
-    addBin(0,0);
 }

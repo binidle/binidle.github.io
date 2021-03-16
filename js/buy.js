@@ -33,7 +33,8 @@ function buyBin(load=false) {
         t.className = "bins" + Math.floor(lineVal + 0.1);
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
         document.querySelector("#lines").appendChild(t);
-        addBin(0, player.bins.length - 1);
+        if(!load)addBin(0, player.bins.length - 1);
+        else addBin(0, 0);
         player.bins[player.bins.length - 1].currGoal = genBinary(1);
         document.querySelector("#burh").innerText = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β"
     } else if (true) {
