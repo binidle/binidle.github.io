@@ -41,7 +41,7 @@ function updateSolves() {
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
     document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.025 + (0.005))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
-    document.querySelector("#version").innerText = "Version: 0.0.11 "+getVersion();
+    document.querySelector("#version").innerText = "Version: 0.0.11 ";
     document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
 }
