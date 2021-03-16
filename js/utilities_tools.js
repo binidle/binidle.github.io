@@ -19,6 +19,18 @@ function prestige() {
     }
 }
 
+function getVersion() {
+    sum=0;
+    for(i=0;i<30;i++){
+        fetch("https://api.github.com/repos/binidle/binidle.github.io/commits?page="+i)
+        .then(x => x.text())
+        .then(function(y){
+            sum+=JSON.parse(y).length;
+            return sum;
+        });
+    }
+}
+
 function updateSolves() {
     document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
