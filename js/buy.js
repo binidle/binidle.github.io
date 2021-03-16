@@ -48,7 +48,7 @@ function addBin(v = 0, z = 0) {
     t.id = "perfbad"
     document.querySelector("#bits" + z).appendChild(t);
     t.onclick = function () {
-        d(this)
+        change(this);
     };
     player.bins[z].bins.push(t);
 }

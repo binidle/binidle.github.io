@@ -1,7 +1,7 @@
 function currSeq(z = 0, o = player.bins[z].bins) {
     z = [];
     for (let i = 0; i < o.length; i++) {
-        z.push(o[i].innerText);
+        z.push(o[i].textContent);
     }
     return z.join('');
 }

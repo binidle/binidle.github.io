@@ -101,17 +101,16 @@ function cForm() {
     }
 }
 
-function d(e) {
-    try {
-        if (e.innerText == "0") {
-            e.innerText = "1";
-        } else {
-            e.innerText = "0";
-        }
-    } catch (error) {
-        // Do nothing, this is for when it is being called by the bruteforce function  in the Bin() class
+function change(e) {
+    if (e.innerText == "0") {
+        e.innerText = "1";
+    } else {
+        e.innerText = "0";
     }
+    d();
+}
 
+function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             if (i < 4) {
@@ -121,9 +120,6 @@ function d(e) {
             }
 
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
-            //             for(i=0;i<player.bins[i].bins.length;i++){
-            //                 player.bins[i].bins[i].innerText=0;
-            //             }
             addBin(0, i);
         }
     }
@@ -156,7 +152,7 @@ function loop(timestamp) {
             }
         }
     }, this);
-    
+
     updateSolves();
     document.querySelector("#perf").innerText = "Performance: " + (1000 / progress).toFixed(2) + "tps";
     if (player.lowp) {
