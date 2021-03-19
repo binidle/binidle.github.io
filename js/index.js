@@ -2,6 +2,7 @@
 var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
+var avgPerf = [];
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
@@ -138,7 +139,16 @@ function init() {
 }
 
 function loop() {
-    var progress = performance.now() - lastRender
+    avgPerf.push(performance.now() - lastRender);
+    if(avgPerf.length>1000) {
+        avgPerf.splice(0,1);
+    }
+
+    var total = 0;
+    for(var i = 0; i < avgPerf.length; i++) {
+        total += avgPerf[i];
+    }
+    var progress = total / avgPerf.length;
 
     // console.log(progress);
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
