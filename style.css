@@ -183,7 +183,7 @@ body {
 }
 
 .alert {
-    position: absolute;
+    /* position: absolute; */
     padding: 20px;
     background-color: #f44336;
     color: white;
