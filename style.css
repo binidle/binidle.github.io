@@ -3,7 +3,7 @@ ul.nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(255, 28, 115);
+    background-color: rgb(249, 255, 242);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -14,7 +14,7 @@ ul.nav1 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(255, 28, 115);
+    background-color: rgb(249, 255, 242);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -128,7 +128,7 @@ li {
 
 
 li:hover {
-    background-color: rgb(255, 183, 75);
+    background-color: rgb(245, 214, 120);
 }
 
 .presb {
@@ -139,7 +139,7 @@ li:hover {
 }
 
 body {
-    background-color: crimson;
+    background-color: rgb(107, 224, 191);
     color: white;
     font-family: 'Roboto', sans-serif;
 }
