@@ -53,3 +53,7 @@ function genBinary(len) {
     }
     return n;
 }
+
+function alertBox(msg) {
+    
+}
