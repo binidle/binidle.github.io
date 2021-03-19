@@ -76,7 +76,7 @@ function alertBox(msg) {
     }, 3000, zz);
 }
 
-function acheiveBox(msg) {
+function acheiveBox(msg) {Beep2.play();
     console.log("Acheivement: "+msg);
     if (false) {
         zz = document.createElement("div");

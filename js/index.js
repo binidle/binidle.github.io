@@ -4,6 +4,10 @@ var lineVal = 0;
 var prestiged = 0;
 var avgPerf = [];
 var focussed=true;
+
+var Beep1 = new Audio('./audio/Beep1.wav');
+var Beep2 = new Audio('./audio/Beep2.wav');
+var Beep3 = new Audio('./audio/Beep3.wav');
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
@@ -55,6 +59,7 @@ function Bin() {
 }
 
 function change(e) {
+    Beep1.play();
     if (e.innerText == "0") {
         e.innerText = "1";
     } else {

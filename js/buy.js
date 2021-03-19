@@ -4,9 +4,9 @@ function buyRandforcer(i = 0) {
         player.randForcers = player.randForcers.add(1);
         player.bins[i].randForcing = true;
         player.bins[i].randForcers++;
+        Beep2.play();
 
-
-    } else {
+    } else {Beep3.play();
         alertBox("You need at least 10⚛ to buy a randforcer! You currently have " + player.solves + "⚛")
     }
 }
@@ -17,7 +17,8 @@ function buyBruteforcer(i = 0) {
         player.bruteForcers = player.bruteForcers.add(1);
         player.bins[i].bruteForcing = true;
         player.bins[i].bruteForcers++;
-    } else {
+        Beep2.play();
+    } else {Beep3.play();
         alertBox("You need at least 100⚛ to buy a bruteforcer! You currently have " + player.solves + "⚛")
     }
 }
@@ -37,7 +38,8 @@ function buyBin(load = false) {
         else addBin(0, 0);
         player.bins[player.bins.length - 1].currGoal = genBinary(1);
         document.querySelector("#burh").innerText = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β"
-    } else if (true) {
+        Beep2.play();
+    } else if (true) {Beep3.play();
         alertBox("You need at least " + (25 + (5 * 5 ** player.bins.length)) + "β to buy a new line! You currently have " + player.qlavrams + "β")
     } else {
         alertBox("weedmart calls: this is useless/unreachable code, that fact that it is here in fact, makes the game slower")
@@ -61,8 +63,9 @@ function sMult() {
         player.sMultiplier = player.sMultiplier.add(1);
         player.qlavrams = player.qlavrams.sub(temp);
         temp = (150 * player.sMultiplier)
+        Beep2.play();
         document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
-    } else {
+    } else {Beep3.play();
         alertBox("You need at least " + temp + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
     }
 }
@@ -73,8 +76,9 @@ function qMult() {
         player.qMultiplier = player.qMultiplier.add(1);
         player.cracks = player.cracks.sub(temp);
         temp = (150 * player.qMultiplier)
+        Beep2.play();
         document.querySelector("#qlavmultQOL").innerText = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
-    } else {
+    } else {Beep3.play();
         alertBox("You need at least " + temp + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
     }
 }
@@ -85,9 +89,11 @@ function cMult() {
         player.cMultiplier = player.cMultiplier.add(1);
         player.solves = player.solves.sub(temp);
         temp = (7500 * player.cMultiplier)
+        Beep2.play();
         document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
     } else {
         alertBox("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
+        Beep3.play();
     }
 }
 
@@ -98,8 +104,9 @@ function cForm() {
         player.cFormula = player.cFormula.add(1);
         player.cracks = player.cracks.sub(temp);
         temp = (500 * player.cFormula)
+        Beep2.play();
         document.querySelector("#crackFormUPG").innerText = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
-    } else {
+    } else {Beep3.play();
         alertBox("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
 }
