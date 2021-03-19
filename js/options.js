@@ -24,7 +24,7 @@ function rainbow() {
 
 function save(local = true) {
     if (local) {
-        download("save.json","weedmart calls: wow! another easter egg! aaaaaaaaaaa problem?")
+        download("save.json", "weedmart calls: wow! another easter egg! aaaaaaaaaaa problem?")
     }
 }
 
@@ -32,6 +32,6 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
     a = JSON.stringify(player);
     a = JSON.parse(a);
     keys = Object.keys(a);
-    document.querySelector("#lines").innerHTML="";
+    document.querySelector("#lines").innerHTML = "";
     buyBin(true);
 }

@@ -6,7 +6,7 @@ var prestiged = 0;
 window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
- 
+
 var player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
@@ -26,7 +26,7 @@ player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i canno
 
 function Bin() {
     this.bins = [];
-    this.state= [];
+    this.state = [];
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers = 0;
@@ -157,7 +157,7 @@ function loop(timestamp) {
     updateSolves();
     document.querySelector("#perf").innerText = "Performance: " + (1000 / progress).toFixed(2) + "tps";
     if (player.lowp) {
-        player.lowp=false;
+        player.lowp = false;
         x = document.querySelectorAll("#perfbad");
         for (i = 0; i < x.length; i++) {
             x[i].style = "display: none;";

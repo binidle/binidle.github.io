@@ -4,7 +4,7 @@ function buyRandforcer(i = 0) {
         player.randForcers = player.randForcers.add(1);
         player.bins[i].randForcing = true;
         player.bins[i].randForcers++;
-        
+
 
     } else {
         alert("You need at least 10⚛ to buy a randforcer! You currently have " + player.solves + "⚛")
@@ -22,18 +22,18 @@ function buyBruteforcer(i = 0) {
     }
 }
 
-function buyBin(load=false) {
-    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length))||load) {
+function buyBin(load = false) {
+    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length)) || load) {
         lineVal += 0.2;
-        if(!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
+        if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
         player.bins.push(new Bin());
         t = document.createElement("ul");
-        if(!load)t.id = "bits" + (player.bins.length - 1);
+        if (!load) t.id = "bits" + (player.bins.length - 1);
         else t.id = "bits0";
         t.className = "bins" + Math.floor(lineVal + 0.1);
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li>`
         document.querySelector("#lines").appendChild(t);
-        if(!load)addBin(0, player.bins.length - 1);
+        if (!load) addBin(0, player.bins.length - 1);
         else addBin(0, 0);
         player.bins[player.bins.length - 1].currGoal = genBinary(1);
         document.querySelector("#burh").innerText = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β"

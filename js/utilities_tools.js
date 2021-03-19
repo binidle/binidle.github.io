@@ -20,14 +20,14 @@ function prestige() {
 }
 
 function getVersion() {
-    sum=0;
-    for(i=0;i<30;i++){
-        fetch("https://api.github.com/repos/binidle/binidle.github.io/commits?page="+i)
-        .then(x => x.text())
-        .then(function(y){
-            sum+=JSON.parse(y).length;
-            return sum;
-        });
+    sum = 0;
+    for (i = 0; i < 30; i++) {
+        fetch("https://api.github.com/repos/binidle/binidle.github.io/commits?page=" + i)
+            .then(x => x.text())
+            .then(function (y) {
+                sum += JSON.parse(y).length;
+                return sum;
+            });
     }
 }
 
@@ -45,7 +45,7 @@ function updateSolves() {
     document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
 }
- 
+
 function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
