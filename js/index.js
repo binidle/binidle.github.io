@@ -135,22 +135,28 @@ function init() {
     }
     player.bins[0].currGoal = genBinary(1);
     // window.requestAnimationFrame(loop)
-    looper = setInterval(loop,0);
+    looper = setInterval(loop, 0);
 }
 
 function loop() {
     avgPerf.push(performance.now() - lastRender);
-    if(avgPerf.length>300) {
-        avgPerf.splice(0,1);
+    if (avgPerf.length > 300) {
+        avgPerf.splice(0, 1);
     }
 
     var total = 0;
-    for(var i = 0; i < avgPerf.length; i++) {
+    for (var i = 0; i < avgPerf.length; i++) {
         total += avgPerf[i];
     }
     var progress = total / avgPerf.length;
 
-    // console.log(progress);
+    //=================================================
+    //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
+
+
+    //=================================================
+
+
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
