@@ -25,7 +25,7 @@ ul.bins0 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(73, 0, 190);
+    background-color: rgb(105, 60, 54);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -37,7 +37,7 @@ ul.bins1 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #02f712;
+    background-color: rgb(171, 55, 55);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -49,7 +49,7 @@ ul.bins2 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f71602;
+    background-color: rgb(224, 134, 74);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -61,7 +61,7 @@ ul.bins3 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f702f3;
+    background-color: rgb(245, 108, 119);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -73,7 +73,7 @@ ul.bins4 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f7f302;
+    background-color: rgb(150, 212, 91);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
@@ -85,7 +85,7 @@ ul.bins5 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #04f7f7;
+    background-color: rgb(158, 72, 145);
     margin-top: -10px;
     margin-right: -8px;
     margin-left: -10px;
