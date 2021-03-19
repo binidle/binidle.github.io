@@ -35,7 +35,7 @@ function updateSolves() {
     document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
-    document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers) * (0.001 * player.qMultiplier)).toFixed(5);
+    document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5);
     document.querySelector("#smlt").innerText = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
     document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
