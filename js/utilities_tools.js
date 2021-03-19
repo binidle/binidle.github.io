@@ -13,9 +13,9 @@ function seqToStr(o) {
 function prestige() {
     if (player.solves >= 100000) {
         prestiged = 1;
-        alert("weedmart calls: not done yet lol")
+        alertBox("weedmart calls: not done yet lol")
     } else {
-        alert("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
+        alertBox("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
     }
 }
 

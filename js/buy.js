@@ -7,7 +7,7 @@ function buyRandforcer(i = 0) {
 
 
     } else {
-        alert("You need at least 10⚛ to buy a randforcer! You currently have " + player.solves + "⚛")
+        alertBox("You need at least 10⚛ to buy a randforcer! You currently have " + player.solves + "⚛")
     }
 }
 
@@ -18,7 +18,7 @@ function buyBruteforcer(i = 0) {
         player.bins[i].bruteForcing = true;
         player.bins[i].bruteForcers++;
     } else {
-        alert("You need at least 100⚛ to buy a bruteforcer! You currently have " + player.solves + "⚛")
+        alertBox("You need at least 100⚛ to buy a bruteforcer! You currently have " + player.solves + "⚛")
     }
 }
 
@@ -38,9 +38,9 @@ function buyBin(load = false) {
         player.bins[player.bins.length - 1].currGoal = genBinary(1);
         document.querySelector("#burh").innerText = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β"
     } else if (true) {
-        alert("You need at least " + (25 + (5 * 5 ** player.bins.length)) + "β to buy a new line! You currently have " + player.qlavrams + "β")
+        alertBox("You need at least " + (25 + (5 * 5 ** player.bins.length)) + "β to buy a new line! You currently have " + player.qlavrams + "β")
     } else {
-        alert("weedmart calls: this is useless/unreachable code, that fact that it is here in fact, makes the game slower")
+        alertBox("weedmart calls: this is useless/unreachable code, that fact that it is here in fact, makes the game slower")
     }
 }
 

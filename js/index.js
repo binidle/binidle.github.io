@@ -63,7 +63,7 @@ function sMult() {
         temp = (150 * player.sMultiplier)
         document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
     } else {
-        alert("You need at least " + temp + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
+        alertBox("You need at least " + temp + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
     }
 }
 
@@ -75,7 +75,7 @@ function qMult() {
         temp = (150 * player.qMultiplier)
         document.querySelector("#qlavmultQOL").innerText = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
     } else {
-        alert("You need at least " + temp + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
+        alertBox("You need at least " + temp + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
     }
 }
 
@@ -87,7 +87,7 @@ function cMult() {
         temp = (7500 * player.cMultiplier)
         document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
     } else {
-        alert("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
+        alertBox("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
     }
 }
 
@@ -99,7 +99,7 @@ function cForm() {
         temp = (500 * player.cFormula)
         document.querySelector("#crackFormUPG").innerText = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + " -> " + numberformat.format(player.cFormula.add(1)) + ") " + temp + "Փ" // broken but idc we'll do it later
     } else {
-        alert("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
+        alertBox("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
 }
 
