@@ -45,7 +45,7 @@ function updateSolves() {
     document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
 }
-
+ 
 function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
