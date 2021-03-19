@@ -115,6 +115,9 @@ function change(e) {
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
+            if(player.solves==0){
+                alertBox("I did the thing! - Crack a code by clicking on the '0'");
+            }
             if (i < 4) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             } else {
@@ -123,6 +126,7 @@ function d() {
 
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
             addBin(0, i);
+            
         }
     }
 }
