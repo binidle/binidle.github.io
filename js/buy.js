@@ -92,8 +92,8 @@ function cMult() {
 }
 
 function cForm() {
-    // temp = (500 * player.cFormula)
-    temp = 500;
+    temp = (500 * player.cFormula)
+    // temp = 500;
     if (player.cracks > temp) {
         player.cFormula = player.cFormula.add(1);
         player.cracks = player.cracks.sub(temp);

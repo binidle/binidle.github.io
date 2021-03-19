@@ -3,6 +3,7 @@ var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
 var avgPerf = [];
+var focussed=true;
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
@@ -84,6 +85,8 @@ function d() {
 updateSolves();
 
 function init() {
+    window.addEventListener("focus", () => {focussed=true});
+    window.addEventListener("blur", () => {focussed=false});
     for (i = 0; i < player.digits; i++) {
         addBin();
     }
@@ -110,7 +113,7 @@ function loop() {
 
     //=================================================
 
-    if(progress<=20&&(performance.now()>2000)){
+    if(1000 / progress<=20&&(performance.now()>2000)&&focussed){
         alertBox("Oh no! Looks like your computers having a rough time. You may want to consider going into settings and enabling Better Performance mode");
     }
 
