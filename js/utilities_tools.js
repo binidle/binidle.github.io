@@ -56,8 +56,8 @@ function genBinary(len) {
 
 function alertBox(msg) {
     zz = document.createElement("div");
-    zz.className="alert";
-    zz.innerHTML=`<span class="closebtn">&times;</span>` + msg + ``;
+    zz.className = "alert";
+    zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
     document.querySelector("#alertBoxs").appendChild(zz);
 
     zz.onclick = function () {
@@ -67,11 +67,35 @@ function alertBox(msg) {
             div.style.display = "none";
         }, 600);
     }
-    setTimeout(function(that){
+    setTimeout(function (that) {
         var div = that;
         div.style.opacity = "0";
         setTimeout(function () {
             div.style.display = "none";
         }, 600);
-    },3000,zz);
+    }, 3000, zz);
+}
+
+function acheiveBox(msg) {
+    if (false) {
+        zz = document.createElement("div");
+        zz.className = "alert";
+        zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
+        document.querySelector("#alertBoxs").appendChild(zz);
+
+        zz.onclick = function () {
+            div = zz;
+            div.style.opacity = "0";
+            setTimeout(function () {
+                div.style.display = "none";
+            }, 600);
+        }
+        setTimeout(function (that) {
+            var div = that;
+            div.style.opacity = "0";
+            setTimeout(function () {
+                div.style.display = "none";
+            }, 600);
+        }, 3000, zz);
+    }
 }
