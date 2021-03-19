@@ -58,14 +58,15 @@ function alertBox(msg) {
     document.querySelector("#alertBoxs").innerHTML += `<div class="alert"><span class="closebtn">&times;</span>` + msg + `</div>`;
     var close = document.getElementsByClassName("closebtn");
     for (i = 0; i < close.length; i++) {
-        var div = close[i].parentElement;
         close[i].onclick = function () {
+            div = this.parentElement;
             div.style.opacity = "0";
             setTimeout(function () {
                 div.style.display = "none";
             }, 600);
         }
         setTimeout(function(){
+            var div = close[i].parentElement;
             div.style.opacity = "0";
             setTimeout(function () {
                 div.style.display = "none";
