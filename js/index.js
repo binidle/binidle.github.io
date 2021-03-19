@@ -85,7 +85,7 @@ function d() {
 updateSolves();
 
 function init() {
-    window.addEventListener("focus", () => {focussed=true});
+    window.addEventListener("focus", () => {setTimeout(()=>{focussed=true},2500)});
     window.addEventListener("blur", () => {focussed=false});
     for (i = 0; i < player.digits; i++) {
         addBin();
