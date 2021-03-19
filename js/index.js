@@ -156,10 +156,13 @@ function loop() {
 
     //=================================================
     //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
-
+    
 
     //=================================================
 
+    if(progress<=20&&(performance.now()>2000)){
+        alertBox("Oh no! Looks like your computers having a rough time. You may want to consider going into settings and enabling Better Performance mode");
+    }
 
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
