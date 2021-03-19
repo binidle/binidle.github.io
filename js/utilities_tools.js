@@ -77,6 +77,7 @@ function alertBox(msg) {
 }
 
 function acheiveBox(msg) {
+    console.log("Acheivement: "+msg);
     if (false) {
         zz = document.createElement("div");
         zz.className = "alert";
