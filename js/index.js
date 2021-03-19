@@ -117,7 +117,7 @@ function d() {
             if (i < 4) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             } else {
-                player.bcracks = player.bcracks.add((((1 * (0.005 + (0.001 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + 1))) * player.cMultiplier);
+                player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
             }
 
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
