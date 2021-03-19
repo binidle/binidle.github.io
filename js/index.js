@@ -53,56 +53,6 @@ function Bin() {
     this.randForcing = false;
 }
 
-
-
-function sMult() {
-    temp = (150 * player.sMultiplier)
-    if (player.qlavrams > temp) {
-        player.sMultiplier = player.sMultiplier.add(1);
-        player.qlavrams = player.qlavrams.sub(temp);
-        temp = (150 * player.sMultiplier)
-        document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
-    } else {
-        alertBox("You need at least " + temp + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
-    }
-}
-
-function qMult() {
-    temp = (150 * player.qMultiplier)
-    if (player.cracks > temp) {
-        player.qMultiplier = player.qMultiplier.add(1);
-        player.cracks = player.cracks.sub(temp);
-        temp = (150 * player.qMultiplier)
-        document.querySelector("#qlavmultQOL").innerText = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
-    } else {
-        alertBox("You need at least " + temp + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
-    }
-}
-
-function cMult() {
-    temp = (7500 * player.cMultiplier)
-    if (player.solves > temp) {
-        player.cMultiplier = player.cMultiplier.add(1);
-        player.solves = player.solves.sub(temp);
-        temp = (7500 * player.cMultiplier)
-        document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
-    } else {
-        alertBox("You need at least " + temp + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
-    }
-}
-
-function cForm() {
-    temp = (500 * player.cFormula)
-    if (player.cracks > temp) {
-        player.cFormula = player.cFormula.add(1);
-        player.cracks = player.cracks.sub(temp);
-        temp = (500 * player.cFormula)
-        document.querySelector("#crackFormUPG").innerText = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + " -> " + numberformat.format(player.cFormula.add(1)) + ") " + temp + "Փ" // broken but idc we'll do it later
-    } else {
-        alertBox("You need at least " + temp + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
-    }
-}
-
 function change(e) {
     if (e.innerText == "0") {
         e.innerText = "1";
