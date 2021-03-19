@@ -169,3 +169,7 @@ body {
         box-shadow: 0 0 3px #2ba805;
     }
 }
+
+.alertBox {
+    position: absolute;
+}
