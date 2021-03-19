@@ -45,6 +45,9 @@ function buyBin(load = false) {
 }
 
 function addBin(v = 0, z = 0) {
+    
+    
+
     t = document.createElement("li");
     t.innerText = v;
     t.id = "perfbad"
