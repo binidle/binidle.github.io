@@ -133,11 +133,12 @@ function init() {
         addBin();
     }
     player.bins[0].currGoal = genBinary(1);
-    window.requestAnimationFrame(loop)
+    // window.requestAnimationFrame(loop)
+    looper = setInterval(loop,0);
 }
 
-function loop(timestamp) {
-    var progress = timestamp - lastRender
+function loop() {
+    var progress = performance.now() - lastRender
 
     // console.log(progress);
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
@@ -163,8 +164,8 @@ function loop(timestamp) {
             x[i].style = "display: none;";
         }
     }
-    lastRender = timestamp;
-    window.requestAnimationFrame(loop);
+    lastRender = performance.now();
+    // window.requestAnimationFrame(loop);
 }
 
 init();
