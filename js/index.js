@@ -140,7 +140,7 @@ function init() {
 
 function loop() {
     avgPerf.push(performance.now() - lastRender);
-    if(avgPerf.length>1000) {
+    if(avgPerf.length>300) {
         avgPerf.splice(0,1);
     }
 
