@@ -118,7 +118,7 @@ function d() {
             if(player.solves==0){
                 alertBox("I did the thing! - Crack a code by clicking on the '0'");
             }
-            if (i < 4) {
+            if (i < 5) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
             } else {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
