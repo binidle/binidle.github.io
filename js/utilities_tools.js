@@ -65,12 +65,12 @@ function alertBox(msg) {
                 div.style.display = "none";
             }, 600);
         }
-        setTimeout(function(){
-            var div = close[i].parentElement;
+        setTimeout(function(that){
+            var div = that.parentElement;
             div.style.opacity = "0";
             setTimeout(function () {
                 div.style.display = "none";
             }, 600);
-        },3000);
+        },3000,close[i]);
     }
 }
