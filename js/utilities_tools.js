@@ -55,22 +55,23 @@ function genBinary(len) {
 }
 
 function alertBox(msg) {
-    document.querySelector("#alertBoxs").innerHTML += `<div class="alert"><span class="closebtn">&times;</span>` + msg + `</div>`;
-    var close = document.getElementsByClassName("closebtn");
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            div = this.parentElement;
-            div.style.opacity = "0";
-            setTimeout(function () {
-                div.style.display = "none";
-            }, 600);
-        }
-        setTimeout(function(that){
-            var div = that.parentElement;
-            div.style.opacity = "0";
-            setTimeout(function () {
-                div.style.display = "none";
-            }, 600);
-        },3000,close[i]);
+    zz = document.createElement("div");
+    zz.className="alert";
+    zz.innerHTML=`<span class="closebtn">&times;</span>` + msg + ``;
+    document.querySelector("#alertBoxs").appendChild(zz);
+
+    zz.onclick = function () {
+        div = zz;
+        div.style.opacity = "0";
+        setTimeout(function () {
+            div.style.display = "none";
+        }, 600);
     }
+    setTimeout(function(that){
+        var div = that;
+        div.style.opacity = "0";
+        setTimeout(function () {
+            div.style.display = "none";
+        }, 600);
+    },3000,zz);
 }
