@@ -14,10 +14,16 @@ function download(filename, text) {
 // Start file download.
 // download("hello.txt", "This is the content of my file :)");
 
-function volume(ud=0){
-    Beep1.volume+=ud/10;
-    Beep2.volume+=ud/10;
-    Beep3.volume+=ud/10;
+function volume(ud = 0) {
+    if ((vol < 0.1 && ud < 0) || (vol > 0.9 && ud > 0)) {
+        
+    }
+    else {
+        vol += ud / 10;
+    }
+    Beep1.volume = vol;
+    Beep2.volume = vol;
+    Beep3.volume = vol;
     Beep1.play();
 }
 
