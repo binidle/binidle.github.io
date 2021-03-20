@@ -5,10 +5,11 @@ var prestiged = 0;
 var avgPerf = [];
 var focussed=true;
 var random;
+var volume = 0.1;
 
-var Beep1 = new Audio('./audio/Beep1.wav');Beep1.volume=0.1;
-var Beep2 = new Audio('./audio/Beep2.wav');Beep2.volume=0.1;
-var Beep3 = new Audio('./audio/Beep3.wav');Beep3.volume=0.1;
+var Beep1 = new Audio('./audio/Beep1.wav');Beep1.volume=volume;
+var Beep2 = new Audio('./audio/Beep2.wav');Beep2.volume=volume;
+var Beep3 = new Audio('./audio/Beep3.wav');Beep3.volume=volume;
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false

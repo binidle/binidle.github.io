@@ -14,6 +14,13 @@ function download(filename, text) {
 // Start file download.
 // download("hello.txt", "This is the content of my file :)");
 
+function volume(ud=0){
+    Beep1.volume+=ud/10;
+    Beep2.volume+=ud/10;
+    Beep3.volume+=ud/10;
+    Beep1.play();
+}
+
 function toggleLowP() {
     player.lowp = !player.lowp;
 }
