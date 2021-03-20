@@ -300,9 +300,9 @@ hi
     <h2> Formulas </h2> <br>
     Line cost formula (1 to 5): 25 + (5 * 5^lines)
     <br>
-    Qlavram generation: (sqrt(Randforcers) * (0.001 * Qlavram Multipliers))
+    Qlavram generation (per tick): (sqrt(Randforcers) * (0.0001 * Qlavram Multipliers))
     <br>
-    Crack generation: ((((Base Cracks * 0.25)/((1 + Cracks/1 + Base Cracks)))) * Crack Multipliers)
+    Crack generation (per tick): ((((Base Cracks * (0.025 + (0.005 * (Crack Formula Upgrade - 1 )))) / (1 + Cracks / 1 + Base Cracks))) * Crack Multiplier)
     <br>
     God this looks terrible, but we'll fix it later
   </div>
