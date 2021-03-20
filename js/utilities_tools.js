@@ -49,7 +49,7 @@ function updateSolves() {
 function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
-        n.push(Math.round(random.nextFloat()));
+        n.push(Math.round(Math.random()));
     }
     return n;
 }
