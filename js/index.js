@@ -70,7 +70,7 @@ function change(e) {
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
+            // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
             if(player.solves==0){
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
             }
