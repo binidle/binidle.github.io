@@ -39,7 +39,6 @@ function Bin() {
     this.bruteForcers = 0;
     this.randforce = function () {
         player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier));
-
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].textContent = Math.round(random.nextFloat());
         }
