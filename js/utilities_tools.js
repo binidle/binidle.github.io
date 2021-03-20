@@ -49,7 +49,7 @@ function updateSolves() {
 function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
-        n.push(Math.round(Math.random()));
+        n.push(Math.round(random.nextFloat()));
     }
     return n;
 }
@@ -76,8 +76,9 @@ function alertBox(msg) {
     }, 3000, zz);
 }
 
-function acheiveBox(msg) {Beep2.play();
-    console.log("Acheivement: "+msg);
+function acheiveBox(msg) {
+    Beep2.play();
+    console.log("Acheivement: " + msg);
     if (false) {
         zz = document.createElement("div");
         zz.className = "alert";
@@ -99,4 +100,14 @@ function acheiveBox(msg) {Beep2.play();
             }, 600);
         }, 3000, zz);
     }
+}
+
+function perfMeasure(f) {
+    var t0 = performance.now()
+
+    f() // <---- The function you're measuring time for
+
+    var t1 = performance.now()
+    // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+    return (t1 - t0);
 }

@@ -4,6 +4,7 @@ var lineVal = 0;
 var prestiged = 0;
 var avgPerf = [];
 var focussed=true;
+var random;
 
 var Beep1 = new Audio('./audio/Beep1.wav');Beep1.volume=0.1;
 var Beep2 = new Audio('./audio/Beep2.wav');Beep2.volume=0.1;
@@ -40,7 +41,7 @@ function Bin() {
         player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier));
 
         for (i = 0; i < this.bins.length; i++) {
-            this.bins[i].textContent = Math.round(Math.random());
+            this.bins[i].textContent = Math.round(random.nextFloat());
         }
         d();
     }
@@ -94,6 +95,7 @@ function init() {
     for (i = 0; i < player.digits; i++) {
         addBin();
     }
+    random = new RNG(performance.now())
     player.bins[0].currGoal = genBinary(1);
     // window.requestAnimationFrame(loop)
     looper = setInterval(loop, 0);

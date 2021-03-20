@@ -5,8 +5,9 @@ function RNG(seed) {
     this.c = 12345;
 
     this.state = seed;
-}
-RNG.prototype.nextFloat = function () {
-    this.state,s = ((this.a * this.state + this.c) % this.m);
-    return s / (this.m - 1);
+    this.nextFloat = function () {
+        s = ((this.a * this.state + this.c) % this.m);
+        this.state = s;
+        return s / (this.m - 1);
+    }
 }
