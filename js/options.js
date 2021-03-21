@@ -16,9 +16,8 @@ function download(filename, text) {
 
 function volume(ud = 0) {
     if ((vol < 0.1 && ud < 0) || (vol > 0.9 && ud > 0)) {
-        
-    }
-    else {
+
+    } else {
         vol += ud / 10;
     }
     Beep1.volume = vol;

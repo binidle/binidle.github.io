@@ -32,16 +32,16 @@ function getVersion() {
 }
 
 function updateSolves() {
-    document.querySelector("#solve").innerText = "Solves (⚛): " + numberformat.format(player.solves);
-    document.querySelector("#qlavram").innerText = "Qlavrams (β): " + numberformat.format(player.qlavrams);
-    document.querySelector("#crack").innerText = "Cracks (Փ): " + numberformat.format(player.cracks);
-    document.querySelector("#qlavramps").innerText = "QPT: " + (Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5);
-    document.querySelector("#smlt").innerText = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
-    document.querySelector("#qmlt").innerText = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
-    document.querySelector("#bcrack").innerText = "Base Cracks: " + numberformat.format(player.bcracks);
-    document.querySelector("#cmlt").innerText = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
-    document.querySelector("#crackps").innerText = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
-    document.querySelector("#version").innerText = "Version: 0.2.2 Colour Update!!!!!! real wacky m8; performance fixed";
+    document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
+    document.querySelector("#qlavram").textContent = "Qlavrams (β): " + numberformat.format(player.qlavrams);
+    document.querySelector("#crack").textContent = "Cracks (Փ): " + numberformat.format(player.cracks);
+    document.querySelector("#qlavramps").textContent = "QPT: " + (Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5);
+    document.querySelector("#smlt").textContent = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
+    document.querySelector("#qmlt").textContent = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
+    document.querySelector("#bcrack").textContent = "Base Cracks: " + numberformat.format(player.bcracks);
+    document.querySelector("#cmlt").textContent = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
+    document.querySelector("#crackps").textContent = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
+    document.querySelector("#version").textContent = "Version: 0.2.2 Colour Update!!!!!! real wacky m8; performance fixed";
     document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
 }
@@ -50,6 +50,14 @@ function genBinary(len) {
     n = [];
     for (let i = 0; i < len; i++) {
         n.push(Math.round(Math.random()));
+    }
+    return n;
+}
+
+function genVal(len, val) {
+    n = [];
+    for (let i = 0; i < len; i++) {
+        n.push(val);
     }
     return n;
 }
@@ -112,8 +120,8 @@ function perfMeasure(f) {
     return (t1 - t0);
 }
 
-function cls(arr,val) { // ez for menu stuff
-    for(ind=0;ind<arr.length;ind++){
-        arr[ind].className=val;
+function cls(arr, val) { // ez for menu stuff
+    for (ind = 0; ind < arr.length; ind++) {
+        arr[ind].className = val;
     }
 }

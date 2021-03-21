@@ -3,7 +3,7 @@ var lastRender = 0
 var lineVal = 0;
 var prestiged = 0;
 var avgPerf = [];
-var focussed=true;
+var focussed = true;
 var random;
 var vol = 0.1;
 var m1 = document.querySelector("#m1")
@@ -12,9 +12,12 @@ var m3 = document.querySelector("#m3")
 var m4 = document.querySelector("#m4")
 var m5 = document.querySelector("#m5")
 
-var Beep1 = new Audio('./audio/Beep1.wav');Beep1.volume=vol;
-var Beep2 = new Audio('./audio/Beep2.wav');Beep2.volume=vol;
-var Beep3 = new Audio('./audio/Beep3.wav');Beep3.volume=vol;
+var Beep1 = new Audio('./audio/Beep1.wav');
+Beep1.volume = vol;
+var Beep2 = new Audio('./audio/Beep2.wav');
+Beep2.volume = vol;
+var Beep3 = new Audio('./audio/Beep3.wav');
+Beep3.volume = vol;
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
@@ -39,7 +42,7 @@ player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i canno
 
 function Bin() {
     this.bins = [];
-    this.state = [];
+    this.state = currSeq(0, this.bins);
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers = 0;
@@ -53,11 +56,16 @@ function Bin() {
         d();
     }
     this.bruteForce = function () {
-        this.state = currSeq(0, this.bins);
         n = addBinary(this.state, "1").split('');
         // console.log(n);
+        if (n.length > this.bins.length) {
+            // console.log("a");
+            n = seqToStr(genVal(this.bins.length, 0));
+        }
+        this.state = n
+
         for (i = 0; i < this.bins.length; i++) {
-            this.bins[i].innerText = n[i];
+            this.bins[i].textContent = n[i];
         }
         d();
     }
@@ -65,21 +73,20 @@ function Bin() {
 
 function change(e) {
     Beep1.play();
-    if (e.innerText == "0") {
-        e.innerText = "1";
+    if (e.textContent == "0") {
+        e.textContent = "1";
     } else {
-        e.innerText = "0";
+        e.textContent = "0";
     }
     d();
+    player.bins[parseInt(e.parentElement.className.split("bins")[1])].state = currSeq(parseInt(e.parentElement.className.split("bins")[1]));
 }
-
-
 
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
-            if(player.solves==0){
+            if (player.solves == 0) {
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
             }
             if (i < 5) {
@@ -89,6 +96,7 @@ function d() {
             }
             addBin(0, i);
             player.bins[i].currGoal = genBinary(player.bins[i].bins.length);
+            tempz = genVal(player.bins[i].bins.length, 0);
         }
     }
 }
@@ -96,8 +104,14 @@ function d() {
 updateSolves();
 
 function init() {
-    window.addEventListener("focus", () => {setTimeout(()=>{focussed=true},2500)});
-    window.addEventListener("blur", () => {focussed=false});
+    window.addEventListener("focus", () => {
+        setTimeout(() => {
+            focussed = true
+        }, 2500)
+    });
+    window.addEventListener("blur", () => {
+        focussed = false
+    });
     for (i = 0; i < player.digits; i++) {
         addBin();
     }
@@ -121,7 +135,7 @@ function loop() {
 
     //=================================================
     //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
-    
+
 
     //=================================================
 
@@ -144,7 +158,7 @@ function loop() {
     }, this);
 
     updateSolves();
-    document.querySelector("#perf").innerText = "Performance: " + (1000 / progress).toFixed(2) + "tps";
+    document.querySelector("#perf").textContent = "Performance: " + (1000 / progress).toFixed(2) + "tps";
     if (player.lowp) {
         player.lowp = false;
         x = document.querySelectorAll("#perfbad");

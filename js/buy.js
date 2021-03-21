@@ -26,9 +26,9 @@ function buyBruteforcer(i = 0) {
 }
 
 function removeBit(zzz = 0) {
-    if (player.cracks>150) {
+    if (player.cracks > 150) {
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
-        player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1,1);
+        player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1, 1);
         player.bins[zzz].currGoal = genBinary(player.bins[zzz].bins.length);
     } else {
         Beep3.play();
@@ -69,6 +69,8 @@ function addBin(v = 0, z = 0) {
         change(this);
     };
     player.bins[z].bins.push(t);
+    player.bins[z].state = currSeq(0, player.bins[z].bins);
+
 }
 
 function sMult() {
