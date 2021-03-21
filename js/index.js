@@ -6,6 +6,11 @@ var avgPerf = [];
 var focussed=true;
 var random;
 var vol = 0.1;
+var m1 = document.querySelector("#m1")
+var m2 = document.querySelector("#m2")
+var m3 = document.querySelector("#m3")
+var m4 = document.querySelector("#m4")
+var m5 = document.querySelector("#m5")
 
 var Beep1 = new Audio('./audio/Beep1.wav');Beep1.volume=vol;
 var Beep2 = new Audio('./audio/Beep2.wav');Beep2.volume=vol;

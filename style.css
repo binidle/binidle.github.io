@@ -208,9 +208,13 @@ body {
     transition-duration: 0.2s;
 }
 
-.acheive th:hover {background-color: rgb(255, 226, 96);}
+.acheive th:hover {
+    background-color: rgb(255, 226, 96);
+}
 
-.acheive tr:nth-child(even){background-color: #fff6d6;}
+.acheive tr:nth-child(even) {
+    background-color: #fff6d6;
+}
 
 .acheive button {
     background-color: #fff6d6;
@@ -221,4 +225,9 @@ body {
 
 .acheive button:hover {
     background-color: rgb(255, 226, 96);
+}
+
+.active {
+    background-color: #2a8672;
+    color: white;
 }

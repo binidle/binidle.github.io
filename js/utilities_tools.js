@@ -111,3 +111,9 @@ function perfMeasure(f) {
     // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
     return (t1 - t0);
 }
+
+function cls(arr,val) { // ez for menu stuff
+    for(ind=0;ind<arr.length;ind++){
+        arr[ind].className=val;
+    }
+}

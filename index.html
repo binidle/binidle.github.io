@@ -59,20 +59,20 @@ hi
 
 <body>
   <ul class="nav">
-    <li
-      onclick="(document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
+    <li id="m1" class="active"
+      onclick="(this.className='active',cls([m2,m3,m4,m5],''),document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
       Solver</li>
-    <li
-      onclick="(document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
+    <li id="m2"
+      onclick="(this.className='active',cls([m1,m3,m4,m5],''),document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
       Upgrades</li>
-    <li
-      onclick="(document.querySelector('#prestige').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#solver').style.display='none')">
+    <li id="m3"
+      onclick="(this.className='active',cls([m2,m1,m4,m5],''),document.querySelector('#prestige').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#solver').style.display='none')">
       Prestige</li>
-    <li
-      onclick="(document.querySelector('#achievements').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
+    <li id="m4"
+      onclick="(this.className='active',cls([m2,m3,m1,m5],''),document.querySelector('#achievements').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
       Achievements</li>
-    <li
-      onclick="(document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
+    <li id="m5"
+      onclick="(this.className='active',cls([m2,m3,m4,m1],''),document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
       Options</li>
     <li class="stats" id="solve">Solves (⚛): </li>
     <li class="stats" id="qlavram">Qlavram (β): </li>
