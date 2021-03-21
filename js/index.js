@@ -43,6 +43,8 @@ function Bin() {
     this.currGoal = [];
     this.randForcers = 0;
     this.bruteForcers = 0;
+    this.bruteForcing = false;
+    this.randForcing = false;
     this.randforce = function () {
         player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier));
         for (i = 0; i < this.bins.length; i++) {
@@ -59,8 +61,6 @@ function Bin() {
         }
         d();
     }
-    this.bruteForcing = false;
-    this.randForcing = false;
 }
 
 function change(e) {
@@ -87,10 +87,8 @@ function d() {
             } else {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
             }
-
-            player.bins[i].currGoal = genBinary(player.bins[i].bins.length + 1);
             addBin(0, i);
-            
+            player.bins[i].currGoal = genBinary(player.bins[i].bins.length);
         }
     }
 }
