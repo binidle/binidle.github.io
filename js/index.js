@@ -73,6 +73,8 @@ function change(e) {
     d();
 }
 
+
+
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
