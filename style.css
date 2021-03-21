@@ -195,3 +195,19 @@ body {
 .closebtn:hover {
     color: black;
 }
+
+.acheive {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(255, 200, 118);
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.acheive th {
+    transition-duration: 0.2s;
+}
+
+.acheive th:hover {background-color: rgb(255, 226, 96);}
+
+.acheive tr:nth-child(even){background-color: #fff6d6;}
