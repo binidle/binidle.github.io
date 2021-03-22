@@ -6,11 +6,12 @@ var avgPerf = [];
 var focussed = true;
 var random;
 var vol = 0.1;
-var m1 = document.querySelector("#m1")
-var m2 = document.querySelector("#m2")
-var m3 = document.querySelector("#m3")
-var m4 = document.querySelector("#m4")
-var m5 = document.querySelector("#m5")
+var m1 = document.querySelector("#m1");
+var fon = true;
+var m2 = document.querySelector("#m2");
+var m3 = document.querySelector("#m3");
+var m4 = document.querySelector("#m4");
+var m5 = document.querySelector("#m5");
 
 var Beep1 = new Audio('./audio/Beep1.wav');
 Beep1.volume = vol;
@@ -73,6 +74,10 @@ function Bin() {
 
 function change(e) {
     Beep1.play();
+    if(fon&&player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing){
+        fon=false;
+        acheiveBox("100% Effort - Help the Forcers do their job (as in click the 0/1 after having a type of Forcer)");
+    }
     if (e.textContent == "0") {
         e.textContent = "1";
     } else {

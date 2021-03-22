@@ -50,6 +50,9 @@ function buyBin(load = false) {
         if(player.bins.length==1){
             acheiveBox("MORE NUMBERS - Buy another line");
         }
+        else if(player.bins.length==5){
+            acheiveBox("FINALLY! - Reach 6 lines and start generation Cracks (Փ)");
+        }
         lineVal += 0.2;
         if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
         player.bins.push(new Bin());
@@ -88,6 +91,9 @@ function addBin(v = 0, z = 0) {
 function sMult() {
     temp = (150 * player.sMultiplier)
     if (player.qlavrams > temp) {
+        if(player.sMultiplier==0){
+            acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
+        }
         player.sMultiplier = player.sMultiplier.add(1);
         player.qlavrams = player.qlavrams.sub(temp);
         temp = (150 * player.sMultiplier)
