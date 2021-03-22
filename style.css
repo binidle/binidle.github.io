@@ -246,3 +246,7 @@ hr {
     border: 10px solid #2a8672;
     border-radius: 5px;
 }
+
+button {
+    font-family: 'Roboto', sans-serif;
+}
