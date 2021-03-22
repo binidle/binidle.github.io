@@ -61,6 +61,7 @@ function updateSolves() {
     document.querySelector("#rforcers").textContent = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").textContent = "Bruteforcers: " + numberformat.format(player.bruteForcers);
     document.querySelector("#played").textContent = "Time Played: "+ time_ago(started);
+    document.querySelector("#solavg").textContent = "Solve Performance: "+ (1/(solavg/1000)).toFixed(2)+"/s";
 }
 
 function time_ago(time) {

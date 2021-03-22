@@ -12,6 +12,9 @@ var m2 = document.querySelector("#m2");
 var m3 = document.querySelector("#m3");
 var m4 = document.querySelector("#m4");
 var m5 = document.querySelector("#m5");
+var solavg=0;
+var ls=performance.now();
+var times = [];
 
 var Beep1 = new Audio('./audio/Beep1.wav');
 Beep1.volume = vol;
@@ -91,6 +94,8 @@ function change(e) {
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
+            times.push(performance.now()-ls);
+            ls = performance.now();
             if((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)>=1){
                 acheiveBox("TOO MUCH POWER - Start generating at least 1 QPT");
             }
@@ -145,6 +150,12 @@ function loop() {
     if(Math.round(performance.now())%600000 >=1&&Math.round(performance.now())%600000<=10){
         alertBox("It has been 10mins, you may want to reset the random number generator's seed in 'Options'");
     }
+
+    var tt = 0;
+    for (var i = 0; i < times.length; i++) {
+        tt += times[i];
+    }
+    solavg = tt / times.length;
 
     //=================================================
     //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
