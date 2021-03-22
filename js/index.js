@@ -1,7 +1,6 @@
 // binbar = document.querySelector("#bits");  
 var lastRender = 0
 var lineVal = 0;
-var prestiged = 0;
 var avgPerf = [];
 var focussed = true;
 var random;
