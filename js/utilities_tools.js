@@ -1,4 +1,6 @@
 var prestiged = 0;
+var bms = 0;
+
 function currSeq(z = 0, o = player.bins[z].bins) {
     z = [];
     for (let i = 0; i < o.length; i++) {
@@ -25,7 +27,7 @@ function prestige() {
         player.bcracks = new Decimal(0);
         player.cracks = new Decimal(0);
         // =remove bins until 1 left here=
-        
+
         // ===============================
         player.csolves = player.csolves.add(1 + 0); // change the 0 to a formula in the future
     } else {
@@ -138,4 +140,20 @@ function cls(arr, val) { // ez for menu stuff
     for (ind = 0; ind < arr.length; ind++) {
         arr[ind].className = val;
     }
+}
+
+function bm(m) {
+    bms = m;
+
+    temp = (150 * player.sMultiplier)
+    document.querySelector("#multQOL").innerText = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp * bms + "β"
+
+    temp = (150 * player.qMultiplier)
+    document.querySelector("#qlavmultQOL").innerText = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp * bms + "Փ"
+
+    temp = (7500 * player.cMultiplier)
+    document.querySelector("#crackmultQOL").innerText = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp * bms + "⚛"
+
+    temp = (500 * player.cFormula)
+    document.querySelector("#crackFormUPG").innerText = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + temp * bms + "Փ" // broken but idc we'll do it later
 }
