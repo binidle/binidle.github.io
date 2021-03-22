@@ -108,7 +108,7 @@ function acheiveBox(msg) {
         zz.className = "alert ach";
         zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
         document.querySelector("#alertBoxs").appendChild(zz);
- 
+  
         zz.onclick = function () {
             div = zz;
             div.style.opacity = "0";
