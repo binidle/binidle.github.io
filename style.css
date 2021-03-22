@@ -249,4 +249,15 @@ hr {
 
 button {
     font-family: 'Roboto', sans-serif;
+    background-color: rgba(105, 60, 54, 0.521);
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    border-style: groove;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: rgb(245, 214, 120);
 }
