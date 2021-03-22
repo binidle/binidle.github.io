@@ -103,12 +103,12 @@ function alertBox(msg) {
 function acheiveBox(msg) {
     Beep2.play();
     console.log("Acheivement: " + msg);
-    if (false) {
+    if (true) {
         zz = document.createElement("div");
         zz.className = "alert ach";
         zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
         document.querySelector("#alertBoxs").appendChild(zz);
-
+ 
         zz.onclick = function () {
             div = zz;
             div.style.opacity = "0";
