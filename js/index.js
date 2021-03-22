@@ -141,6 +141,10 @@ function loop() {
     }
     var progress = total / avgPerf.length;
 
+    if(Math.round(performance.now())%600000 >=1&&Math.round(performance.now())%600000 <=50){
+        alertBox("It has been 30mins, you may want to reset the random number generator's seed in 'Options'");
+    }
+
     //=================================================
     //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
 
