@@ -27,6 +27,9 @@ function volume(ud = 0) {
 }
 
 function toggleLowP() {
+    if (player.lowp == false) {
+        acheiveBox("How much dedicated wam? - Use 'Better Performance'");
+    }
     player.lowp = !player.lowp;
 }
 
