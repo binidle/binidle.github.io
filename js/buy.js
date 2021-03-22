@@ -36,6 +36,7 @@ function buyBruteforcer(i = 0) {
 
 function removeBit(zzz = 0) {
     if (player.cracks > 150) {
+        player.cracks = player.cracks.sub(150);
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
         player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1, 1);
         player.bins[zzz].currGoal = genBinary(player.bins[zzz].bins.length);
