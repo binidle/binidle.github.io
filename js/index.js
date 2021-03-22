@@ -5,7 +5,7 @@ var avgPerf = [];
 var focussed = true;
 var random;
 var vol = 0.1;
-var started = performance.now();
+var started = new Date();
 var m1 = document.querySelector("#m1");
 var fon = true;
 var m2 = document.querySelector("#m2");
