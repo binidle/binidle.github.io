@@ -34,6 +34,7 @@ var player = {
     cMultiplier: new Decimal(1),
     cFormula: new Decimal(1),
     bcracks: new Decimal(0),
+    csolves: new Decimal(0),
     lowp: false,
     bins: []
 }
