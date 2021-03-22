@@ -54,7 +54,7 @@ function updateSolves() {
     document.querySelector("#qmlt").textContent = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").textContent = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").textContent = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
-    document.querySelector("#crackps").textContent = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier).toFixed(5);
+    document.querySelector("#crackps").textContent = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.bcracks / 1 + player.cracks))) * player.cMultiplier).toFixed(5);
     document.querySelector("#version").textContent = "Version: b0.2.2 Colour Update!!!!!! real wacky m8; performance fixed; currently in beta";
     document.querySelector("#rforcers").innerHTML = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").innerHTML = "Bruteforcers: " + numberformat.format(player.bruteForcers);
