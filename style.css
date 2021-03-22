@@ -244,7 +244,8 @@ body {
 
 hr {
     border: 10px solid #505273;
-    border-radius: 5px;
+    margin: 30px -8px 6px;
+    /* border-radius: 5px; */
 }
 
 button {
