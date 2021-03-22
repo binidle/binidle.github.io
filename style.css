@@ -241,3 +241,8 @@ body {
     background-color: #2a8672;
     color: white;
 }
+
+hr {
+    border: 10px solid #2a8672;
+    border-radius: 5px;
+}
