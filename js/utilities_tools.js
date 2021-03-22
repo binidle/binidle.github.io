@@ -1,3 +1,4 @@
+var prestiged = 0;
 function currSeq(z = 0, o = player.bins[z].bins) {
     z = [];
     for (let i = 0; i < o.length; i++) {
@@ -13,7 +14,20 @@ function seqToStr(o) {
 function prestige() {
     if (player.solves >= 100000) {
         prestiged = 1;
-        alertBox("weedmart calls: not done yet lol")
+        alertBox("weedmart calls: not done yet lol; being worked on")
+        player.solves = new Decimal(0)
+        player.sMultiplier = new Decimal(1)
+        player.qMultiplier = new Decimal(1)
+        player.cMultiplier = new Decimal(1)
+        player.randForcers = new Decimal(0)
+        player.bruteForcers = new Decimal(0)
+        player.qlavrams = new Decimal(0)
+        player.bcracks = new Decimal(0)
+        player.cracks = new Decimal(0)
+        // =remove bins until 1 left here=
+        
+        // ===============================
+        player.csolves = player.csolves.add(1 + 0) // change the 0 to a formula in the future
     } else {
         alertBox("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
     }

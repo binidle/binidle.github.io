@@ -1,7 +1,6 @@
 // binbar = document.querySelector("#bits");  
 var lastRender = 0
 var lineVal = 0;
-var prestiged = 0;
 var avgPerf = [];
 var focussed = true;
 var random;
@@ -36,6 +35,7 @@ var player = {
     cMultiplier: new Decimal(1),
     cFormula: new Decimal(1),
     bcracks: new Decimal(0),
+    csolves: new Decimal(0),
     lowp: false,
     bins: []
 }
