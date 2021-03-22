@@ -31,6 +31,7 @@ function toggleLowP() {
 }
 
 function rainbow() {
+    acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
     document.body.style.backgroundImage = "url('./rainbow.gif')";
 }
 

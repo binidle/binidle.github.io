@@ -85,6 +85,9 @@ function change(e) {
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
+            if((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)>=1){
+                acheiveBox("TOO MUCH POWER - Start generating at least 1 QPT");
+            }
             // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
             if (player.solves == 0) {
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");

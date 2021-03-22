@@ -89,7 +89,7 @@ function acheiveBox(msg) {
     console.log("Acheivement: " + msg);
     if (false) {
         zz = document.createElement("div");
-        zz.className = "alert";
+        zz.className = "alert ach";
         zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
         document.querySelector("#alertBoxs").appendChild(zz);
 
@@ -106,7 +106,7 @@ function acheiveBox(msg) {
             setTimeout(function () {
                 div.style.display = "none";
             }, 600);
-        }, 3000, zz);
+        }, 5000, zz);
     }
 }
 

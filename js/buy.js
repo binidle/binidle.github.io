@@ -1,5 +1,11 @@
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
+        if(player.randForcers<1){
+            acheiveBox("RANDOMISATION - Reach 10 solves and buy a Randforcer");
+        }
+        if(player.randForcers==10){
+            acheiveBox("MORE RANDOMISATION - Buy 10 Randforcers");
+        }
         player.solves = player.solves.sub(10);
         player.randForcers = player.randForcers.add(1);
         player.bins[i].randForcing = true;
@@ -14,6 +20,9 @@ function buyRandforcer(i = 0) {
 
 function buyBruteforcer(i = 0) {
     if (player.solves >= 100) {
+        if(player.bruteForcers<1){
+            acheiveBox("Where did my money go? - Buy a Bruteforcer");
+        }
         player.solves = player.solves.sub(100);
         player.bruteForcers = player.bruteForcers.add(1);
         player.bins[i].bruteForcing = true;
@@ -38,6 +47,9 @@ function removeBit(zzz = 0) {
 
 function buyBin(load = false) {
     if (player.qlavrams > (25 + (5 * 5 ** player.bins.length)) || load) {
+        if(player.bins.length==1){
+            acheiveBox("MORE NUMBERS - Buy another line");
+        }
         lineVal += 0.2;
         if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
         player.bins.push(new Bin());
