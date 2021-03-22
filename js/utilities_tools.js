@@ -1,5 +1,5 @@
 var prestiged = 0;
-var bms = 0;
+var bms = 1;
 
 function currSeq(z = 0, o = player.bins[z].bins) {
     z = [];
