@@ -249,7 +249,7 @@ hr {
 
 button {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(105, 60, 54);
+    background-color: rgba(105, 60, 54, 0.521);
     color: white;
     padding: 5px;
     margin: 5px;
