@@ -142,6 +142,7 @@ body {
     background-color: rgb(247, 181, 82);
     color: white;
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 .tcolor {
@@ -243,8 +244,9 @@ body {
 }
 
 hr {
-    border: 10px solid #505273;
+    border: 7px solid #505273;
     margin: 30px -8px 6px;
+    background-color: #505273;
     /* border-radius: 5px; */
 }
 
