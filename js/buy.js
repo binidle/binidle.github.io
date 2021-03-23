@@ -1,5 +1,5 @@
 function buyRandforcer(i = 0) {
-    if (player.solves >= 10 * bms) {
+    if (player.solves >= 10) {
         if (player.randForcers < 1) {
             acheiveBox("RANDOMISATION - Reach 10 solves and buy a Randforcer");
         }
@@ -19,7 +19,7 @@ function buyRandforcer(i = 0) {
 }
 
 function buyBruteforcer(i = 0) {
-    if (player.solves >= 100 * bms) {
+    if (player.solves >= 100) {
         if (player.bruteForcers < 1) {
             acheiveBox("Where did my money go? - Buy a Bruteforcer");
         }
@@ -35,7 +35,7 @@ function buyBruteforcer(i = 0) {
 }
 
 function removeBit(zzz = 0) {
-    if (player.cracks > 150 * bms) {
+    if (player.cracks > 150) {
         player.cracks = player.cracks.sub(150);
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
         player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1, 1);
@@ -47,7 +47,7 @@ function removeBit(zzz = 0) {
 }
 
 function buyBin(load = false) {
-    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length)) * bms || load) {
+    if (player.qlavrams > (25 + (5 * 5 ** player.bins.length)) || load) {
         if (player.bins.length == 1) {
             acheiveBox("MORE NUMBERS - Buy another line");
         } else if (player.bins.length == 5) {
@@ -158,7 +158,6 @@ function cForm() {
 
 function prestige() {
     if (player.solves >= 100000) {
-        prestiged = 1;
         alertBox("weedmart calls: not done yet lol; being worked on");
         player.solves = new Decimal(0);
         player.sMultiplier = new Decimal(1);
@@ -173,9 +172,32 @@ function prestige() {
 
         // ===============================
         player.csolves = player.csolves.add(1 + 0); // change the 0 to a formula in the future
-        document.querySelector("#csolves").textContent = "Complex Solves: "+numberformat.format(player.csolves);
+        document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves);
 
-        
+        player.bins.forEach((i, j) => {
+            i.randForcing = false;
+            i.randForcers = 0;
+            i.bruteForcing = false;
+            i.bruteForcers = 0;
+            i.currGoal = genBinary(1);
+            i.bins.forEach((sz) => {
+                sz.remove();
+            });
+            i.bins = [];
+
+        }, player);
+        for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
+            document.querySelector("#lines").children[i].remove();
+        }
+        for (let j = 0; j < player.bins.length - 1; j++) {
+            player.bins.splice(j, 1);
+        }
+        addBin(0);
+        document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
+        document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
+        document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
+        document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
+        document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
 
     } else {
         alertBox("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
