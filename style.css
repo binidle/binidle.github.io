@@ -262,3 +262,7 @@ button {
 button:hover {
     background-color: rgb(245, 214, 120);
 }
+
+#alertBoxs {
+    z-index: 99 !important;position: absolute;
+}
