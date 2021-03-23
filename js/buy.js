@@ -158,7 +158,7 @@ function cForm() {
 
 function prestige() {
     if (player.solves >= 100000) {
-        alertBox("weedmart calls: not done yet lol; being worked on");
+        // alertBox("weedmart calls: not done yet lol; being worked on");
         player.solves = new Decimal(0);
         player.sMultiplier = new Decimal(1);
         player.qMultiplier = new Decimal(1);
