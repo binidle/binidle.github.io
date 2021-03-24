@@ -88,7 +88,7 @@ function addBin(v = 0, z = 0) {
 
 function sMult(pr = false) {
     temp = (150 * player.sMultiplier)
-    if (player.solves > temp * bms && !pr) {
+    if (player.qlavrams > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             if (player.sMultiplier == 0) {
                 acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
@@ -119,7 +119,7 @@ function sMult(pr = false) {
 
 function qMult(pr = false) {
     temp = (150 * player.qMultiplier)
-    if (player.qlavrams > temp * bms && !pr) {
+    if (player.cracks > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.qMultiplier = player.qMultiplier.add(1);
             player.cracks = player.cracks.sub(temp);
@@ -144,7 +144,7 @@ function qMult(pr = false) {
 
 function cMult(pr = false) {
     temp = (7500 * player.cMultiplier)
-    if (player.cracks > temp * bms && !pr) {
+    if (player.solves > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.cMultiplier = player.cMultiplier.add(1);
             player.solves = player.solves.sub(temp);
@@ -170,7 +170,7 @@ function cMult(pr = false) {
 function cForm(pr = false) {
     temp = (500 * player.cFormula)
     // temp = 500;
-    if (player.cFormula > temp * bms && !pr) {
+    if (player.cracks > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.cFormula = player.cFormula.add(1);
             player.cracks = player.cracks.sub(temp);
