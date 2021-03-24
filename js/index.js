@@ -134,6 +134,8 @@ function init() {
     player.bins[0].currGoal = genBinary(1);
     // window.requestAnimationFrame(loop)
     looper = setInterval(loop, 0);
+    load(true);
+    setInterval((save(false,true)),100000);
 }
 
 function loop() {
