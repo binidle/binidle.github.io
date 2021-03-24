@@ -47,7 +47,10 @@ function save(local = true) {
     abc["binamt"] = player.bins.length;
     abc["binmax"] = player.bins[0].bins.length;
     if (local) {
-        download("save.json", enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"))
+        download("save.json", enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"));
+    }
+    else {
+        navigator.clipboard.writeText(enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"));
     }
 }
 
