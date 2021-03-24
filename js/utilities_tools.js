@@ -219,6 +219,10 @@ function dec(cipherText){
    return plain;
 }
 
+function checksum(sd) {
+    
+}
+
 function cheat() {
     player.qlavrams.mantissa=10000000000000000000000000;
     player.cracks.mantissa=10000000000000000000000000;
