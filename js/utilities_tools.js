@@ -75,7 +75,7 @@ function time_ago(time) {
         [58060800000, 'centuries; why have you played this long', 2903040000] // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
     ];
     var seconds = (+new Date() - time) / 1000,
-        token = 'ago',
+        token = ' ',
         list_choice = 1;
 
     if (seconds == 0) {
