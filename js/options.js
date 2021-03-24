@@ -72,6 +72,7 @@ function load() { // weedmart calls: THIS WORKIS!!
             alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
         } else {
             decoded = JSON.parse(atob(dec1[0]));
+            player.csolves = new Decimal(parseFloat(decoded.player.csolves));
             player.solves = new Decimal(parseFloat(decoded.player.solves));
             player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
             player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
@@ -127,6 +128,7 @@ function loadc() {
         } else {
             decoded = JSON.parse(atob(dec1[0]));
             player.solves = new Decimal(parseFloat(decoded.player.solves));
+            player.csolves = new Decimal(parseFloat(decoded.player.csolves));
             player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
             player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
             player.cMultiplier = new Decimal(parseFloat(decoded.player.cMultiplier));
