@@ -59,9 +59,9 @@ function time_ago(time) {
     }
     var time_formats = [
         [60, 'seconds', 1], // 60
-        [120, '1 minute ago', '1 minute from now'], // 60*2
+        [120, '1 minute', '1 minute from now'], // 60*2
         [3600, 'minutes', 60], // 60*60, 60
-        [7200, '1 hour ago', '1 hour from now'], // 60*60*2
+        [7200, '1 hour', '1 hour from now'], // 60*60*2
         [86400, 'hours', 3600], // 60*60*24, 60*60
         [172800, 'Yesterday', 'Tomorrow'], // 60*60*24*2
         [604800, 'days', 86400], // 60*60*24*7, 60*60*24
@@ -72,7 +72,7 @@ function time_ago(time) {
         [58060800, 'Last year', 'Next year'], // 60*60*24*7*4*12*2
         [2903040000, 'years', 29030400], // 60*60*24*7*4*12*100, 60*60*24*7*4*12
         [5806080000, 'Last century', 'Next century'], // 60*60*24*7*4*12*100*2
-        [58060800000, 'centuries', 2903040000] // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
+        [58060800000, 'centuries; why have you played this long', 2903040000] // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
     ];
     var seconds = (+new Date() - time) / 1000,
         token = 'ago',
