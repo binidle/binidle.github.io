@@ -64,17 +64,17 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
     };
     
     showOpenFilePicker(pickerOpts).then(([x]) => x.getFile().then(y => y.text().then(zz => {
-        decoded = dec(zz);
+        decoded = JSON.parse(atob(dec(zz)));
         console.log(decoded);
-        player.solves = new Decimal(0);
-        player.sMultiplier = new Decimal(1);
-        player.qMultiplier = new Decimal(1);
-        player.cMultiplier = new Decimal(1);
-        player.randForcers = new Decimal(0);
-        player.bruteForcers = new Decimal(0);
-        player.qlavrams = new Decimal(0);
-        player.bcracks = new Decimal(0);
-        player.cracks = new Decimal(0);
+        player.solves = new Decimal(parseFloat(decoded.player.solves));
+        player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
+        player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
+        player.cMultiplier = new Decimal(parseFloat(decoded.player.cMultiplier));
+        player.randForcers = new Decimal(parseFloat(decoded.player.randForcers));
+        player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
+        player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
+        player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+        player.cracks = new Decimal(parseFloat(decoded.player.cracks));
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
