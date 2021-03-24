@@ -36,7 +36,7 @@ function updateSolves() {
     document.querySelector("#bcrack").textContent = "Base Cracks: " + numberformat.format(player.bcracks);
     document.querySelector("#cmlt").textContent = "Crack Multipliers: " + numberformat.format(player.cMultiplier) + "x";
     document.querySelector("#crackps").textContent = "CPT: " + ((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.bcracks / 1 + player.cracks))) * player.cMultiplier).toFixed(5);
-    document.querySelector("#version").textContent = "Version: b0.2.2 Colour Update!!!!!! real wacky m8; performance fixed; currently in beta";
+    document.querySelector("#version").textContent = "Version: b0.3.0 save/prestige update!!!!!! go crazy m8; added save and prestige; currently in beta";
     document.querySelector("#rforcers").textContent = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").textContent = "Bruteforcers: " + numberformat.format(player.bruteForcers);
     document.querySelector("#played").textContent = "Time Played: " + time_ago(started);
