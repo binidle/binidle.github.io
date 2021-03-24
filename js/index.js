@@ -135,7 +135,7 @@ function init() {
     // window.requestAnimationFrame(loop)
     looper = setInterval(loop, 0);
     load(true);
-    setInterval((save(false,true)),100000);
+    setInterval(()=>{save(false,true)},10000);
 }
 
 function loop() {
