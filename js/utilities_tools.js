@@ -220,7 +220,7 @@ function dec(cipherText){
 }
 
 function checksum(sd) {
-    
+    return CryptoJS.MD5(sd).toString();
 }
 
 function cheat() {

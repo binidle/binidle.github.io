@@ -46,7 +46,7 @@ function save(local = true) {
     abc["binamt"] = player.bins.length;
     abc["binmax"] = player.bins[0].bins.length;
     if (local) {
-        download("save.json", enc(btoa(JSON.stringify(abc)),"bruh funny"))
+        download("save.json", enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"))
     }
 }
 
@@ -56,44 +56,55 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
         types: [{
             description: 'JSON File',
             accept: {
-                'json/*': ['.json','.txt']
+                'json/*': ['.json', '.txt']
             }
         }, ],
         excludeAcceptAllOption: true,
         multiple: false
     };
-    
+
     showOpenFilePicker(pickerOpts).then(([x]) => x.getFile().then(y => y.text().then(zz => {
-        decoded = JSON.parse(atob(dec(zz)));
-        console.log(decoded);
-        player.solves = new Decimal(parseFloat(decoded.player.solves));
-        player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
-        player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
-        player.cMultiplier = new Decimal(parseFloat(decoded.player.cMultiplier));
-        player.randForcers = new Decimal(parseFloat(decoded.player.randForcers));
-        player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
-        player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
-        player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
-        player.cracks = new Decimal(parseFloat(decoded.player.cracks));
+        dec1 = dec(zz).split("|");
+        if (dec1[1] != checksum(dec1[0])) {
+            alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
+        } else {
+            decoded = JSON.parse(atob(dec1[0]));
+            console.log(decoded);
+            player.solves = new Decimal(parseFloat(decoded.player.solves));
+            player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
+            player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
+            player.cMultiplier = new Decimal(parseFloat(decoded.player.cMultiplier));
+            player.randForcers = new Decimal(parseFloat(decoded.player.randForcers));
+            player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
+            player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
+            player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+            player.cracks = new Decimal(parseFloat(decoded.player.cracks));
 
-        player.bins.forEach((i, j) => {
-            i.randForcing = false;
-            i.randForcers = 0;
-            i.bruteForcing = false;
-            i.bruteForcers = 0;
-            i.currGoal = genBinary(1);
-            i.bins.forEach((sz) => {
-                sz.remove();
-            });
-            i.bins = [];
+            player.bins.forEach((i, j) => {
+                i.randForcing = false;
+                i.randForcers = 0;
+                i.bruteForcing = false;
+                i.bruteForcers = 0;
+                i.currGoal = genBinary(1);
+                i.bins.forEach((sz) => {
+                    sz.remove();
+                });
+                i.bins = [];
 
-        }, player);
-        for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
-            document.querySelector("#lines").children[i].remove();
+            }, player);
+            for (let i = document.querySelector("#lines").children.length - 1; i > -1; i--) {
+                document.querySelector("#lines").children[i].remove();
+            }
+            for (let j = 0; j < player.bins.length; j++) {
+                player.bins.splice(j, 1);
+            }
+
+            for(i=0;i<decoded.binamt;i++){
+                buyBin(true);
+                for(f=0;f<decoded.binmax;f++){
+                    addBin(Math.round(random.nextFloat()),i);
+                };
+            }
         }
-        for (let j = 0; j < player.bins.length - 1; j++) {
-            player.bins.splice(j, 1);
-        }
-        addBin(0);
     })));
 }
