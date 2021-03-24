@@ -43,6 +43,7 @@ function rainbow() {
 function save(local = true) {
     abc = {};
     abc["player"] = player;
+    abc["bins"] = player.bins;
     abc["binamt"] = player.bins.length;
     abc["binmax"] = player.bins[0].bins.length;
     if (local) {
@@ -69,7 +70,6 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
             alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
         } else {
             decoded = JSON.parse(atob(dec1[0]));
-            console.log(decoded);
             player.solves = new Decimal(parseFloat(decoded.player.solves));
             player.sMultiplier = new Decimal(parseFloat(decoded.player.sMultiplier));
             player.qMultiplier = new Decimal(parseFloat(decoded.player.qMultiplier));
@@ -101,9 +101,17 @@ function load() { // weedmart calls: THIS DOES NOT WORK YEt
 
             for(i=0;i<decoded.binamt;i++){
                 buyBin(true);
-                for(f=0;f<decoded.binmax;f++){
+                for(f=0;f<decoded.bins[i].bins.length;f++){
                     addBin(Math.round(random.nextFloat()),i);
                 };
+            }
+            console.log(decoded);
+            for(indexidk=0;indexidk<decoded.bins.length;indexidk++){
+                player.bins[indexidk].randForcing=decoded.bins[indexidk].randForcing;
+                player.bins[indexidk].randForcers=decoded.bins[indexidk].randForcers;
+                player.bins[indexidk].bruteForcing=decoded.bins[indexidk].bruteForcing;
+                player.bins[indexidk].bruteForcers=decoded.bins[indexidk].bruteForcers;
+                player.bins[indexidk].currGoal=decoded.bins[indexidk].currGoal;
             }
         }
     })));
