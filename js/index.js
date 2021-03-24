@@ -15,6 +15,7 @@ var m5 = document.querySelector("#m5");
 var solavg=0;
 var ls=performance.now();
 var times = [];
+const SECRET = 'I am batman'
 
 var Beep1 = new Audio('./audio/Beep1.wav');
 Beep1.volume = vol;

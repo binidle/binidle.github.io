@@ -1,3 +1,5 @@
+var decoded;
+
 function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -39,15 +41,59 @@ function rainbow() {
 }
 
 function save(local = true) {
+    abc = {};
+    abc["player"] = player;
+    abc["binamt"] = player.bins.length;
+    abc["binmax"] = player.bins[0].bins.length;
     if (local) {
-        download("save.json", "weedmart calls: wow! another easter egg! aaaaaaaaaaa problem?")
+        download("save.json", enc(btoa(JSON.stringify(abc)),"bruh funny"))
     }
 }
 
 function load() { // weedmart calls: THIS DOES NOT WORK YEt
-    a = JSON.stringify(player);
-    a = JSON.parse(a);
-    keys = Object.keys(a);
-    document.querySelector("#lines").innerHTML = "";
-    buyBin(true);
+    a = "";
+    var pickerOpts = {
+        types: [{
+            description: 'JSON File',
+            accept: {
+                'json/*': ['.json','.txt']
+            }
+        }, ],
+        excludeAcceptAllOption: true,
+        multiple: false
+    };
+    
+    showOpenFilePicker(pickerOpts).then(([x]) => x.getFile().then(y => y.text().then(zz => {
+        decoded = dec(zz);
+        console.log(decoded);
+        player.solves = new Decimal(0);
+        player.sMultiplier = new Decimal(1);
+        player.qMultiplier = new Decimal(1);
+        player.cMultiplier = new Decimal(1);
+        player.randForcers = new Decimal(0);
+        player.bruteForcers = new Decimal(0);
+        player.qlavrams = new Decimal(0);
+        player.bcracks = new Decimal(0);
+        player.cracks = new Decimal(0);
+
+        player.bins.forEach((i, j) => {
+            i.randForcing = false;
+            i.randForcers = 0;
+            i.bruteForcing = false;
+            i.bruteForcers = 0;
+            i.currGoal = genBinary(1);
+            i.bins.forEach((sz) => {
+                sz.remove();
+            });
+            i.bins = [];
+
+        }, player);
+        for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
+            document.querySelector("#lines").children[i].remove();
+        }
+        for (let j = 0; j < player.bins.length - 1; j++) {
+            player.bins.splice(j, 1);
+        }
+        addBin(0);
+    })));
 }
