@@ -42,7 +42,8 @@ var player = {
     bcracks: new Decimal(0),
     csolves: new Decimal(0),
     lowp: false,
-    bins: []
+    bins: [],
+    achs: [false,false,false,false,false,false,false,false,false,false,false,false]
 }
 player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
