@@ -243,9 +243,9 @@ function loadachs() {
     if (player.achs[5]) document.querySelector(".m5Ach").className = "acheived";
     if (player.achs[6]) document.querySelector(".m6Ach").className = "acheived";
     if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";
-    if (player.achs[8]) document.querySelector(".m8Ach").className = "acheived";
+    if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";
     if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";
     if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";
     if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";
-    if (player.achs[12]) document.querySelector(".m12Ach").className = "acheived";
+    if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";
 }
