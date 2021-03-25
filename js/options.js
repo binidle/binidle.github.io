@@ -71,7 +71,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
         try {
             dec1 = dec(window.localStorage.save).split("|");
             if (dec1[1] != checksum(dec1[0])) {
-                alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
+                alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
 
                 decoded = JSON.parse(atob(dec1[0]));
@@ -147,7 +147,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
         showOpenFilePicker(pickerOpts).then(([x]) => x.getFile().then(y => y.text().then(zz => {
             dec1 = dec(zz).split("|");
             if (dec1[1] != checksum(dec1[0])) {
-                alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
+                alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
 
                 decoded = JSON.parse(atob(dec1[0]));
@@ -210,7 +210,7 @@ function loadc() {
     navigator.clipboard.readText().then(zz => {
         dec1 = dec(zz).split("|");
         if (dec1[1] != checksum(dec1[0])) {
-            alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!!");
+            alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
         } else {
 
             decoded = JSON.parse(atob(dec1[0]));
