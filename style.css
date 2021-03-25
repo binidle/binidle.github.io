@@ -269,3 +269,7 @@ button:hover {
     z-index: 99 !important;
     position: absolute;
 }
+
+.acheived {
+    background-color: #2a8672;
+}

@@ -231,4 +231,5 @@ function cheat() {
 
 function reset() {
     window.localStorage.save = "";
+    window.location=""
 }
