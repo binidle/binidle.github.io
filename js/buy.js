@@ -1,9 +1,11 @@
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
-        if (player.randForcers < 1) {
+        if (player.randForcers < 1&&!player.achs[1]) {
+            player.achs[1]=true;
             acheiveBox("RANDOMISATION - Reach 10 solves and buy a Randforcer");
         }
-        if (player.randForcers == 10) {
+        if (player.randForcers == 10&&!player.achs[2]) {
+            player.achs[2]=true;
             acheiveBox("MORE RANDOMISATION - Buy 10 Randforcers");
         }
         player.solves = player.solves.sub(10);
@@ -20,7 +22,8 @@ function buyRandforcer(i = 0) {
 
 function buyBruteforcer(i = 0) {
     if (player.solves >= 100) {
-        if (player.bruteForcers < 1) {
+        if (player.bruteForcers < 1&&!player.achs[3]) {
+            player.achs[3]=true;
             acheiveBox("Where did my money go? - Buy a Bruteforcer");
         }
         player.solves = player.solves.sub(100);
@@ -48,10 +51,12 @@ function removeBit(zzz = 0) {
 
 function buyBin(load = false) {
     if (player.qlavrams > (25 + (5 * 5 ** player.bins.length)) || load) {
-        if (player.bins.length == 1) {
+        if (player.bins.length == 1&&!player.achs[4]) {
+            player.achs[4]=true;
             acheiveBox("MORE NUMBERS - Buy another line");
-        } else if (player.bins.length == 5) {
-            acheiveBox("FINALLY! - Reach 6 lines and start generation Cracks (Փ)");
+        } else if (player.bins.length == 5&&!player.achs[6]) {
+            player.achs[6]=true;
+            acheiveBox("Get Cracking! - Reach 6 lines and start generation Cracks (Փ)");
         }
         lineVal += 0.2;
         if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
@@ -90,7 +95,8 @@ function sMult(pr = false) {
     temp = (150 * player.sMultiplier)
     if (player.qlavrams > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
-            if (player.sMultiplier == 0) {
+            if (player.sMultiplier == 0&&!player.achs[5]) {
+                player.achs[5]=true;
                 acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
             }
             player.sMultiplier = player.sMultiplier.add(1);
@@ -101,9 +107,6 @@ function sMult(pr = false) {
         }
     } else if (player.csolves >= 10) {
         for (let szz = 0; szz < bms; szz++) {
-            if (player.sMultiplier == 0) {
-                acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
-            }
             player.sMultiplier = player.sMultiplier.add(1);
             player.csolves = player.csolves.sub(temp);
             temp = (150 * player.sMultiplier)
