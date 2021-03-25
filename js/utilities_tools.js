@@ -235,17 +235,17 @@ function reset() {
 }
 
 function loadachs() {
-    if (player.achs[0]) document.querySelector(".m0Ach").className = "acheived";
-    if (player.achs[1]) document.querySelector(".m1Ach").className = "acheived";
-    if (player.achs[2]) document.querySelector(".m2Ach").className = "acheived";
-    if (player.achs[3]) document.querySelector(".m3Ach").className = "acheived";
-    if (player.achs[4]) document.querySelector(".m4Ach").className = "acheived";
-    if (player.achs[5]) document.querySelector(".m5Ach").className = "acheived";
-    if (player.achs[6]) document.querySelector(".m6Ach").className = "acheived";
-    if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";
-    if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";
-    if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";
-    if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";
-    if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";
-    if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";
+    try{if (player.achs[0]) document.querySelector(".m0Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[1]) document.querySelector(".m1Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[2]) document.querySelector(".m2Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[3]) document.querySelector(".m3Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[4]) document.querySelector(".m4Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[5]) document.querySelector(".m5Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[6]) document.querySelector(".m6Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";}catch(e){}
+    try{if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";}catch(e){}
 }
