@@ -228,3 +228,7 @@ function cheat() {
     player.cracks.mantissa=10000000000000000000000000;
     player.solves.mantissa=10000000000000000000000000;
 }
+
+function reset() {
+    window.localStorage.save="";
+}
