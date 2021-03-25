@@ -32,7 +32,7 @@ function toggleLowP() {
     if (player.lowp == false && !player.achs[13]) {
         player.achs[13] = true;
         acheiveBox("How much dedicated wam? - Use 'Better Performance'");
-        document.querySelector(".13Ach").className = "acheived";
+        document.querySelector(".m13Ach").className = "acheived";
     }
     player.lowp = !player.lowp;
 }
@@ -48,7 +48,7 @@ function rainbow() {
     if (!player.achs[12]) {
         player.achs[12] = true;
         acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
-        document.querySelector(".12Ach").className = "acheived";
+        document.querySelector(".m12Ach").className = "acheived";
     }
     document.body.style.backgroundImage = "url('./rainbow.gif')";
 }

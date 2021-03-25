@@ -84,7 +84,7 @@ function change(e) {
         player.achs[10] = true;
         fon = false;
         acheiveBox("100% Effort - Help the Forcers do their job (as in click the 0/1 after having a type of Forcer)");
-        document.querySelector(".10Ach").className = "acheived";
+        document.querySelector(".m10Ach").className = "acheived";
     }
     if (e.textContent == "0") {
         e.textContent = "1";
@@ -103,13 +103,13 @@ function d() {
             if ((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5) >= 1 && !player.achs[12]) {
                 player.achs[12] = true;
                 acheiveBox("FINALLY - Start generating at least 1 QPT");
-                document.querySelector(".12Ach").className = "acheived";
+                document.querySelector(".m12Ach").className = "acheived";
             }
             // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
             if (player.solves == 0 && !player.achs[0]) {
                 player.achs[0] = true;
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
-                document.querySelector(".0Ach").className = "acheived";
+                document.querySelector(".m0Ach").className = "acheived";
             }
             if (i < 5) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
