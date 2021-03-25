@@ -35,6 +35,13 @@ function toggleLowP() {
     player.lowp = !player.lowp;
 }
 
+function toggleLowPOff() {
+    x = document.querySelectorAll("#perfbad");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "";
+    }
+}
+
 function rainbow() {
     acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
     document.body.style.backgroundImage = "url('./rainbow.gif')";
