@@ -5,7 +5,6 @@ var avgPerf = [];
 var focussed = true;
 var random;
 var vol = 0.1;
-var started = new Date();
 var m1 = document.querySelector("#m1");
 var fon = true;
 var m2 = document.querySelector("#m2");
@@ -43,7 +42,8 @@ var player = {
     csolves: new Decimal(0),
     lowp: false,
     bins: [],
-    achs: [false, false, false, false, false, false, false, false, false, false, false, false]
+    achs: [false, false, false, false, false, false, false, false, false, false, false, false],
+    started: new Date()
 }
 player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 

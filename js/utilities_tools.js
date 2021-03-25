@@ -39,7 +39,7 @@ function updateSolves() {
     document.querySelector("#version").textContent = "Version: b0.3.0 save/prestige update!!!!!! go crazy m8; added save and prestige; currently in beta";
     document.querySelector("#rforcers").textContent = "Randforcers: " + numberformat.format(player.randForcers);
     document.querySelector("#bforcers").textContent = "Bruteforcers: " + numberformat.format(player.bruteForcers);
-    document.querySelector("#played").textContent = "Time Played: " + time_ago(started);
+    document.querySelector("#played").textContent = "Time Played: " + time_ago(player.started);
     document.querySelector("#solavg").textContent = "Solve Performance: " + (1 / (solavg / 1000)).toFixed(2) + "/s";
 }
 
