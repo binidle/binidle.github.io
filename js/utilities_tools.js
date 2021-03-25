@@ -228,10 +228,3 @@ function cheat() {
     player.cracks.mantissa=10000000000000000000000000;
     player.solves.mantissa=10000000000000000000000000;
 }
-
-old = Audio.play
-Audio.prototype.play = () => {
-  try{
-  old();
-  }catch(e){}
-}
