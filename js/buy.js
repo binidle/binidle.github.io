@@ -100,7 +100,7 @@ function sMult(pr = false) {
     temp = (150 * player.sMultiplier)
     if (player.qlavrams > temp * bms && !pr) {
         for (let szz = 0; szz < bms; szz++) {
-            if (player.sMultiplier == 0 && !player.achs[5]) {
+            if (player.sMultiplier == 1 && !player.achs[5]) {
                 player.achs[5] = true;
                 acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
                 loadachs();

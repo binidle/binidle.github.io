@@ -100,7 +100,7 @@ function d() {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             times.push(performance.now() - ls);
             ls = performance.now();
-            if ((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5) >= 1 && !player.achs[12]) {
+            if (parseFloat((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)) >= 1 && !player.achs[12]) {
                 player.achs[12] = true;
                 acheiveBox("FINALLY - Start generating at least 1 QPT");
                 loadachs();
