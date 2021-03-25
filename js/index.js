@@ -145,6 +145,7 @@ function init() {
     setInterval(() => {
         save(false, true)
     }, 10000);
+    alertBox("Be sure to join the discord at: <a href='https://discord.gg/SsE6gNdrKT'>https://discord.gg/SsE6gNdrKT</a>");
 }
 
 function loop() {
