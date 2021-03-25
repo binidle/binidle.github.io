@@ -29,7 +29,8 @@ function volume(ud = 0) {
 }
 
 function toggleLowP() {
-    if (player.lowp == false) {
+    if (player.lowp == false && !player.achs[13]) {
+        player.achs[13] = true;
         acheiveBox("How much dedicated wam? - Use 'Better Performance'");
     }
     player.lowp = !player.lowp;
@@ -43,7 +44,10 @@ function toggleLowPOff() {
 }
 
 function rainbow() {
-    acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
+    if (!player.achs[12]) {
+        player.achs[12] = true;
+        acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
+    }
     document.body.style.backgroundImage = "url('./rainbow.gif')";
 }
 
@@ -80,6 +84,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
+                player.achs = new Decimal(parseFloat(decoded.player.achs));
 
                 player.bins.forEach((i, j) => {
                     i.randForcing = false;
@@ -149,6 +154,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+                player.achs = new Decimal(parseFloat(decoded.player.achs));
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
 
                 player.bins.forEach((i, j) => {
@@ -205,6 +211,7 @@ function loadc() {
             player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
             player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
             player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+            player.achs = new Decimal(parseFloat(decoded.player.achs));
             player.cracks = new Decimal(parseFloat(decoded.player.cracks));
 
             player.bins.forEach((i, j) => {

@@ -80,7 +80,8 @@ function Bin() {
 
 function change(e) {
     Beep1.play();
-    if(fon&&player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing){
+    if(fon&&player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing&&!player.achs[10]){
+        player.achs[10]=true;
         fon=false;
         acheiveBox("100% Effort - Help the Forcers do their job (as in click the 0/1 after having a type of Forcer)");
     }
@@ -98,11 +99,13 @@ function d() {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             times.push(performance.now()-ls);
             ls = performance.now();
-            if((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)>=1){
-                acheiveBox("TOO MUCH POWER - Start generating at least 1 QPT");
+            if((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)>=1&&!player.achs[12]){
+                player.achs[12]=true;
+                acheiveBox("FINALLY - Start generating at least 1 QPT");
             }
             // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
-            if (player.solves == 0) {
+            if (player.solves == 0&&!player.achs[0]) {
+                player.achs[0]=true;
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
             }
             if (i < 5) {
