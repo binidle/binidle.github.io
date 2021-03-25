@@ -58,7 +58,7 @@ function buyBin(load = false) {
         player.bins.push(new Bin());
         t = document.createElement("ul");
         t.id = "bits" + (player.bins.length - 1);
-        t.className = "bins" + Math.floor(lineVal + 0.1);
+        t.className = "bins" + Math.floor(lineVal + 0.2);
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li><li class="stats" onclick="removeBit(parseInt(this.parentElement.id.split('bits')[1]))">Remove Bit 150Φ</li>`
         document.querySelector("#lines").appendChild(t);
         if (!load) addBin(0, player.bins.length - 1);
