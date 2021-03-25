@@ -99,7 +99,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                         addBin(Math.round(random.nextFloat()), i);
                     };
                 }
-                console.log(decoded);
+                // console.log(decoded);
                 for (indexidk = 0; indexidk < decoded.bins.length; indexidk++) {
                     player.bins[indexidk].randForcing = decoded.bins[indexidk].randForcing;
                     player.bins[indexidk].randForcers = decoded.bins[indexidk].randForcers;
@@ -169,7 +169,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                         addBin(Math.round(random.nextFloat()), i);
                     };
                 }
-                console.log(decoded);
+                // console.log(decoded);
                 for (indexidk = 0; indexidk < decoded.bins.length; indexidk++) {
                     player.bins[indexidk].randForcing = decoded.bins[indexidk].randForcing;
                     player.bins[indexidk].randForcers = decoded.bins[indexidk].randForcers;
@@ -225,7 +225,7 @@ function loadc() {
                     addBin(Math.round(random.nextFloat()), i);
                 };
             }
-            console.log(decoded);
+            // console.log(decoded);
             for (indexidk = 0; indexidk < decoded.bins.length; indexidk++) {
                 player.bins[indexidk].randForcing = decoded.bins[indexidk].randForcing;
                 player.bins[indexidk].randForcers = decoded.bins[indexidk].randForcers;
