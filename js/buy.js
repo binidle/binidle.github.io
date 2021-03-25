@@ -3,10 +3,12 @@ function buyRandforcer(i = 0) {
         if (player.randForcers < 1 && !player.achs[1]) {
             player.achs[1] = true;
             acheiveBox("RANDOMISATION - Reach 10 solves and buy a Randforcer");
+            document.querySelector(".1Ach").className = "acheived";
         }
         if (player.randForcers == 10 && !player.achs[2]) {
             player.achs[2] = true;
             acheiveBox("MORE RANDOMISATION - Buy 10 Randforcers");
+            document.querySelector(".2Ach").className = "acheived";
         }
         player.solves = player.solves.sub(10);
         player.randForcers = player.randForcers.add(1);
@@ -25,6 +27,7 @@ function buyBruteforcer(i = 0) {
         if (player.bruteForcers < 1 && !player.achs[3]) {
             player.achs[3] = true;
             acheiveBox("Where did my money go? - Buy a Bruteforcer");
+            document.querySelector(".3Ach").className = "acheived";
         }
         player.solves = player.solves.sub(100);
         player.bruteForcers = player.bruteForcers.add(1);
@@ -54,9 +57,11 @@ function buyBin(load = false) {
         if (player.bins.length == 1 && !player.achs[4]) {
             player.achs[4] = true;
             acheiveBox("MORE NUMBERS - Buy another line");
+            document.querySelector(".4Ach").className = "acheived";
         } else if (player.bins.length == 5 && !player.achs[6]) {
             player.achs[6] = true;
             acheiveBox("Get Cracking! - Reach 6 lines and start generation Cracks (Փ)");
+            document.querySelector(".6Ach").className = "acheived";
         }
         lineVal += 0.2;
         if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
@@ -98,6 +103,7 @@ function sMult(pr = false) {
             if (player.sMultiplier == 0 && !player.achs[5]) {
                 player.achs[5] = true;
                 acheiveBox("x2 Mutliplier! - Buy a Solver Multiplier for 150β");
+                document.querySelector(".5Ach").className = "acheived";
             }
             player.sMultiplier = player.sMultiplier.add(1);
             player.qlavrams = player.qlavrams.sub(temp);
