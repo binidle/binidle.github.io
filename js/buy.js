@@ -5,7 +5,7 @@ function buyRandforcer(i = 0) {
             acheiveBox("RANDOMISATION - Reach 10 solves and buy a Randforcer");
             loadachs();
         }
-        if (player.randForcers == 10 && !player.achs[2]) {
+        if (player.randForcers == 9 && !player.achs[2]) {
             player.achs[2] = true;
             acheiveBox("MORE RANDOMISATION - Buy 10 Randforcers");
             loadachs();
