@@ -266,5 +266,6 @@ button:hover {
 }
 
 #alertBoxs {
-    z-index: 99 !important;position: absolute;
+    z-index: 99 !important;
+    position: absolute;
 }

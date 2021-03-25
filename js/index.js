@@ -12,8 +12,8 @@ var m2 = document.querySelector("#m2");
 var m3 = document.querySelector("#m3");
 var m4 = document.querySelector("#m4");
 var m5 = document.querySelector("#m5");
-var solavg=0;
-var ls=performance.now();
+var solavg = 0;
+var ls = performance.now();
 var times = [];
 const SECRET = 'I am batman'
 
@@ -43,7 +43,7 @@ var player = {
     csolves: new Decimal(0),
     lowp: false,
     bins: [],
-    achs: [false,false,false,false,false,false,false,false,false,false,false,false]
+    achs: [false, false, false, false, false, false, false, false, false, false, false, false]
 }
 player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
@@ -80,9 +80,9 @@ function Bin() {
 
 function change(e) {
     Beep1.play();
-    if(fon&&player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing&&!player.achs[10]){
-        player.achs[10]=true;
-        fon=false;
+    if (fon && player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing && !player.achs[10]) {
+        player.achs[10] = true;
+        fon = false;
         acheiveBox("100% Effort - Help the Forcers do their job (as in click the 0/1 after having a type of Forcer)");
     }
     if (e.textContent == "0") {
@@ -97,15 +97,15 @@ function change(e) {
 function d() {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
-            times.push(performance.now()-ls);
+            times.push(performance.now() - ls);
             ls = performance.now();
-            if((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)>=1&&!player.achs[12]){
-                player.achs[12]=true;
+            if ((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5) >= 1 && !player.achs[12]) {
+                player.achs[12] = true;
                 acheiveBox("FINALLY - Start generating at least 1 QPT");
             }
             // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
-            if (player.solves == 0&&!player.achs[0]) {
-                player.achs[0]=true;
+            if (player.solves == 0 && !player.achs[0]) {
+                player.achs[0] = true;
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
             }
             if (i < 5) {
@@ -139,7 +139,9 @@ function init() {
     // window.requestAnimationFrame(loop)
     looper = setInterval(loop, 0);
     load(true);
-    setInterval(()=>{save(false,true)},10000);
+    setInterval(() => {
+        save(false, true)
+    }, 10000);
 }
 
 function loop() {
