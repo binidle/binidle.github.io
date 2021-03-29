@@ -88,6 +88,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
+                player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
 
@@ -166,6 +167,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+                player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
@@ -231,6 +233,7 @@ function loadc() {
             player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
             player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
             player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+            player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
             player.achs = decoded.player.achs;
             player.started = decoded.player.started;
             player.cracks = new Decimal(parseFloat(decoded.player.cracks));

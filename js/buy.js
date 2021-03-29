@@ -203,6 +203,21 @@ function cForm(pr = false) {
     }
 }
 
+function PresQlav() {
+    if (player.csolves >= 8 && player.presqlav == 0) {
+        player.presqlav = player.presqlav.add(1);
+        player.csolves = player.csolves.sub(8); //shit code but idc
+    }
+    else if (player.presqlav == 1) {
+        Beep3.play();
+        alertBox("You've already purchased this upgrade!")
+    }
+    else {
+        Beep3.play();
+        alertBox("You need at least 8☸ to buy Better Qlavram Generators! You currently have " + player.csolves + "☸")
+    }
+}
+
 function prestige() {
     if (player.solves >= 100000) {
         // alertBox("weedmart calls: not done yet lol; being worked on");
