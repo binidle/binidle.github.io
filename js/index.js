@@ -40,6 +40,7 @@ var player = {
     cFormula: new Decimal(1),
     bcracks: new Decimal(0),
     csolves: new Decimal(0),
+    presqlav: new Decimal(0),
     lowp: false,
     bins: [],
     achs: [false, false, false, false, false, false, false, false, false, false, false, false],
@@ -56,7 +57,7 @@ function Bin() {
     this.bruteForcing = false;
     this.randForcing = false;
     this.randforce = function () {
-        player.qlavrams = player.qlavrams.add(Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier));
+        player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)); 
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].textContent = Math.round(random.nextFloat());
         }
