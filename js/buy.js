@@ -219,7 +219,6 @@ function prestige() {
 
         // ===============================
         player.csolves = player.csolves.add(10 + 0); // change the 0 to a formula in the future
-        document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves);
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
@@ -236,7 +235,7 @@ function prestige() {
         for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
             document.querySelector("#lines").children[i].remove();
         }
-        for (let j = 0; j < player.bins.length - 1; j++) {
+        for (let j = 0; j < player.bins.length; j++) {
             player.bins.splice(j, 1);
         }
         addBin(0);
