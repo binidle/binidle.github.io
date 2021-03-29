@@ -115,7 +115,7 @@ function sMult(pr = false) {
     } else if (player.csolves >= 10) {
         for (let szz = 0; szz < bms; szz++) {
             player.sMultiplier = player.sMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp);
+            player.csolves = player.csolves.sub(temp/bms);
             temp = (150 * player.sMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -140,7 +140,7 @@ function qMult(pr = false) {
     } else if (player.csolves >= 10) {
         for (let szz = 0; szz < bms; szz++) {
             player.qMultiplier = player.qMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp);
+            player.csolves = player.csolves.sub(temp/bms);
             temp = (150 * player.qMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -165,7 +165,7 @@ function cMult(pr = false) {
     } else if (player.csolves >= 10) {
         for (let szz = 0; szz < bms; szz++) {
             player.cMultiplier = player.cMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp);
+            player.csolves = player.csolves.sub(temp/bms);
             temp = (7500 * player.cMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -191,7 +191,7 @@ function cForm(pr = false) {
     } else if (player.csolves >= 10) {
         for (let szz = 0; szz < bms; szz++) {
             player.cFormula = player.cFormula.add(1);
-            player.csolves = player.csolves.sub(temp);
+            player.csolves = player.csolves.sub(temp/bms);
             temp = (500 * player.cFormula)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
