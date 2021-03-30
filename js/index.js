@@ -43,6 +43,7 @@ var player = {
     omegas: new Decimal(0),
     oMultiplier: new Decimal(1),
     presqlav: new Decimal(0),
+    presline: new Decimal(0),
     lowp: false,
     bins: [],
     achs: [false, false, false, false, false, false, false, false, false, false, false, false],

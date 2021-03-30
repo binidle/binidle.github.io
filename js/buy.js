@@ -1,4 +1,5 @@
-var lineVal=0;
+var lineVal = 0;
+
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
         if (player.randForcers < 1 && !player.achs[1]) {
@@ -69,8 +70,8 @@ function buyBin(load = false) {
         player.bins.push(new Bin());
         t = document.createElement("ul");
         t.id = "bits" + (player.bins.length - 1);
-        if(!load)t.className = "bins" + Math.floor(lineVal+0.1);
-        else t.className = "bins" + Math.floor(lineVal-0.2);
+        if (!load) t.className = "bins" + Math.floor(lineVal + 0.1);
+        else t.className = "bins" + Math.floor(lineVal - 0.2);
         t.innerHTML = `<li class="stats" onclick="buyRandforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Randforcer 10⚛</li><li class="stats" onclick="buyBruteforcer(parseInt(this.parentElement.id.split('bits')[1]))">Buy Bruteforcer 100⚛</li><li class="stats" onclick="removeBit(parseInt(this.parentElement.id.split('bits')[1]))">Remove Bit 150Φ</li>`
         document.querySelector("#lines").appendChild(t);
         if (!load) addBin(0, player.bins.length - 1);
@@ -205,7 +206,7 @@ function cForm(pr = false) {
 }
 
 function oMult() {
-    temp = (100*player.oMultiplier)
+    temp = (100 * player.oMultiplier)
     // temp = 500;
     if (player.csolves > temp * bms) {
         for (let szz = 0; szz < bms; szz++) {
@@ -225,12 +226,23 @@ function PresQlav() {
     if (player.csolves >= 8 && player.presqlav == 0) {
         player.presqlav = player.presqlav.add(1);
         player.csolves = player.csolves.sub(8); //shit code but idc
-    }
-    else if (player.presqlav == 1) {
+    } else if (player.presqlav == 1) {
         Beep3.play();
         alertBox("You've already purchased this upgrade!")
+    } else {
+        Beep3.play();
+        alertBox("You need at least 8☸ to buy Better Qlavram Generators! You currently have " + player.csolves + "☸")
     }
-    else {
+}
+
+function PresLine() {
+    if (player.csolves >= 100 && player.presline == 0) {
+        player.presline = player.presline.add(1);
+        player.csolves = player.csolves.sub(100);
+    } else if (player.presline == 1) {
+        Beep3.play();
+        alertBox("You've already purchased this upgrade!")
+    } else {
         Beep3.play();
         alertBox("You need at least 8☸ to buy Better Qlavram Generators! You currently have " + player.csolves + "☸")
     }
@@ -238,7 +250,7 @@ function PresQlav() {
 
 function prestige() {
     if (player.solves >= 100000) {
-        lineVal=0;
+        lineVal = 0;
         // alertBox("weedmart calls: not done yet lol; being worked on");
         player.solves = new Decimal(0);
         player.sMultiplier = new Decimal(1);
@@ -269,7 +281,7 @@ function prestige() {
         for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
             document.querySelector("#lines").children[i].remove();
         }
-        player.bins.splice(1,player.bins.length-1);
+        player.bins.splice(1, player.bins.length - 1);
         addBin(0);
         document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
