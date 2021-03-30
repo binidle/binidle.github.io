@@ -204,6 +204,23 @@ function cForm(pr = false) {
     }
 }
 
+function oMult() {
+    temp = (100*player.oMultiplier)
+    // temp = 500;
+    if (player.csolves > temp * bms) {
+        for (let szz = 0; szz < bms; szz++) {
+            player.oMultiplier = player.oMultiplier.add(1);
+            player.csolves = player.csolves.sub(temp);
+            temp = (100 * player.oMultiplier)
+            Beep2.play();
+            document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
+        }
+    } else {
+        Beep3.play();
+        alertBox("You need at least " + temp * bms + "☸ to buy a Omega Multiplier! You currently have " + player.csolves + "☸")
+    }
+}
+
 function PresQlav() {
     if (player.csolves >= 8 && player.presqlav == 0) {
         player.presqlav = player.presqlav.add(1);

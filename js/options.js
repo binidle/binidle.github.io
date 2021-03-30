@@ -75,7 +75,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
             if (dec1[1] != checksum(dec1[0])) {
                 alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
-                lineVal=0;
+                lineVal = 0;
 
                 decoded = JSON.parse(atob(dec1[0]));
                 player.csolves = new Decimal(parseFloat(decoded.player.csolves));
@@ -89,6 +89,8 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
+                player.omegas = new Decimal(parseFloat(decoded.player.omegas));
+                player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
@@ -156,7 +158,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
             if (dec1[1] != checksum(dec1[0])) {
                 alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
-                lineVal=0;
+                lineVal = 0;
 
                 decoded = JSON.parse(atob(dec1[0]));
                 player.csolves = new Decimal(parseFloat(decoded.player.csolves));
@@ -169,6 +171,8 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
                 player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+                player.omegas = new Decimal(parseFloat(decoded.player.omegas));
+                player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
@@ -223,7 +227,7 @@ function loadc() {
         if (dec1[1] != checksum(dec1[0])) {
             alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
         } else {
-            lineVal=0;
+            lineVal = 0;
 
             decoded = JSON.parse(atob(dec1[0]));
             player.solves = new Decimal(parseFloat(decoded.player.solves));
@@ -236,6 +240,8 @@ function loadc() {
             player.bruteForcers = new Decimal(parseFloat(decoded.player.bruteForcers));
             player.qlavrams = new Decimal(parseFloat(decoded.player.qlavrams));
             player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
+            player.omegas = new Decimal(parseFloat(decoded.player.omegas));
+            player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
             player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
             player.achs = decoded.player.achs;
             player.started = decoded.player.started;
