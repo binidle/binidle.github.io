@@ -235,17 +235,67 @@ function reset() {
 }
 
 function loadachs() {
-    try{if (player.achs[0]) document.querySelector(".m0Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[1]) document.querySelector(".m1Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[2]) document.querySelector(".m2Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[3]) document.querySelector(".m3Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[4]) document.querySelector(".m4Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[5]) document.querySelector(".m5Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[6]) document.querySelector(".m6Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";}catch(e){}
-    try{if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";}catch(e){}
+    try {
+        if (player.achs[0]) document.querySelector(".m0Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[1]) document.querySelector(".m1Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[2]) document.querySelector(".m2Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[3]) document.querySelector(".m3Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[4]) document.querySelector(".m4Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[5]) document.querySelector(".m5Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[6]) document.querySelector(".m6Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";
+    } catch (e) {}
+}
+
+function removeAll() {
+    document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
+    document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
+    document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
+    document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
+    document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
+    player.bins.forEach((i, j) => {
+        i.randForcing = false;
+        i.randForcers = 0;
+        i.bruteForcing = false;
+        i.bruteForcers = 0;
+        i.currGoal = genBinary(1);
+        i.bins.forEach((sz) => {
+            sz.remove();
+        });
+        i.bins = [];
+
+    }, player);
+    for (let i = document.querySelector("#lines").children.length - 1; i > -1; i--) {
+        document.querySelector("#lines").children[i].remove();
+    }
+    player.bins.splice(1, player.bins.length - 1);
 }
