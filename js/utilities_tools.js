@@ -232,7 +232,7 @@ function cheat() {
 }
 
 function reset() {
-    window.localStorage.save = "";
+    delete localStorage.save
     window.location = ""
 }
 
