@@ -115,7 +115,7 @@ function d() {
                 loadachs();
             }
             if (i < 5) {
-                tomp = (1 + math.pow(player.csolves,1.25))
+                tomp = (1 + Math.pow(player.csolves,1.25))
                 player.solves = player.solves.add(tomp.mul(player.sMultiplier.mul(player.bins[i].bins.length))); // add player.csolves ^ 1.25 somewhere in this h
             } else if (i < 10) {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
