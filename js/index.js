@@ -113,7 +113,7 @@ function d() {
                 loadachs();
             }
             if (i < 5) {
-                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length)); // add player.csolves ^ 1.25 somewhere in this h
             } else {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
             }
