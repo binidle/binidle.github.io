@@ -43,6 +43,7 @@ function updateSolves() {
     document.querySelector("#solavg").textContent = "Solve Performance: " + (1 / (solavg / 1000)).toFixed(2) + "/s";
     document.querySelector("#csolvmult").textContent = "These multiplying solves by: " + numberformat.format((1 + Math.floor(Math.pow(player.csolves,1.25)))) + "x";
     document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
+    document.querySelector("#omega").textContent = "Omegas (ῼ): " + numberformat.format(player.omegas);
 }
 
 function time_ago(time) {
@@ -233,7 +234,7 @@ function cheat() {
 
 function reset() {
     delete localStorage.save
-    window.location = ""
+    window.location.reload()
 }
 
 function loadachs() {
