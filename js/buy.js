@@ -213,7 +213,7 @@ function oMult() {
             player.csolves = player.csolves.sub(temp);
             temp = (100 * player.oMultiplier)
             Beep2.play();
-            document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
+            document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + temp + "☸" // broken but idc we'll do it later
         }
     } else {
         Beep3.play();
