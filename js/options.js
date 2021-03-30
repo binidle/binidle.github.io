@@ -47,7 +47,7 @@ function toggleLowPOff() {
 function rainbow() {
     if (!player.achs[12]) {
         player.achs[12] = true;
-        acheiveBox("I regret this... - Use cool rainbow background theme, you cannot turn this off");
+        acheiveBox("I regret this... - Use le cool rainbow background theme, you cannot turn this off");
         loadachs();
     }
     document.body.style.backgroundImage = "url('./rainbow.gif')";
