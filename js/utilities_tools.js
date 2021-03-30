@@ -30,7 +30,7 @@ function updateSolves() {
     document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").textContent = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").textContent = "Cracks (Փ): " + numberformat.format(player.cracks);
-    document.querySelector("#qlavramps").textContent = "QPT: " + (Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5);
+    document.querySelector("#qlavramps").textContent = "QPT: " + (Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).toFixed(5);
     document.querySelector("#smlt").textContent = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
     document.querySelector("#qmlt").textContent = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
     document.querySelector("#bcrack").textContent = "Base Cracks: " + numberformat.format(player.bcracks);
