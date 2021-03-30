@@ -114,9 +114,9 @@ function sMult(pr = false) {
             document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
         }
     } else if (player.csolves >= 10) {
+        player.csolves = player.csolves.sub(10);
         for (let szz = 0; szz < bms; szz++) {
             player.sMultiplier = player.sMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp/bms);
             temp = (150 * player.sMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -139,9 +139,9 @@ function qMult(pr = false) {
             document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
         }
     } else if (player.csolves >= 10) {
+        player.csolves = player.csolves.sub(10);
         for (let szz = 0; szz < bms; szz++) {
             player.qMultiplier = player.qMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp/bms);
             temp = (150 * player.qMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -164,9 +164,9 @@ function cMult(pr = false) {
             document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
         }
     } else if (player.csolves >= 10) {
+        player.csolves = player.csolves.sub(10);
         for (let szz = 0; szz < bms; szz++) {
             player.cMultiplier = player.cMultiplier.add(1);
-            player.csolves = player.csolves.sub(temp/bms);
             temp = (7500 * player.cMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
@@ -190,9 +190,9 @@ function cForm(pr = false) {
             document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
         }
     } else if (player.csolves >= 10) {
+        player.csolves = player.csolves.sub(10);
         for (let szz = 0; szz < bms; szz++) {
             player.cFormula = player.cFormula.add(1);
-            player.csolves = player.csolves.sub(temp/bms);
             temp = (500 * player.cFormula)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
