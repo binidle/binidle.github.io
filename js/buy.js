@@ -235,7 +235,7 @@ function prestige() {
         // ===============================
         player.csolves = player.csolves.add((1 * player.solves.e) - 3); // Will add another formula later on
 
-        player.bins.forEach((i, j) => {
+        Array.apply(player.bins).forEach((i, j) => {
             i.randForcing = false;
             i.randForcers = 0;
             i.bruteForcing = false;
@@ -250,9 +250,11 @@ function prestige() {
         for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
             document.querySelector("#lines").children[i].remove();
         }
-        for (let j = 0; j < player.bins.length; j++) {
-            player.bins.splice(j, 1);
-        }
+        // for (let j = 0; j < player.bins.length+2; j++) {
+        //     player.bins.splice(j, 1);
+        //     console.log(j);
+        // }
+        player.bins.splice(1,player.bins.length-1);
         addBin(0);
         document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
