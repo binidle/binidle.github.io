@@ -41,7 +41,7 @@ function updateSolves() {
     document.querySelector("#bforcers").textContent = "Bruteforcers: " + numberformat.format(player.bruteForcers);
     document.querySelector("#played").textContent = "Time Played: " + time_ago(player.started);
     document.querySelector("#solavg").textContent = "Solve Performance: " + (1 / (solavg / 1000)).toFixed(2) + "/s";
-    document.querySelector("#csolvmult").textContent = "These multiplying solves by: " + (1 + Math.floor(Math.pow(player.csolves,1.25))) + "x";
+    document.querySelector("#csolvmult").textContent = "These multiplying solves by: " + numberformat.format((1 + Math.floor(Math.pow(player.csolves,1.25)))) + "x";
     document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
 }
 
