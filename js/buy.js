@@ -235,7 +235,7 @@ function prestige() {
         // ===============================
         player.csolves = player.csolves.add(10 + 0); // change the 0 to a formula in the future
 
-        player.bins.forEach((i, j) => {
+        Array.apply(player.bins).forEach((i, j) => {
             i.randForcing = false;
             i.randForcers = 0;
             i.bruteForcing = false;
@@ -250,8 +250,9 @@ function prestige() {
         for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
             document.querySelector("#lines").children[i].remove();
         }
-        for (let j = 0; j < player.bins.length; j++) {
+        for (let j = 0; j < player.bins.length+2; j++) {
             player.bins.splice(j, 1);
+            console.log(j);
         }
         addBin(0);
         document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
