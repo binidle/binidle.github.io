@@ -1,3 +1,4 @@
+var lineVal=0;
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
         if (player.randForcers < 1 && !player.achs[1]) {
@@ -220,7 +221,38 @@ function PresQlav() {
 
 function prestige() {
     if (player.solves >= 100000) {
-        removeAll();
+        lineVal=0;
+        // alertBox("weedmart calls: not done yet lol; being worked on");
+        player.solves = new Decimal(0);
+        player.sMultiplier = new Decimal(1);
+        player.qMultiplier = new Decimal(1);
+        player.cMultiplier = new Decimal(1);
+        player.randForcers = new Decimal(0);
+        player.bruteForcers = new Decimal(0);
+        player.qlavrams = new Decimal(0);
+        player.bcracks = new Decimal(0);
+        player.cracks = new Decimal(0);
+        // =remove bins until 1 left here=
+
+        // ===============================
+        player.csolves = player.csolves.add((1 * player.solves.e) - 3); // Will add another formula later on
+
+        player.bins.forEach((i, j) => {
+            i.randForcing = false;
+            i.randForcers = 0;
+            i.bruteForcing = false;
+            i.bruteForcers = 0;
+            i.currGoal = genBinary(1);
+            i.bins.forEach((sz) => {
+                sz.remove();
+            });
+            i.bins = [];
+
+        }, player);
+        for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
+            document.querySelector("#lines").children[i].remove();
+        }
+        player.bins.splice(1,player.bins.length-1);
         addBin(0);
         document.querySelector("#burh").textContent = "Buy another line " + (25 + (5 * 5 ** player.bins.length)) + "β";
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
