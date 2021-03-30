@@ -143,8 +143,8 @@ li:hover {
 body {
     background-color: rgb(247, 181, 82);
     color: #333333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-family: 'Armata', sans-serif;
+    font-size: 13.5px;
 }
 
 .tcolor {
@@ -254,7 +254,7 @@ hr {
 }
 
 button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Armata', sans-serif;
     background-color: rgba(105, 60, 54);
     color: white;
     padding: 5px;
