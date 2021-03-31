@@ -281,7 +281,7 @@ function loadachs() {
 
 function removeAll() {
     morgz = (0.95 * player.presline)
-    document.querySelector("#burh").textContent = "Buy another line " + Math.pow(25 + (5 * 5 ** player.bins.length),morgz) + "β";
+    document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(Math.pow(25 + (5 * 5 ** player.bins.length),morgz)) + "β";
     document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
     document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
     document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
