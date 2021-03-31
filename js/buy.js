@@ -263,12 +263,7 @@ function prestige() {
         // =remove bins until 1 left here=
 
         // ===============================
-        if (1 < (2 * (player.bins - 5))) {
-            player.csolves = player.csolves.add(2 * (player.bins - 5)); // Will add another formula later on
-        }
-        else {
-            player.csolves = player.csolves.add(2) // Will add another formula later on
-        }
+        player.csolves = player.csolves.add(Math.floor(((player.bins.length * 4) * (player.cracks.e * 3) * (player.qlavrams.e * 2) * player.solves.e)/1000)); 
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
