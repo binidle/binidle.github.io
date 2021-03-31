@@ -50,7 +50,7 @@ function removeBit(zzz = 0) {
         player.bins[zzz].currGoal = genBinary(player.bins[zzz].bins.length);
     } else {
         Beep3.play();
-        alertBox("You need at least 150Φ to remove a bit! You currently have " + player.cracks + "Φ")
+        alertBox("You need at least 150Φ to remove a bit! You currently have " + player.cracks + "Φ") // make this not have decimals in it!!
     }
 }
 
