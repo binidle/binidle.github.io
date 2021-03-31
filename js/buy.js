@@ -244,7 +244,7 @@ function PresLine() {
         alertBox("You've already purchased this upgrade!")
     } else {
         Beep3.play();
-        alertBox("You need at least 8☸ to buy Better Qlavram Generators! You currently have " + player.csolves + "☸")
+        alertBox("You need at least 100☸ to buy Lower Line Cost! You currently have " + player.csolves + "☸")
     }
 }
 
