@@ -1,4 +1,5 @@
 var lineVal = 0;
+var bitval = 0;
 
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
@@ -44,13 +45,14 @@ function buyBruteforcer(i = 0) {
 
 function removeBit(zzz = 0) {
     if (player.cracks > 150) {
-        player.cracks = player.cracks.sub(150);
+        bitval += 1;
+        player.cracks = player.cracks.sub(150 + bitval);
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
         player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1, 1);
         player.bins[zzz].currGoal = genBinary(player.bins[zzz].bins.length);
     } else {
         Beep3.play();
-        alertBox("You need at least 150Φ to remove a bit! You currently have " + player.cracks + "Φ") // make this not have decimals in it!!
+        alertBox("You need at least " + (150 + bitval) + "Φ to remove a bit! You currently have " + player.cracks + "Φ") // make this not have decimals in it!!
     }
 }
 
@@ -263,7 +265,7 @@ function prestige() {
         // =remove bins until 1 left here=
 
         // ===============================
-        player.csolves=player.csolves.add(Math.floor(((player.bins.length * 4) * (player.cracks.e * 3) * (player.qlavrams.e * 2) * player.solves.e*(player.omegas/100))/1000))
+        player.csolves = player.csolves.add(Math.floor(((player.bins.length * 4) * (player.cracks.e * 3) * (player.qlavrams.e * 2) * player.solves.e)/1000)); 
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
