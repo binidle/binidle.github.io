@@ -252,6 +252,7 @@ function PresLine() {
 function prestige() {
     if (player.solves >= 100000) {
         lineVal = 0;
+        bitval = 0;
         // alertBox("weedmart calls: not done yet lol; being worked on");
         player.solves = new Decimal(0);
         player.sMultiplier = new Decimal(1);
