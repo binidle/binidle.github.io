@@ -30,7 +30,7 @@ function updateSolves() {
     document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").textContent = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").textContent = "Cracks (Փ): " + numberformat.format(player.cracks);
-    document.querySelectorAll("#bitremove").forEach((i)=>i.textContent = "Remove Bit " + (150 + player.bitval) + "Փ");
+    document.querySelectorAll("#bitremove").forEach((i) => i.textContent = "Remove Bit " + (150 + player.bitval) + "Փ");
     document.querySelector("#qlavramps").textContent = "QPT: " + (Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).toFixed(5);
     document.querySelector("#smlt").textContent = "Solve Multipliers: " + numberformat.format(player.sMultiplier) + "x";
     document.querySelector("#qmlt").textContent = "Qlavram Multipliers: " + numberformat.format(player.qMultiplier) + "x";
@@ -42,7 +42,7 @@ function updateSolves() {
     document.querySelector("#bforcers").textContent = "Bruteforcers: " + numberformat.format(player.bruteForcers);
     document.querySelector("#played").textContent = "Time Played: " + time_ago(player.started);
     document.querySelector("#solavg").textContent = "Solve Performance: " + (1 / (solavg / 1000)).toFixed(2) + "/s";
-    document.querySelector("#csolvmult").textContent = "These are multiplying solves by: " + numberformat.format((1 + Math.floor(Math.pow(player.csolves,1.25)))) + "x";
+    document.querySelector("#csolvmult").textContent = "These are multiplying solves by: " + numberformat.format((1 + Math.floor(Math.pow(player.csolves, 1.25)))) + "x";
     document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
     document.querySelector("#omega").textContent = "Omegas (ῼ): " + numberformat.format(player.omegas);
 }
@@ -234,8 +234,10 @@ function cheat() {
 }
 
 function reset() {
-    delete localStorage.save
-    window.location.reload()
+    if (prompt("ARE YOU SURE YOU WANT TO RESET YOUR SAVE")) {
+        delete localStorage.save
+        window.location.reload()
+    }
 }
 
 function loadachs() {
@@ -282,7 +284,7 @@ function loadachs() {
 
 function removeAll() {
     morgz = (0.95 * player.presline)
-    document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(Math.pow(25 + (5 * 5 ** player.bins.length),morgz)) + "β";
+    document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(Math.pow(25 + (5 * 5 ** player.bins.length), morgz)) + "β";
     document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
     document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
     document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
