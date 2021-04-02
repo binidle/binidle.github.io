@@ -103,7 +103,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
                 document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
                 document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
-                document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " +  (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
+                document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
 
                 player.bins.forEach((i, j) => {
                     i.randForcing = false;
@@ -176,6 +176,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.bcracks = new Decimal(parseFloat(decoded.player.bcracks));
                 player.omegas = new Decimal(parseFloat(decoded.player.omegas));
                 player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
+                player.bitval = parseFloat(decoded.player.bitval);
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
@@ -186,8 +187,8 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
                 document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
                 document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
-                document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " +  (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
-                
+                document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
+
                 player.bins.forEach((i, j) => {
                     i.randForcing = false;
                     i.randForcers = 0;
@@ -248,6 +249,7 @@ function loadc() {
             player.omegas = new Decimal(parseFloat(decoded.player.omegas));
             player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
             player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
+            player.bitval = parseFloat(decoded.player.bitval);
             player.achs = decoded.player.achs;
             player.started = decoded.player.started;
             player.cracks = new Decimal(parseFloat(decoded.player.cracks));
@@ -257,8 +259,8 @@ function loadc() {
             document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
             document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
             document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
-            document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " +  (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
-            
+            document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
+
             player.bins.forEach((i, j) => {
                 i.randForcing = false;
                 i.randForcers = 0;
