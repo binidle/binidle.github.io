@@ -234,7 +234,7 @@ function cheat() {
 }
 
 function reset() {
-    if (prompt("ARE YOU SURE YOU WANT TO RESET YOUR SAVE")) {
+    if (confirm("ARE YOU SURE YOU WANT TO RESET YOUR SAVE")) {
         delete localStorage.save
         window.location.reload()
     }
