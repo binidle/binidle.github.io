@@ -1,5 +1,4 @@
 var lineVal = 0;
-var bitval = 0;
 
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
@@ -45,14 +44,14 @@ function buyBruteforcer(i = 0) {
 
 function removeBit(zzz = 0) {
     if (player.cracks > 150) {
-        bitval += 1;
-        player.cracks = player.cracks.sub(150 + bitval);
+        player.bitval += 1;
+        player.cracks = player.cracks.sub(150 + player.bitval);
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
         player.bins[zzz].bins.splice(player.bins[zzz].bins.length - 1, 1);
         player.bins[zzz].currGoal = genBinary(player.bins[zzz].bins.length);
     } else {
         Beep3.play();
-        alertBox("You need at least " + (150 + bitval) + "Φ to remove a bit! You currently have " + player.cracks + "Φ") // make this not have decimals in it!!
+        alertBox("You need at least " + (150 + player.bitval) + "Φ to remove a bit! You currently have " + player.cracks + "Φ") // make this not have decimals in it!!
     }
 }
 
@@ -252,7 +251,7 @@ function PresLine() {
 function prestige() {
     if (player.solves >= 100000) {
         lineVal = 0;
-        bitval = 0;
+        player.bitval = 0;
         // alertBox("weedmart calls: not done yet lol; being worked on");
         player.solves = new Decimal(0);
         player.sMultiplier = new Decimal(1);

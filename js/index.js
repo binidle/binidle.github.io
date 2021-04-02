@@ -44,6 +44,7 @@ var player = {
     oMultiplier: new Decimal(1),
     presqlav: new Decimal(0),
     presline: new Decimal(0),
+    bitval: 0,
     lowp: false,
     bins: [],
     achs: [false, false, false, false, false, false, false, false, false, false, false, false],

@@ -92,6 +92,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.omegas = new Decimal(parseFloat(decoded.player.omegas));
                 player.oMultiplier = new Decimal(parseFloat(decoded.player.oMultiplier));
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
+                player.bitval = parseFloat(decoded.player.bitval);
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
 
