@@ -228,9 +228,9 @@ function checksum(sd) {
 }
 
 function cheat() {
-    player.qlavrams.mantissa = 1e999;
-    player.cracks.mantissa = 10000000000000000000000000;
-    player.solves.mantissa = 10000000000000000000000000;
+    player.qlavrams.mantissa = 1e300;
+    player.cracks.mantissa = 1e300;
+    player.solves.mantissa = 1e300;
 }
 
 function reset() {
