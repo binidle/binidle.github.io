@@ -275,10 +275,7 @@ function prestige() {
         player.qlavrams = new Decimal(0);
         player.bcracks = new Decimal(0);
         player.cracks = new Decimal(0);
-        // =remove bins until 1 left here=
-
-        // ===============================
-        player.csolves = player.csolves.add(Math.floor(((player.bins.length * 4) * (player.cracks.e * 3) * (player.qlavrams.e * 2) * player.solves.e)/1000)); 
+        player.csolves = player.csolves.add(Math.floor(2 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
