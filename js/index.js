@@ -43,7 +43,8 @@ var player = {
     omegas: new Decimal(0),
     oMultiplier: new Decimal(1),
     presqlav: new Decimal(0),
-    presline: new Decimal(0),
+    presline: new Decimal(0),   
+    presmult: new Decimal(0),
     bitval: 0,
     lowp: false,
     bins: [],
@@ -116,10 +117,14 @@ function d() {
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
                 loadachs();
             }
-            if (i < 5) {
-                tomp = new Decimal(1 + Math.pow(player.csolves,1.25))
-                player.solves = player.solves.add(tomp.mul(player.sMultiplier.mul(player.bins[i].bins.length))); // add player.csolves ^ 1.25 somewhere in this h
-            } else if (i < 10) {
+            if (i < 5 && player.presmult == 1) {
+                tomp = new Decimal(1 + Math.pow(player.csolves,1.05))
+                player.solves = player.solves.add(tomp.mul(player.sMultiplier.mul(player.bins[i].bins.length)));
+            }
+            if (i < 5 && player.presmult == 0) {
+                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+            }
+            else if (i < 10) {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
             } else if (i < 15) {
                 player.omegas = player.omegas.add(player.oMultiplier.mul(player.bins[i].bins.length));

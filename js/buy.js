@@ -231,7 +231,7 @@ function PresQlav() {
         alertBox("You've already purchased this upgrade!")
     } else {
         Beep3.play();
-        alertBox("You need at least 8☸ to buy Better Qlavram Generators! You currently have " + player.csolves + "☸")
+        alertBox("You need at least 8☸ to buy the Better Qlavram Generators! You currently have " + player.csolves + "☸")
     }
 }
 
@@ -244,7 +244,20 @@ function PresLine() {
         alertBox("You've already purchased this upgrade!")
     } else {
         Beep3.play();
-        alertBox("You need at least 100☸ to buy Lower Line Cost! You currently have " + player.csolves + "☸")
+        alertBox("You need at least 100☸ to buy the Lower Line Cost! You currently have " + player.csolves + "☸")
+    }
+}
+
+function CSolveMulti() {
+    if (player.csolves >= 2 && player.presmult == 0) {
+        player.csolves = player.csolves.sub(2)
+        player.presmult = player.presmult.add(1)
+    } else if (player.presmult == 1) {
+        Beep3.play();
+        alertBox("You've already purchased this upgrade!")
+    } else {
+        Beep3.play();
+        alertBox("You need at least 2☸ to buy the Complex Solve Multiplier! You currently have " + player.csolves + "☸")
     }
 }
 
