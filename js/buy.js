@@ -43,7 +43,7 @@ function buyBruteforcer(i = 0) {
 }
 
 function removeBit(zzz = 0) {
-    if (player.cracks > 150 + player.bitval) {
+    if (player.cracks > 150) {
         player.bitval += 1;
         player.cracks = player.cracks.sub(150 + player.bitval);
         player.bins[zzz].bins[player.bins[zzz].bins.length - 1].remove();
@@ -275,7 +275,7 @@ function prestige() {
         player.qlavrams = new Decimal(0);
         player.bcracks = new Decimal(0);
         player.cracks = new Decimal(0);
-        player.csolves = player.csolves.add(Math.floor(2 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
+        player.csolves = player.csolves.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
 
         player.bins.forEach((i, j) => {
             i.randForcing = false;
