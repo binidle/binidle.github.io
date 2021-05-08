@@ -30,7 +30,7 @@ function volume(ud = 0) {
 
 function cool_button() {
     theme.play();
-    acheiveBox("<img style='width:200px;height:200px;' src='./bug.gif'/>",25000);
+    acheiveBox("<img style='width:200px;height:200px;' src='./bug.gif'/>",28000);
 }
 
 function toggleLowP() {
