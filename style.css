@@ -147,6 +147,10 @@ body {
     font-size: 13.5px;
 }
 
+img {
+    image-rendering: pixelated;
+}
+
 .tcolor {
     color: black;
 }

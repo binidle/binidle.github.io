@@ -28,6 +28,11 @@ function volume(ud = 0) {
     Beep1.play();
 }
 
+function cool_button() {
+    theme.play();
+    acheiveBox("<img style='width:200px;height:200px;' src='./bug.gif'/>",25000);
+}
+
 function toggleLowP() {
     if (player.lowp == false && !player.achs[13]) {
         player.achs[13] = true;

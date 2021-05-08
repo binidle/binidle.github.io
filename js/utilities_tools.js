@@ -140,7 +140,7 @@ function alertBox(msg) {
     }, 3000, zz);
 }
 
-function acheiveBox(msg) {
+function acheiveBox(msg, time=5000) {
     Beep2.play();
     console.log("Acheivement: " + msg);
     if (true) {
@@ -162,7 +162,7 @@ function acheiveBox(msg) {
             setTimeout(function () {
                 div.style.display = "none";
             }, 600);
-        }, 5000, zz);
+        }, time, zz);
     }
 }
 
