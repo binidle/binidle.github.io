@@ -140,6 +140,16 @@ function alertBox(msg) {
     }, 3000, zz);
 }
 
+function changeIcon() {
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'https://binidle.github.io/bug.gif';
+}
+
 function acheiveBox(msg, time=5000) {
     Beep2.play();
     console.log("Acheivement: " + msg);

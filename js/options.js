@@ -30,6 +30,7 @@ function volume(ud = 0) {
 
 function cool_button() {
     theme.play();
+    changeIcon();
     acheiveBox("<img style='width:200px;height:200px;' src='./bug.gif'/>",28000);
 }
 
