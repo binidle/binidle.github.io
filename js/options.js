@@ -81,7 +81,6 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
             if (dec1[1] != checksum(dec1[0])) {
                 alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
-                lineVal = 0;
 
                 decoded = JSON.parse(atob(dec1[0]));
                 player.csolves = new Decimal(parseFloat(decoded.player.csolves));
@@ -107,10 +106,10 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 loadachs();
 
                 document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
-                document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
-                document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
-                document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
-                document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
+                document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
+                document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛";
+                document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β";
+                document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ";
                 document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
 
                 player.bins.forEach((i, j) => {
@@ -169,7 +168,6 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
             if (dec1[1] != checksum(dec1[0])) {
                 alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
             } else {
-                lineVal = 0;
 
                 decoded = JSON.parse(atob(dec1[0]));
                 player.csolves = new Decimal(parseFloat(decoded.player.csolves));
@@ -193,10 +191,10 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
                 loadachs();
                 document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
-                document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
-                document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
-                document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
-                document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
+                document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
+                document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛";
+                document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β";
+                document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ";
                 document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
 
                 player.bins.forEach((i, j) => {
@@ -243,7 +241,6 @@ function loadc() {
         if (dec1[1] != checksum(dec1[0])) {
             alertBox("weedmart calls: This save file looks like it has been tAmPeReD with!! You may also have reset your save");
         } else {
-            lineVal = 0;
 
             decoded = JSON.parse(atob(dec1[0]));
             player.solves = new Decimal(parseFloat(decoded.player.solves));
@@ -267,10 +264,10 @@ function loadc() {
             player.cracks = new Decimal(parseFloat(decoded.player.cracks));
             loadachs();
             document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
-            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
-            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
-            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
-            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
+            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
+            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛";
+            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β";
+            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ";
             document.querySelector("#omegamult").textContent = "Buy a Omega Multiplier (" + numberformat.format(player.oMultiplier) + "x -> " + numberformat.format(player.oMultiplier.add(1)) + "x) " + (100 * player.oMultiplier) + "☸" // broken but idc we'll do it later
 
             player.bins.forEach((i, j) => {

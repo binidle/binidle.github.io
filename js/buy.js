@@ -1,4 +1,3 @@
-var lineVal = 0;
 
 function buyRandforcer(i = 0) {
     if (player.solves >= 10) {
@@ -66,7 +65,6 @@ function buyBin(load = false) {
             acheiveBox("Get Cracking! - Reach 6 lines and start generation Cracks (Փ)");
             loadachs();
         }
-        lineVal += 0.2;
         if (!load) player.qlavrams = player.qlavrams.sub((25 + (5 * 5 ** player.bins.length)));
         player.bins.push(new Bin());
         t = document.createElement("ul");
@@ -99,6 +97,8 @@ function addBin(v = 0, z = 0) {
 
 }
 
+
+
 function sMult(pr = false) {
     temp = (150 * player.sMultiplier)
     if (player.qlavrams > temp * bms && !pr) {
@@ -112,7 +112,7 @@ function sMult(pr = false) {
             player.qlavrams = player.qlavrams.sub(temp);
             temp = (150 * player.sMultiplier)
             Beep2.play();
-            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
+            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β"
         }
     } else if (player.csolves >= 10) {
         player.csolves = player.csolves.sub(10);
@@ -121,11 +121,11 @@ function sMult(pr = false) {
             temp = (150 * player.sMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
-            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + temp + "β"
+            document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β"
         }
     } else {
         Beep3.play();
-        alertBox("You need at least " + temp * bms + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
+        alertBox("You need at least " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β to buy a multiplier! You currently have " + player.qlavrams + "β")
     }
 }
 
@@ -137,7 +137,7 @@ function qMult(pr = false) {
             player.cracks = player.cracks.sub(temp);
             temp = (150 * player.qMultiplier)
             Beep2.play();
-            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
+            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ"
         }
     } else if (player.csolves >= 10) {
         player.csolves = player.csolves.sub(10);
@@ -146,11 +146,11 @@ function qMult(pr = false) {
             temp = (150 * player.qMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
-            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + temp + "Փ"
+            document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ"
         }
     } else {
         Beep3.play();
-        alertBox("You need at least " + temp * bms + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
+        alertBox("You need at least " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ to buy a Qlavram multiplier! You currently have " + player.cracks + "Փ")
     }
 }
 
@@ -162,7 +162,7 @@ function cMult(pr = false) {
             player.solves = player.solves.sub(temp);
             temp = (7500 * player.cMultiplier)
             Beep2.play();
-            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
+            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛"
         }
     } else if (player.csolves >= 10) {
         player.csolves = player.csolves.sub(10);
@@ -171,10 +171,10 @@ function cMult(pr = false) {
             temp = (7500 * player.cMultiplier)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
-            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + temp + "⚛"
+            document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛"
         }
     } else {
-        alertBox("You need at least " + temp * bms + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
+        alertBox("You need at least " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛ to buy a Crack multiplier! You currently have " + player.solves + "⚛")
         Beep3.play();
     }
 }
@@ -188,7 +188,7 @@ function cForm(pr = false) {
             player.cracks = player.cracks.sub(temp);
             temp = (500 * player.cFormula)
             Beep2.play();
-            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
+            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ" // broken but idc we'll do it later
         }
     } else if (player.csolves >= 10) {
         player.csolves = player.csolves.sub(10);
@@ -197,11 +197,11 @@ function cForm(pr = false) {
             temp = (500 * player.cFormula)
             document.querySelector("#csolves").textContent = "Complex Solves: " + numberformat.format(player.csolves) + "☸";
             Beep2.play();
-            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + temp + "Փ" // broken but idc we'll do it later
+            document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ" // broken but idc we'll do it later
         }
     } else {
         Beep3.play();
-        alertBox("You need at least " + temp * bms + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
+        alertBox("You need at least " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ to buy a Crack Formula Boost! You currently have " + player.cracks + "Փ")
     }
 }
 
@@ -261,44 +261,16 @@ function CSolveMulti() {
     }
 }
 
-function prestige() {
+function prestige1() {
     if (player.solves >= 100000) {
-        lineVal = 0;
-        player.bitval = 0;
-        // alertBox("weedmart calls: not done yet lol; being worked on");
-        player.solves = new Decimal(0);
-        player.sMultiplier = new Decimal(1);
-        player.qMultiplier = new Decimal(1);
-        player.cMultiplier = new Decimal(1);
-        player.randForcers = new Decimal(0);
-        player.bruteForcers = new Decimal(0);
-        player.qlavrams = new Decimal(0);
-        player.bcracks = new Decimal(0);
-        player.cracks = new Decimal(0);
+        resetVal();
         player.csolves = player.csolves.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
 
-        player.bins.forEach((i, j) => {
-            i.randForcing = false;
-            i.randForcers = 0;
-            i.bruteForcing = false;
-            i.bruteForcers = 0;
-            i.currGoal = genBinary(1);
-            i.bins.forEach((sz) => {
-                sz.remove();
-            });
-            i.bins = [];
-
-        }, player);
-        for (let i = document.querySelector("#lines").children.length - 1; i > 0; i--) {
-            document.querySelector("#lines").children[i].remove();
-        }
-        player.bins.splice(1, player.bins.length - 1);
-        addBin(0);
         document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
-        document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (500 * player.cFormula) + "Փ"; // broken but idc we'll do it later
-        document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (7500 * player.cMultiplier) + "⚛";
-        document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (150 * player.sMultiplier) + "β";
-        document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (150 * player.qMultiplier) + "Փ";
+        document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
+        document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛";
+        document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β";
+        document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ";
 
     } else {
         alertBox("You need at least 100000⚛ to prestige!! You currently have " + player.solves + "⚛")
