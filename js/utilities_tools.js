@@ -162,6 +162,7 @@ function resetVal() {
     player.qlavrams = new Decimal(0);
     player.bcracks = new Decimal(0);
     player.cracks = new Decimal(0);
+    player.omegas = new Decimal(0);
 
     player.bins.forEach((i, j) => {
         i.randForcing = false;

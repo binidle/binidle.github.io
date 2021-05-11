@@ -280,7 +280,7 @@ function prestige1() {
 function prestige2() {
     if (player.omegas >= 100000) {
         resetVal();
-        player.plumes = player.plumes.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
+        player.plumes = player.plumes.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks * 2) * (player.qlavrams.e * 2) * player.solves.e)/5));
 
         document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
