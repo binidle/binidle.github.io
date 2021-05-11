@@ -41,6 +41,7 @@ var player = {
     bcracks: new Decimal(0),
     csolves: new Decimal(0),
     omegas: new Decimal(0),
+    plumes: new Decimal(0),
     oMultiplier: new Decimal(1),
     presqlav: new Decimal(0),
     presline: new Decimal(0),   

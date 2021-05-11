@@ -81,7 +81,7 @@ hi
     <li id="m5"
       onclick="(this.className='active',cls([m2,m3,m4,m1],''),document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
       Options</li>
-    
+
     <li class="stats" id="solve">Solves (⚛): </li>
     <li class="stats" id="qlavramps">QPS: </li>
     <li class="stats" id="qlavram">Qlavram (β): </li>
@@ -127,7 +127,7 @@ hi
       <ul id="bits0" class="bins0">
         <li class="stats" onclick="buyRandforcer()">Buy Randforcer 10⚛</li>
         <li class="stats" onclick="buyBruteforcer()">Buy Bruteforcer 100⚛</li>
-        <li id ="bitremove" class="stats" onclick="removeBit()">Remove Bit 150Φ</li>
+        <li id="bitremove" class="stats" onclick="removeBit()">Remove Bit 150Φ</li>
       </ul>
     </div>
     <br>
@@ -154,53 +154,64 @@ hi
     <br>
   </div>
   <div id="prestige" style="display: none;">
-    <h3>Soon</h3>
-    <h4>Get 100000⚛ Solves to prestige</h4>
-    <button onclick="prestige1()" class="presb"> Prestige </button>
-    <br>
-    <p id="csolves">Complex Solves: 0☸</p>
-    <p id="csolvmult">These provide a solve multiplier of: woson (if you see this, something broke) </p>
-    <br>
-    <table class="acheive" align="center" border="3" cellpadding="3" width="10%">
+    <table>
       <tr>
-        <th><button onclick="CSolveMulti()"> Complex Solve Multiplier 2☸ </button></th>
-        <th><button onclick="PresGain()"> Higher Prestige Gain 5☸</button></th>
-        <th><button onclick="PresQlav()"> Better Qlavram Generation 8☸ </button></th>
+        <h3>Soon</h3>
+        <h4>Get 100000⚛ Solves to prestige</h4>
+        <button onclick="prestige1()" class="presb"> Prestige </button>
+        <br>
+        <p id="csolves">Complex Solves: 0☸</p>
+        <p id="csolvmult">These provide a solve multiplier of: woson (if you see this, something broke) </p>
+        <br>
+        <table class="acheive" align="center" border="3" cellpadding="3" width="10%">
+          <tr>
+            <th><button onclick="CSolveMulti()"> Complex Solve Multiplier 2☸ </button></th>
+            <th><button onclick="PresGain()"> Higher Prestige Gain 5☸</button></th>
+            <th><button onclick="PresQlav()"> Better Qlavram Generation 8☸ </button></th>
+          </tr>
+          <tr>
+            <th><button onclick="bms=3,sMult(true),bms=1"> Solve Destroyer 10☸</button></th>
+            <th><button onclick="bms=3,qMult(true),bms=1"> Qlavram Destroyer 25☸</button></th>
+            <th><button onclick="bms=3,cMult(true),bms=1"> Crack Destroyer 50☸</button></th>
+          </tr>
+          <tr>
+            <th><button onclick="PresLine()"> Lower Line Cost 100☸ </button></th>
+            <th><button onclick="CSolveGain()"> Complex Solve Gain Is Uncapped 250☸ </button></th>
+            <th><button onclick="PresLines()"> Unlock Prestige Lines 10000☸ </button></th>
+          </tr>
+        </table>
+        <br>
+        <h3 align="center">Upgrades explained</h3>
+        <br>
+        <p align="center">Rx means Row x, Uy means Upgrade y
+          <br>
+          R1U1: Complex Solves boost Solve gain
+          <br>
+          R1U2: Prestige gain is multiplied by 2
+          <br>
+          R1U3: Qlavrams now generate to the power of 0.6 instead of 0.5
+          <br>
+          R2U1: 3x Permanant Solve Multipliers (not premanant yet)
+          <br>
+          R2U2: 3x Permanant Qlavram Multipliers (not premanant yet)
+          <br>
+          R2U3: 3x Permanant Crack Multipliers (not premanant yet)
+          <br>
+          R3U1: Line cost is powered by 0.95
+          <br>
+          R3U2: Complex solve softcap is removed
+          <br>
+          R3U3: Unlock a new mechanic </p>
+        <br>
       </tr>
+      <hr>
       <tr>
-        <th><button onclick="bms=3,sMult(true),bms=1"> Solve Destroyer 10☸</button></th>
-        <th><button onclick="bms=3,qMult(true),bms=1"> Qlavram Destroyer 25☸</button></th>
-        <th><button onclick="bms=3,cMult(true),bms=1"> Crack Destroyer 50☸</button></th>
-      </tr>
-      <tr>
-        <th><button onclick="PresLine()"> Lower Line Cost 100☸ </button></th>
-        <th><button onclick="CSolveGain()"> Complex Solve Gain Is Uncapped 250☸ </button></th>
-        <th><button onclick="PresLines()"> Unlock Prestige Lines 10000☸ </button></th>
+        <h3>Soon</h3>
+        <h4>Get 100000ῼ Omegas to prestige layer 2</h4>
+        <button onclick="prestige2()" class="presb"> Prestige </button>
+        <p id="plumes">Plumes: 0⚼</p>
       </tr>
     </table>
-    <br>
-    <h3 align="center">Upgrades explained</h3>
-    <br>
-    <p align="center">Rx means Row x, Uy means Upgrade y
-      <br>
-      R1U1: Complex Solves boost Solve gain
-      <br>
-      R1U2: Prestige gain is multiplied by 2
-      <br>
-      R1U3: Qlavrams now generate to the power of 0.6 instead of 0.5
-      <br>
-      R2U1: 3x Permanant Solve Multipliers (not premanant yet)
-      <br>
-      R2U2: 3x Permanant Qlavram Multipliers (not premanant yet)
-      <br>
-      R2U3: 3x Permanant Crack Multipliers (not premanant yet)
-      <br>
-      R3U1: Line cost is powered by 0.95
-      <br>
-      R3U2: Complex solve softcap is removed
-      <br>
-      R3U3: Unlock a new mechanic </p>
-    <br>
   </div>
   <div id="achievements" style="display: none; ">
     <h2>In progressi</h2>
@@ -321,14 +332,21 @@ hi
     <h2> Corruption Settings </h2>
     <ul>
       <br>
-      <h3>These are hard, optional challenges that are based on your best solves. They also give very small boosts. To take effect, you must prestige.</h3>
+      <h3>These are hard, optional challenges that are based on your best solves. They also give very small boosts. To
+        take effect, you must prestige.</h3>
       <br>
-      <button onclick="slower(1)">Time Speed Slower</button><button onclick="slower(-1)">Time Speed Faster</button> Effect: Effective ticks are divided
-      by this corruptions level. <br> Reward: A small boost is added to effective ticks (Formula: (Floor(Sqrt(1 + (Best solves/3.6e6))) - 1)) <br> Reward cap is 20 ticks. <br>
-      <button onclick="harder(1)">Less currencies</button><button onclick="harder(-1)">More currencies</button> Effect: Currency gain is divided by this corruptions level.
-      <br> Reward: You gain slightly more currencies (Formula: (Floor(Sqrt(1 + (Best solves/1e10))) - 1)) <br> Reward cap is 1.5x. <br>
-      <button onclick="hardmult(1)">Less Multiplier Power</button><button onclick="hardmult(-1)">More Multiplier Power</button> Effect: Multiplier power is divided by this corruptions level.
-      <br> Reward: Multiplier effect is slightly better. (Formula: (Floor(Sqrt(1 + (Best solves/1e15))) - 1)) <br> Reward cap is 1.2x. <br> <br>
+      <button onclick="slower(1)">Time Speed Slower</button><button onclick="slower(-1)">Time Speed Faster</button>
+      Effect: Effective ticks are divided
+      by this corruptions level. <br> Reward: A small boost is added to effective ticks (Formula: (Floor(Sqrt(1 + (Best
+      solves/3.6e6))) - 1)) <br> Reward cap is 20 ticks. <br>
+      <button onclick="harder(1)">Less currencies</button><button onclick="harder(-1)">More currencies</button> Effect:
+      Currency gain is divided by this corruptions level.
+      <br> Reward: You gain slightly more currencies (Formula: (Floor(Sqrt(1 + (Best solves/1e10))) - 1)) <br> Reward
+      cap is 1.5x. <br>
+      <button onclick="hardmult(1)">Less Multiplier Power</button><button onclick="hardmult(-1)">More Multiplier
+        Power</button> Effect: Multiplier power is divided by this corruptions level.
+      <br> Reward: Multiplier effect is slightly better. (Formula: (Floor(Sqrt(1 + (Best solves/1e15))) - 1)) <br>
+      Reward cap is 1.2x. <br> <br>
       There is more to come. Also they do nothing right now lol
     </ul>
     <h2> General Help </h2>
