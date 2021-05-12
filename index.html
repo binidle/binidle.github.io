@@ -216,12 +216,12 @@ hi
   <div id="achievements" style="display: none; ">
     <h2>In progressi</h2>
     <br>
-    <button align="center"> Achievements </button>
-    <button align="center"> Hidden Achievements </button>
+    <button onclick="(document.querySelector('#hach').style.display='none',document.querySelector('#pach').style.display='')" align="center"> Achievements </button>
+    <button onclick="(document.querySelector('#hach').style.display='',document.querySelector('#pach').style.display='none')" align="center"> Hidden Achievements </button>
     <!-- I want to make some of these (e.g. cool rainbow background) not count toward ach multiplier -->
     <br>
     <h3 align="center">Achievement multiplier: soon</h3>
-    <table class="tcolor acheive" style="user-select: none;" border="1" align="center" cellpadding="1" bgcolor="white"
+    <table id="pach" class="tcolor acheive" style="user-select: none;" border="1" align="center" cellpadding="1" bgcolor="white"
       width="70%">
       <!--Progress Achievements-->
       <!-- mission accomplishd -->
@@ -268,7 +268,7 @@ hi
       </tr>
     </table>
     <br>
-    <table class="tcolor acheive" border="1" align="center" cellpadding="1" bgcolor="white" width="70%"
+    <table id="hach" class="tcolor acheive" border="1" align="center" cellpadding="1" bgcolor="white" width="70%"
       style="display:none;user-select: none;">
       <!--Hidden Achievements-->
       <tr>
