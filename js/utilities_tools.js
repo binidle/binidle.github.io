@@ -318,6 +318,9 @@ function loadachs() {
     try {
         if (player.achs[16]) document.querySelector(".m16Ach").className = "acheived";
     } catch (e) {}
+    try {
+        if (player.achs[14]) document.querySelector(".m14Ach").className = "acheived";
+    } catch (e) {}
 }
 
 function removeAll() {

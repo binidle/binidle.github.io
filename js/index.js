@@ -229,6 +229,18 @@ function loop() {
     //     alertBox("Oh no! Looks like your computers having a rough time. You may want to consider going into settings and enabling Better Performance mode");
     // }
 
+    diffMs = Math.abs(new Date(player.started) - new Date());
+    if (!player.achs[9]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=10) {
+        player.achs[9]=true;
+        acheiveBox("Newbie - Play for 10 minutes");
+        loadachs();
+    }
+    if (!player.achs[14]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=(60*10)) {
+        player.achs[14]=true;
+        acheiveBox("Gamer - Play for 10 hours");
+        loadachs();
+    }
+
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
