@@ -315,6 +315,9 @@ function loadachs() {
     try {
         if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";
     } catch (e) {}
+    try {
+        if (player.achs[16]) document.querySelector(".m16Ach").className = "acheived";
+    } catch (e) {}
 }
 
 function removeAll() {

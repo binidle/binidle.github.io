@@ -52,8 +52,8 @@ console.log(`⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠋⠉⠉⠉⠉⠉�
 var devtools = function () {};
 devtools.toString = function () {
     if (!this.opened) {
-        if (!player.achs[9]) {
-            player.achs[9] = true;
+        if (!player.achs[16]) {
+            player.achs[16] = true;
             acheiveBox("Faceless - find the hidden face");
             loadachs();
         }
