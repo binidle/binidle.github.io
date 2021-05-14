@@ -101,7 +101,7 @@ function addBin(v = 0, z = 0) {
 
 function sMult(pr = false) {
     temp = (150 * player.sMultiplier)
-    if (player.qlavrams > temp * bms && !pr) {
+    if (player.qlavrams > (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             if (player.sMultiplier == 1 && !player.achs[5]) {
                 player.achs[5] = true;
@@ -131,7 +131,7 @@ function sMult(pr = false) {
 
 function qMult(pr = false) {
     temp = (150 * player.qMultiplier)
-    if (player.cracks > temp * bms && !pr) {
+    if (player.cracks > (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.qMultiplier = player.qMultiplier.add(1);
             player.cracks = player.cracks.sub((sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150));
@@ -156,7 +156,7 @@ function qMult(pr = false) {
 
 function cMult(pr = false) {
     temp = (7500 * player.cMultiplier)
-    if (player.solves > temp * bms && !pr) {
+    if (player.solves > (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.cMultiplier = player.cMultiplier.add(1);
             player.solves = player.solves.sub((sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500));
@@ -182,7 +182,7 @@ function cMult(pr = false) {
 function cForm(pr = false) {
     temp = (500 * player.cFormula)
     // temp = 500;
-    if (player.cracks > temp * bms && !pr) {
+    if (player.cracks > (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) && !pr) {
         for (let szz = 0; szz < bms; szz++) {
             player.cFormula = player.cFormula.add(1);
             player.cracks = player.cracks.sub((sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500));
