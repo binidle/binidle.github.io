@@ -66,7 +66,7 @@ function save(local = true, strg = false) {
     abc["binamt"] = player.bins.length;
     abc["binmax"] = player.bins[0].bins.length;
     if (local) {
-        download("save.json", enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"));
+        download("save.idle", enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny"));
     } else if (strg) {
         window.localStorage.save = enc(btoa(JSON.stringify(abc)) + "|" + checksum(btoa(JSON.stringify(abc))), "bruh funny");
     } else {
@@ -99,6 +99,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.presmult = new Decimal(parseFloat(decoded.player.presmult));
                 player.presline = new Decimal(parseFloat(decoded.player.presline));
+                player.plumes = new Decimal(parseFloat(decoded.player.plumes));
                 player.bitval = parseFloat(decoded.player.bitval);
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
@@ -186,6 +187,7 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                 player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
                 player.presmult = new Decimal(parseFloat(decoded.player.presmult));
                 player.presline = new Decimal(parseFloat(decoded.player.presline));
+                player.plumes = new Decimal(parseFloat(decoded.player.plumes));
                 player.achs = decoded.player.achs;
                 player.started = decoded.player.started;
                 player.cracks = new Decimal(parseFloat(decoded.player.cracks));
@@ -258,6 +260,7 @@ function loadc() {
             player.presqlav = new Decimal(parseFloat(decoded.player.presqlav));
             player.presmult = new Decimal(parseFloat(decoded.player.presmult));
             player.presline = new Decimal(parseFloat(decoded.player.presline));
+            player.plumes = new Decimal(parseFloat(decoded.player.plumes));
             player.bitval = parseFloat(decoded.player.bitval);
             player.achs = decoded.player.achs;
             player.started = decoded.player.started;
