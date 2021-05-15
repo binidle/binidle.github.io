@@ -155,9 +155,9 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
         a = "";
         var pickerOpts = {
             types: [{
-                description: 'JSON File',
+                description: 'BINIDLE Save',
                 accept: {
-                    'json/*': ['.json', '.txt']
+                    'idle/*': ['.idle', '.txt']
                 }
             }, ],
             excludeAcceptAllOption: true,
