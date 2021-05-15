@@ -27,6 +27,8 @@ window.oncontextmenu = function () {
     return false
 } // prevent right clicking coz its a pain in the ass 
 
+var activated = [];
+
 console.log(`⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠛⠛⠛⠿⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⡀⠠⠤⠒⢂⣉⣉⣉⣑⣒⣒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠐⠒⠚⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⡠⠔⠉⣀⠔⠒⠉⣀⣀⠀⠀⠀⣀⡀⠈⠉⠑⠒⠒⠒⠒⠒⠈⠉⠉⠉⠁⠂⠀⠈⠙⢿⣿⣿⣿⣿⣿⣿
@@ -237,6 +239,11 @@ function loop() {
     }
     if (!player.achs[14]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=(60*10)) {
         player.achs[14]=true;
+        acheiveBox("Gamer - Play for 10 hours");
+        loadachs();
+    }
+    if (!player.achs[15]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=(60*100)) {
+        player.achs[15]=true;
         acheiveBox("Gamer - Play for 10 hours");
         loadachs();
     }

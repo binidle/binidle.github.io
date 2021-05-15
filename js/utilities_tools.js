@@ -220,6 +220,7 @@ function perfMeasure(f) {
 }
 
 function cls(arr, val) { // ez for menu stuff
+    
     for (ind = 0; ind < arr.length; ind++) {
         arr[ind].className = val;
     }
@@ -301,25 +302,31 @@ function loadachs() {
         if (player.achs[7]) document.querySelector(".m7Ach").className = "acheived";
     } catch (e) {}
     try {
-        if (player.achs[8]) document.querySelector(".m12Ach").className = "acheived";
+        if (player.achs[8]) document.querySelector(".m8Ach").className = "acheived";
     } catch (e) {}
     try {
         if (player.achs[9]) document.querySelector(".m9Ach").className = "acheived";
     } catch (e) {}
     try {
-        if (player.achs[10]) document.querySelector(".m10Ach").className = "acheived";
+        if (player.achs[10]) document.querySelector(".m11Ach").className = "acheived";
     } catch (e) {}
     try {
         if (player.achs[11]) document.querySelector(".m11Ach").className = "acheived";
     } catch (e) {}
     try {
-        if (player.achs[12]) document.querySelector(".m8Ach").className = "acheived";
+        if (player.achs[12]) document.querySelector(".m12Ach").className = "acheived";
     } catch (e) {}
     try {
         if (player.achs[16]) document.querySelector(".m16Ach").className = "acheived";
     } catch (e) {}
     try {
         if (player.achs[14]) document.querySelector(".m14Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[13]) document.querySelector(".m13Ach").className = "acheived";
+    } catch (e) {}
+    try {
+        if (player.achs[15]) document.querySelector(".m15Ach").className = "acheived";
     } catch (e) {}
 }
 
