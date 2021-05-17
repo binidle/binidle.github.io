@@ -200,7 +200,7 @@ function init() {
 }
 
 function loop() {
-    avgPerf.push(performance.now() - lastRender);
+    avgPerf.push(10/(performance.now() - lastRender));
     if (avgPerf.length > 300) {
         avgPerf.splice(0, 1);
     }
@@ -210,6 +210,7 @@ function loop() {
         total += avgPerf[i];
     }
     var progress = total / avgPerf.length;
+    lastRender = performance.now();
 
     // if(Math.round(performance.now())%600000 >=1&&Math.round(performance.now())%600000<=10){
     //     alertBox("It has been 10mins, you may want to reset the random number generator's seed in 'Options'");
@@ -271,7 +272,6 @@ function loop() {
             x[i].style = "display: none;";
         }
     }
-    lastRender = performance.now();
     // window.requestAnimationFrame(loop);
 }
 
