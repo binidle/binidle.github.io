@@ -156,12 +156,8 @@ function d() {
                 acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
                 loadachs();
             }
-            if (i < 5 && player.presmult == 1) {
-                tomp = new Decimal(1 + Math.pow(player.csolves, 1.05))
-                player.solves = player.solves.add(tomp.mul(player.sMultiplier.mul(player.bins[i].bins.length)));
-            }
-            if (i < 5 && player.presmult == 0) {
-                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length));
+            if (i < 5) {
+                player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length).mul((1 + Math.floor(Math.pow(player.csolves, 1.25)))));
             } else if (i < 10) {
                 player.bcracks = player.bcracks.add(player.cMultiplier.mul(player.bins[i].bins.length));
             } else if (i < 15) {
