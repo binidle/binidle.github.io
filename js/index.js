@@ -51,8 +51,8 @@ console.log(`⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠋⠉⠉⠉⠉⠉�
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣤⣤⣤⣤⣀⣀⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿`);
 
-var devtools = function () {};
-devtools.toString = function () {
+let devtools = () => {};
+devtools.toString = () => {
     if (!this.opened) {
         if (!player.achs[16]) {
             player.achs[16] = true;
@@ -65,7 +65,7 @@ devtools.toString = function () {
 
 console.log('%c', devtools);
 
-var player = {
+let player = {
     solves: new Decimal(0),
     digits: new Decimal(1),
     qlavrams: new Decimal(0),
@@ -123,7 +123,7 @@ function Bin() {
     }
 }
 
-function change(e) {
+let change = (e) => {
     Beep1.play();
     if (fon && player.bins[parseInt(e.parentElement.className.split("bins")[1])].randForcing && !player.achs[10]) {
         player.achs[10] = true;
@@ -140,7 +140,7 @@ function change(e) {
     player.bins[parseInt(e.parentElement.className.split("bins")[1])].state = currSeq(parseInt(e.parentElement.className.split("bins")[1]));
 }
 
-function d() {
+let d = () => {
     for (let i = 0; i < player.bins.length; i++) {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             times.push(performance.now() - ls);
@@ -172,7 +172,7 @@ function d() {
 
 updateSolves();
 
-function init() {
+let init = () => {
     window.addEventListener("focus", () => {
         setTimeout(() => {
             focussed = true
@@ -195,7 +195,7 @@ function init() {
     alertBox("Be sure to join the discord at: <a href='https://discord.gg/3qhqADcGe7'>https://discord.gg/3qhqADcGe7</a>");
 }
 
-function loop() {
+let loop = () => {
     avgPerf.push(10/(performance.now() - lastRender));
     if (avgPerf.length > 300) {
         avgPerf.splice(0, 1);

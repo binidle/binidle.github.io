@@ -1,6 +1,6 @@
 var bms = 1;
 
-function currSeq(z = 0, o = player.bins[z].bins) {
+let currSeq = (z = 0, o = player.bins[z].bins) => {
     z = [];
     for (let i = 0; i < o.length; i++) {
         z.push(o[i].textContent); //FUCK YOU I WILL CRASH YOUR COMPUTER
@@ -8,13 +8,20 @@ function currSeq(z = 0, o = player.bins[z].bins) {
     return z.join('');
 }
 
-function seqToStr(o) {
+let seqToStr = (o) => {
     return o.join('');
 }
 
+let speedTest = (q,f) => {
+    var iterations = 10000000;
+    console.time(q);
+    for(var i = 0; i < iterations; i++ ){
+        f();
+    };
+    console.timeEnd(q)
+}
 
-
-function getVersion() {
+let getVersion = () => {
     sum = 0;
     for (i = 0; i < 30; i++) {
         fetch("https://api.github.com/repos/binidle/binidle.github.io/commits?page=" + i)
@@ -26,7 +33,7 @@ function getVersion() {
     }
 }
 
-function updateSolves() {
+let updateSolves = () => {
     document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").textContent = "Qlavrams (β): " + numberformat.format(player.qlavrams);
     document.querySelector("#crack").textContent = "Cracks (Փ): " + numberformat.format(player.cracks);
@@ -47,7 +54,7 @@ function updateSolves() {
     document.querySelector("#omega").textContent = "Omegas (ῼ): " + numberformat.format(player.omegas);
 }
 
-function time_ago(time) {
+let time_ago = (time) => {
 
     switch (typeof time) {
         case 'number':
@@ -102,7 +109,7 @@ function time_ago(time) {
     return time;
 }
 
-function genBinary(len) {
+let genBinary = (len) => {
     n = [];
     for (let i = 0; i < len; i++) {
         n.push(Math.round(Math.random()));
@@ -110,7 +117,7 @@ function genBinary(len) {
     return n;
 }
 
-function genVal(len, val) {
+let genVal = (len, val) => {
     n = [];
     for (let i = 0; i < len; i++) {
         n.push(val);
@@ -209,7 +216,7 @@ function acheiveBox(msg, time = 5000) {
     }
 }
 
-function perfMeasure(f) {
+let perfMeasure = (f) => {
     var t0 = performance.now()
 
     f() // <---- The function you're measuring time for
