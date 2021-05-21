@@ -108,7 +108,7 @@ function sMult(pr = false) {
             loadachs();
         }
         player.qlavrams = player.qlavrams.sub((sigma(1, bms, i => i * 150) + sigma(1, player.sMultiplier, i => i * 150) - 150));
-        player.sMultiplier = player.sMultiplier.add(1);
+        player.sMultiplier = player.sMultiplier.add(1*bms);
         temp = (150 * player.sMultiplier)
         Beep2.play();
         document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.sMultiplier, i => i * 150) - 150) + "β"
@@ -137,7 +137,7 @@ function qMult(pr = false) {
             loadachs();
         }
         player.cracks = player.cracks.sub((sigma(1, bms, i => i * 150) + sigma(1, player.qMultiplier, i => i * 150) - 150));
-        player.qMultiplier = player.qMultiplier.add(1);
+        player.qMultiplier = player.qMultiplier.add(1*bms);
         temp = (150 * player.qMultiplier)
         Beep2.play();
         document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.qMultiplier, i => i * 150) - 150) + "Փ"
@@ -162,7 +162,7 @@ function cMult(pr = false) {
     if (player.solves > (sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500) && !pr) {
 
         player.solves = player.solves.sub((sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500));
-        player.cMultiplier = player.cMultiplier.add(1);
+        player.cMultiplier = player.cMultiplier.add(1*bms);
         temp = (7500 * player.cMultiplier)
         Beep2.play();
         document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500) + "⚛"
@@ -188,7 +188,7 @@ function cForm(pr = false) {
     if (player.cracks > (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) && !pr) {
 
         player.cracks = player.cracks.sub((sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500));
-        player.cFormula = player.cFormula.add(1);
+        player.cFormula = player.cFormula.add(1*bms);
         temp = (500 * player.cFormula)
         Beep2.play();
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) + "Փ" // broken but idc we'll do it later
