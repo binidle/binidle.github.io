@@ -33,6 +33,25 @@ let getVersion = () => {
     }
 }
 
+document.addEventListener('keyPress', function(e) {
+    if(e.keyCode == 32) {
+        document.elementFromPoint();
+    }
+}, false);
+
+
+var then;
+
+window.onfocus = () => {
+    // acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
+    // player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).mul(1+((performance.now()-then)/1000));
+}
+
+window.onblur = () => {
+    then = performance.now();
+}
+
+
 let updateSolves = () => {
     document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
     document.querySelector("#qlavram").textContent = "Qlavrams (β): " + numberformat.format(player.qlavrams);

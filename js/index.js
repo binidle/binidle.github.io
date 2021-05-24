@@ -92,16 +92,6 @@ let player = {
 }
 player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
-var then;
-
-window.onfocus = () => {
-    acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
-    // player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).mul(1+((performance.now()-then)/1000));
-}
-
-window.onblur = () => {
-    then = performance.now();
-}
 
 function Bin() {
     this.bins = [];
