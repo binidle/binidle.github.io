@@ -96,6 +96,7 @@ var then;
 
 window.onfocus = () => {
     acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
+    // player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).mul(1+((performance.now()-then)/1000));
 }
 
 window.onblur = () => {

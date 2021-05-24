@@ -187,6 +187,7 @@ img {
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+    pointer-events: all;
 }
 
 .alert {
