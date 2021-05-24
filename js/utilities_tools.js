@@ -12,10 +12,10 @@ let seqToStr = (o) => {
     return o.join('');
 }
 
-let speedTest = (q,f) => {
+let speedTest = (q, f) => {
     var iterations = 10000000;
     console.time(q);
-    for(var i = 0; i < iterations; i++ ){
+    for (var i = 0; i < iterations; i++) {
         f();
     };
     console.timeEnd(q)
@@ -33,9 +33,11 @@ let getVersion = () => {
     }
 }
 
-document.addEventListener('keyPress', function(e) {
-    if(e.keyCode == 32) {
-        document.elementFromPoint();
+document.addEventListener('keypress', function (e) { // THIS IS REALLY COOL!!
+    // alert(1)
+    if (e.keyCode == 32) {
+        e.preventDefault();
+        document.elementFromPoint(mousePos.x,mousePos.y).click();
     }
 }, false);
 
@@ -51,6 +53,36 @@ window.onblur = () => {
     then = performance.now();
 }
 
+var mousePos;
+
+document.onmousemove = handleMouseMove;
+
+function handleMouseMove(event) {
+    var dot, eventDoc, doc, body, pageX, pageY;
+
+    event = event || window.event; // IE-ism
+
+    // If pageX/Y aren't available and clientX/Y are,
+    // calculate pageX/Y - logic taken from jQuery.
+    // (This is to support old IE)
+    if (event.pageX == null && event.clientX != null) {
+        eventDoc = (event.target && event.target.ownerDocument) || document;
+        doc = eventDoc.documentElement;
+        body = eventDoc.body;
+
+        event.pageX = event.clientX +
+            (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+            (doc && doc.clientLeft || body && body.clientLeft || 0);
+        event.pageY = event.clientY +
+            (doc && doc.scrollTop || body && body.scrollTop || 0) -
+            (doc && doc.clientTop || body && body.clientTop || 0);
+    }
+
+    mousePos = {
+        x: event.pageX,
+        y: event.pageY
+    };
+}
 
 let updateSolves = () => {
     document.querySelector("#solve").textContent = "Solves (⚛): " + numberformat.format(player.solves);
@@ -246,7 +278,7 @@ let perfMeasure = (f) => {
 }
 
 function cls(arr, val) { // ez for menu stuff
-    
+
     for (ind = 0; ind < arr.length; ind++) {
         arr[ind].className = val;
     }
@@ -254,10 +286,10 @@ function cls(arr, val) { // ez for menu stuff
 
 function bm(m) {
     bms = m;
-    document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β"
-    document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ"
-    document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛"
-    document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ" // broken but idc we'll do it later
+    document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.sMultiplier, i => i * 150) - 150) + "β"
+    document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.qMultiplier, i => i * 150) - 150) + "Փ"
+    document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500) + "⚛"
+    document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) + "Փ" // broken but idc we'll do it later
 }
 
 function sigma(start, end, modifier) {
@@ -359,10 +391,10 @@ function loadachs() {
 function removeAll() {
     morgz = (0.95 * player.presline)
     document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(Math.pow(25 + (5 * 5 ** player.bins.length), morgz)) + "β";
-    document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1,bms,i=>i*500)+sigma(1,player.cFormula,i=>i*500)-500) + "Փ"; // broken but idc we'll do it later
-    document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*7500)+sigma(1,player.cMultiplier,i=>i*7500)-7500) + "⚛";
-    document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.sMultiplier,i=>i*150)-150) + "β";
-    document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1,bms,i=>i*150)+sigma(1,player.qMultiplier,i=>i*150)-150) + "Փ";
+    document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) + "Փ"; // broken but idc we'll do it later
+    document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500) + "⚛";
+    document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.sMultiplier, i => i * 150) - 150) + "β";
+    document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.qMultiplier, i => i * 150) - 150) + "Փ";
     player.bins.forEach((i, j) => {
         i.randForcing = false;
         i.randForcers = 0;
