@@ -92,6 +92,16 @@ let player = {
 }
 player.bins = [new Bin()]; // THIS LINE IS PART OF DECLARING THE PAKYER (i cannot spell) OBJECT
 
+var then;
+
+window.onfocus = () => {
+    acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
+}
+
+window.onblur = () => {
+    then = performance.now();
+}
+
 function Bin() {
     this.bins = [];
     this.state = currSeq(0, this.bins);
