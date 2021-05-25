@@ -130,7 +130,7 @@ li {
 
 
 li:hover {
-    background-color: rgb(245, 214, 120);
+    background-color: rgb(65, 0, 73);
 }
 
 .presb {
@@ -141,10 +141,15 @@ li:hover {
 }
 
 body {
-    background-color: rgb(247, 181, 82);
-    color: #333333;
+    background-color: rgb(54, 54, 54);/*rgb(247, 181, 82);*/
+    color: #e0d3ff;
     font-family: 'Roboto Mono', monospace;
     font-size: 13.5px;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    pointer-events: all !important;
 }
 
 img {
@@ -220,7 +225,7 @@ img {
 .acheive {
     border-collapse: collapse;
     width: 100%;
-    background-color: rgb(255, 200, 118);
+    background-color: rgb(223, 77, 167);
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -230,11 +235,11 @@ img {
 }
 
 .acheive th:hover {
-    background-color: rgb(255, 226, 96);
+    background-color: rgb(183, 70, 187);
 }
 
-.acheive tr:nth-child(even) {
-    background-color: #fff6d6;
+.acheive tr:nth-child(2) {
+    background-color: #cab6e5;
 }
 
 .acheive button {
@@ -249,8 +254,13 @@ img {
 }
 
 .active {
-    background-color: #2a8672;
+    background-color: #ced3ff;
     color: #160000;
+}
+
+.active:hover {
+    color: #ced3ff;
+    /* color: #160000; */
 }
 
 hr {
@@ -272,7 +282,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(245, 214, 120);
+    background-color: rgb(65, 0, 73);
 }
 
 #alertBoxs {
@@ -282,5 +292,5 @@ button:hover {
 }
 
 .acheived {
-    background-color: #2a8672;
+    background-color: #862a67;
 }

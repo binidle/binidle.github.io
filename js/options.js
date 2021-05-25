@@ -57,6 +57,7 @@ function rainbow() {
         loadachs();
     }
     document.body.style.backgroundImage = "url('./rainbow.gif')";
+    document.body.style.color = "#333333";
 }
 
 function save(local = true, strg = false) {
