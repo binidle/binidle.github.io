@@ -41,7 +41,6 @@ document.addEventListener('keypress', function (e) { // THIS IS REALLY COOL!!
     }
 }, false);
 
-
 var then;
 
 window.onfocus = () => {
