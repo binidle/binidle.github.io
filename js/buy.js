@@ -113,7 +113,7 @@ function sMult(pr = false) {
         Beep2.play();
         document.querySelector("#multQOL").textContent = "Buy a Solve Multiplier (" + numberformat.format(player.sMultiplier) + "x -> " + numberformat.format(player.sMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.sMultiplier, i => i * 150) - 150) + "β"
 
-    } else if (player.csolves >= 10) {
+    } else if (player.csolves >= 10&&pr) {
         player.csolves = player.csolves.sub(10);
 
         player.sMultiplier = player.sMultiplier.add(1);
@@ -142,7 +142,7 @@ function qMult(pr = false) {
         Beep2.play();
         document.querySelector("#qlavmultQOL").textContent = "Buy a Qlavram Multiplier (" + numberformat.format(player.qMultiplier) + "x -> " + numberformat.format(player.qMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 150) + sigma(1, player.qMultiplier, i => i * 150) - 150) + "Փ"
 
-    } else if (player.csolves >= 10) {
+    } else if (player.csolves >= 10&&pr) {
         player.csolves = player.csolves.sub(10);
 
         player.qMultiplier = player.qMultiplier.add(1);
@@ -167,7 +167,7 @@ function cMult(pr = false) {
         Beep2.play();
         document.querySelector("#crackmultQOL").textContent = "Buy a Crack Multiplier (" + numberformat.format(player.cMultiplier) + "x -> " + numberformat.format(player.cMultiplier.add(1)) + "x) " + (sigma(1, bms, i => i * 7500) + sigma(1, player.cMultiplier, i => i * 7500) - 7500) + "⚛"
 
-    } else if (player.csolves >= 10) {
+    } else if (player.csolves >= 10&&pr) {
         player.csolves = player.csolves.sub(10);
 
         player.cMultiplier = player.cMultiplier.add(1);
@@ -193,7 +193,7 @@ function cForm(pr = false) {
         Beep2.play();
         document.querySelector("#crackFormUPG").textContent = "Buy a Crack Formula Boost (" + numberformat.format(player.cFormula) + "x -> " + numberformat.format(player.cFormula.add(1)) + "x) " + (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) + "Փ" // broken but idc we'll do it later
 
-    } else if (player.csolves >= 10) {
+    } else if (player.csolves >= 10&&pr) {
         player.csolves = player.csolves.sub(10);
 
         player.cFormula = player.cFormula.add(1);
