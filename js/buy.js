@@ -266,7 +266,7 @@ function CSolveMulti() {
 
 function prestige1() {
     if (player.solves >= 100000) {
-        player.csolves = player.csolves.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks.e * 2) * (player.qlavrams.e * 2) * player.solves.e) / 5));
+        player.csolves = player.csolves.add(Math.floor(1 + ((player.bins.length ) * (player.cracks.e ) * (player.qlavrams.e ) * player.solves.e) / 5));
         resetVal();
 
         document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
@@ -282,7 +282,7 @@ function prestige1() {
 
 function prestige2() {
     if (player.omegas >= 100000) {
-        player.plumes = player.plumes.add(Math.floor(1 + ((player.bins.length * 4) * (player.cracks * 2) * (player.qlavrams.e * 2) * player.solves.e) / 5));
+        player.plumes = player.plumes.add(Math.floor(1 + ((player.bins.length ) * (player.cracks.e ) * (player.qlavrams.e ) * player.solves.e) / 5));
         resetVal();
 
         document.querySelector("#burh").textContent = "Buy another line " + numberformat.format(25 + (5 * 5 ** player.bins.length)) + "β";
