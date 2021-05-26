@@ -197,7 +197,7 @@ let init = () => {
 }
 
 let loop = () => {
-    avgPerf.push(10/(performance.now() - lastRender));
+    avgPerf.push(1000/(1000/(performance.now() - lastRender)));
     if (avgPerf.length > 300) {
         avgPerf.splice(0, 1);
     }
