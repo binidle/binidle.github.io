@@ -10,7 +10,6 @@ function RNG(seed) {
         this.state = ((this.a * this.state + this.c) % this.m);
         if(this.s>11154){
             this.state=Math.random();
-            // console.log("a");
             this.s=0;
         }
         this.s++;

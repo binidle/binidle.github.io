@@ -13,9 +13,6 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
 
-// Start file download.
-// download("hello.txt", "This is the content of my file :)");
-
 function volume(ud = 0) {
     if ((vol < 0.1 && ud < 0) || (vol > 0.9 && ud > 0)) {
 
@@ -75,7 +72,7 @@ function save(local = true, strg = false) {
     }
 }
 
-function load(local = false) { // weedmart calls: THIS WORKIS!!
+function load(local = false) {
     if (local) {
         try {
             dec1 = dec(window.localStorage.save).split("|");
@@ -139,7 +136,6 @@ function load(local = false) { // weedmart calls: THIS WORKIS!!
                         addBin(Math.round(random.nextFloat()), i);
                     };
                 }
-                // console.log(decoded);
                 for (indexidk = 0; indexidk < decoded.bins.length; indexidk++) {
                     player.bins[indexidk].randForcing = decoded.bins[indexidk].randForcing;
                     player.bins[indexidk].randForcers = decoded.bins[indexidk].randForcers;
@@ -299,7 +295,6 @@ function loadc() {
                     addBin(Math.round(random.nextFloat()), i);
                 };
             }
-            // console.log(decoded);
             for (indexidk = 0; indexidk < decoded.bins.length; indexidk++) {
                 player.bins[indexidk].randForcing = decoded.bins[indexidk].randForcing;
                 player.bins[indexidk].randForcers = decoded.bins[indexidk].randForcers;

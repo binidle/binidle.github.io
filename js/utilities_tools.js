@@ -3,7 +3,7 @@ var bms = 1;
 let currSeq = (z = 0, o = player.bins[z].bins) => {
     z = [];
     for (let i = 0; i < o.length; i++) {
-        z.push(o[i].textContent); //FUCK YOU I WILL CRASH YOUR COMPUTER
+        z.push(o[i].textContent);
     }
     return z.join('');
 }
@@ -33,7 +33,7 @@ let getVersion = () => {
     }
 }
 
-document.addEventListener('keypress', function (e) { // THIS IS REALLY COOL!!
+document.addEventListener('keypress', function (e) {
     // alert(1)
     if (e.keyCode == 32) {
         e.preventDefault();
@@ -44,8 +44,7 @@ document.addEventListener('keypress', function (e) { // THIS IS REALLY COOL!!
 var then;
 
 window.onfocus = () => {
-    // acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
-    // player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier)).mul(1+((performance.now()-then)/1000));
+    acheiveBox("Welcome back! You were gone for "+((performance.now()-then)/1000).toFixed(1)+" seconds");
 }
 
 window.onblur = () => {
@@ -61,9 +60,6 @@ function handleMouseMove(event) {
 
     event = event || window.event; // IE-ism
 
-    // If pageX/Y aren't available and clientX/Y are,
-    // calculate pageX/Y - logic taken from jQuery.
-    // (This is to support old IE)
     if (event.pageX == null && event.clientX != null) {
         eventDoc = (event.target && event.target.ownerDocument) || document;
         doc = eventDoc.documentElement;
@@ -209,7 +205,6 @@ function changeIcon() {
 
 function resetVal() {
     player.bitval = 0;
-    // alertBox("weedmart calls: not done yet lol; being worked on");
     player.solves = new Decimal(0);
     player.sMultiplier = new Decimal(1);
     player.qMultiplier = new Decimal(1);
@@ -272,11 +267,10 @@ let perfMeasure = (f) => {
     f() // <---- The function you're measuring time for
 
     var t1 = performance.now()
-    // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
     return (t1 - t0);
 }
 
-function cls(arr, val) { // ez for menu stuff
+function cls(arr, val) {
 
     for (ind = 0; ind < arr.length; ind++) {
         arr[ind].className = val;

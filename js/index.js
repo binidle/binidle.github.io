@@ -1,4 +1,3 @@
-// binbar = document.querySelector("#bits");  
 var lastRender = 0
 var avgPerf = [];
 var focussed = true;
@@ -30,10 +29,9 @@ window.onload = () => {
       .catch(err => console.log("service worker not registered", err))
 }
 
-// can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
-} // prevent right clicking coz its a pain in the ass 
+} 
 
 var activated = [];
 
@@ -117,9 +115,7 @@ function Bin() {
     }
     this.bruteForce = function () {
         n = addBinary(this.state, "1").split('');
-        // console.log(n);
         if (n.length > this.bins.length) {
-            // console.log("a");
             n = seqToStr(genVal(this.bins.length, 0));
         }
         this.state = n
@@ -184,7 +180,6 @@ let init = () => {
     }
     random = new RNG(performance.now())
     player.bins[0].currGoal = genBinary(1);
-    // window.requestAnimationFrame(loop)
     looper = setInterval(loop, 0);
     load(true);
     setInterval(() => {
@@ -213,7 +208,7 @@ let loop = () => {
     solavg = tt / times.length;
 
     //=================================================
-    //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
+    // ADD ACHEIVEMENT MONITORING CODE HERE!!
 
     if (parseFloat((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)) >= 1 && !player.achs[12]) {
         player.achs[12] = true;

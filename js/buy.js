@@ -184,7 +184,6 @@ function cMult(pr = false) {
 
 function cForm(pr = false) {
     temp = (500 * player.cFormula)
-    // temp = 500;
     if (player.cracks > (sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500) && !pr) {
 
         player.cracks = player.cracks.sub((sigma(1, bms, i => i * 500) + sigma(1, player.cFormula, i => i * 500) - 500));
@@ -210,7 +209,6 @@ function cForm(pr = false) {
 
 function oMult() {
     temp = (100 * player.oMultiplier)
-    // temp = 500;
     if (player.csolves > temp * bms) {
         for (let szz = 0; szz < bms; szz++) {
             player.oMultiplier = player.oMultiplier.add(1);
