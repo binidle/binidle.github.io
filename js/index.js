@@ -110,7 +110,6 @@ function Bin() {
     this.bruteForcing = false;
     this.randForcing = false;
     this.randforce = function () {
-        player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier));
         for (i = 0; i < this.bins.length; i++) {
             this.bins[i].textContent = Math.round(random.nextFloat());
         }
@@ -154,17 +153,7 @@ let d = () => {
         if (currSeq(i) == seqToStr(player.bins[i].currGoal)) {
             times.push(performance.now() - ls);
             ls = performance.now();
-            if (parseFloat((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)) >= 1 && !player.achs[12]) {
-                player.achs[12] = true;
-                acheiveBox("FINALLY - Start generating at least 1 QPT");
-                loadachs();
-            }
-            // console.log(currSeq(i),seqToStr(player.bins[i].currGoal));
-            if (player.solves == 0 && !player.achs[0]) {
-                player.achs[0] = true;
-                acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
-                loadachs();
-            }
+            
             if (i < 5) {
                 player.solves = player.solves.add(player.sMultiplier.mul(player.bins[i].bins.length).mul((1 + Math.floor(Math.pow(player.csolves, 1.25)))));
             } else if (i < 10) {
@@ -217,10 +206,6 @@ let loop = () => {
     var progress = total / avgPerf.length;
     lastRender = performance.now();
 
-    // if(Math.round(performance.now())%600000 >=1&&Math.round(performance.now())%600000<=10){
-    //     alertBox("It has been 10mins, you may want to reset the random number generator's seed in 'Options'");
-    // }
-
     var tt = 0;
     for (var i = 0; i < times.length; i++) {
         tt += times[i];
@@ -230,12 +215,17 @@ let loop = () => {
     //=================================================
     //LIAM ADD ACHEIVEMENT MONITORING CODE HERE!!
 
-
-    //=================================================
-
-    // if(1000 / progress<=20&&(performance.now()>2000)&&focussed){
-    //     alertBox("Oh no! Looks like your computers having a rough time. You may want to consider going into settings and enabling Better Performance mode");
-    // }
+    if (parseFloat((Math.sqrt(player.randForcers) * (0.0001 * player.qMultiplier)).toFixed(5)) >= 1 && !player.achs[12]) {
+        player.achs[12] = true;
+        acheiveBox("FINALLY - Start generating at least 1 QPT");
+        loadachs();
+    }
+    
+    if (player.solves == 0 && !player.achs[0]) {
+        player.achs[0] = true;
+        acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
+        loadachs();
+    }
 
     diffMs = Math.abs(new Date(player.started) - new Date());
     if (!player.achs[9]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=10) {
@@ -253,10 +243,13 @@ let loop = () => {
         acheiveBox("Gamer - Play for 10 hours");
         loadachs();
     }
+    
+    //=================================================
 
     player.cracks = player.cracks.add((((player.bcracks * (0.025 + (0.005 * (player.cFormula.sub(1))))) / (1 + player.cracks / 1 + player.bcracks))) * player.cMultiplier);
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
+            player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier) * b.randForcers);
             for (i = 0; i < b.randForcers; i++) {
                 b.randforce();
             }
@@ -277,7 +270,6 @@ let loop = () => {
             x[i].style = "display: none;";
         }
     }
-    // window.requestAnimationFrame(loop);
 }
 
 init();
