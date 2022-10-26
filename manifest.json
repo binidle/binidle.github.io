@@ -2,7 +2,7 @@
   "name": "Binidle",
   "short_name": "binidle",
   "start_url": "index.html",
-  "display": "standalone",
+  "display": "minimal-ui",
   "background_color": "#363636",
   "theme_color": "#505273",
   "orientation": "portrait-primary",
