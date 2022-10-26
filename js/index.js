@@ -22,6 +22,18 @@ var Beep2 = new Audio('./audio/Beep2.wav');
 Beep2.volume = vol;
 var Beep3 = new Audio('./audio/Beep3.wav');
 Beep3.volume = vol;
+
+window.onload = () => {
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(res => console.log("service worker registered"))
+          .catch(err => console.log("service worker not registered", err))
+        })
+    }
+}
+
 // can you please update github I beg you why aren't you deploying
 window.oncontextmenu = function () {
     return false
