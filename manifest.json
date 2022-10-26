@@ -1,0 +1,15 @@
+{
+  "name": "Binidle",
+  "short_name": "binidle",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#363636",
+  "theme_color": "#505273",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/meta.png",
+      "type": "image/png", "sizes": "700x700"
+    }
+  ]
+}
