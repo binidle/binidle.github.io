@@ -250,8 +250,10 @@ let loop = () => {
     player.bins.forEach(function (b, j) {
         if (b.randForcing) {
             player.qlavrams = player.qlavrams.add(Math.pow(player.randForcers, 0.5 + (0.1 * player.presqlav)) * (0.0001 * player.qMultiplier) * b.randForcers);
-            for (i = 0; i < b.randForcers; i++) {
-                b.randforce();
+            if (!b.bruteForcing) {
+                for (i = 0; i < b.randForcers; i++) {
+                    b.randforce();
+                }
             }
         }
         if (b.bruteForcing) {
