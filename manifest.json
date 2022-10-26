@@ -5,11 +5,17 @@
   "display": "minimal-ui",
   "background_color": "#363636",
   "theme_color": "#505273",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/meta.png",
-      "type": "image/png", "sizes": "700x700"
+      "type": "image/png",
+      "sizes": "700x700"
     }
-  ]
+  ],
+  "categories": [
+    "games"
+  ],
+  "scope": "https://binidle.github.io/*",
+  "lang": "en"
 }
