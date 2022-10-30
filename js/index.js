@@ -9,6 +9,7 @@ var m2 = document.querySelector("#m2");
 var m3 = document.querySelector("#m3");
 var m4 = document.querySelector("#m4");
 var m5 = document.querySelector("#m5");
+let frames = 0;
 var solavg = 0;
 var ls = performance.now();
 var times = [];
@@ -250,7 +251,10 @@ let loop = () => {
     }, this);
 
     updateSolves();
-    document.querySelector("#perf").textContent = "Performance: " + (1000 / progress).toFixed(0) + "tps";
+    if (frames % 10 == 0) {
+        document.querySelector("#perf").textContent = "Performance: " + (1000 / progress).toFixed(0) + "tps";
+        frames = 0;
+    }
     if (player.lowp) {
         player.lowp = false;
         x = document.querySelectorAll("#perfbad");
@@ -258,6 +262,8 @@ let loop = () => {
             x[i].style = "display: none;";
         }
     }
+    
+    frames ++;
 }
 
 init();
