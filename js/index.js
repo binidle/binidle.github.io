@@ -208,7 +208,7 @@ let loop = () => {
         loadachs();
     }
     
-    if (player.solves == 0 && !player.achs[0]) {
+    if (player.solves == 1 && !player.achs[0]) {
         player.achs[0] = true;
         acheiveBox("I did the thing! - Crack a code by clicking on the '0'");
         loadachs();
@@ -227,7 +227,7 @@ let loop = () => {
     }
     if (!player.achs[15]&&Math.round(((diffMs % 86400000) % 3600000) / 60000)>=(60*100)) {
         player.achs[15]=true;
-        acheiveBox("Gamer - Play for 10 hours");
+        acheiveBox("Redditor - Play for 100 hours");
         loadachs();
     }
     
