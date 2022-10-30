@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<!-- aaaaabbe
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠛⠛⠛⠿⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⡀⠠⠤⠒⢂⣉⣉⣉⣑⣒⣒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠐⠒⠚⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⡠⠔⠉⣀⠔⠒⠉⣀⣀⠀⠀⠀⣀⡀⠈⠉⠑⠒⠒⠒⠒⠒⠈⠉⠉⠉⠁⠂⠀⠈⠙⢿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠔⠁⠠⠖⠡⠔⠊⠀⠀⠀⠀⠀⠀⠀⠐⡄⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠉⠲⢄⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠊⠀⢀⣀⣤⣤⣤⣤⣀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠜⠀⠀⠀⠀⣀⡀⠀⠈⠃⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡿⠥⠐⠂⠀⠀⠀⠀⡄⠀⠰⢺⣿⣿⣿⣿⣿⣟⠀⠈⠐⢤⠀⠀⠀⠀⠀⠀⢀⣠⣶⣾⣯⠀⠀⠉⠂⠀⠠⠤⢄⣀⠙⢿⣿⣿⣿⣿
+⣿⡿⠋⠡⠐⠈⣉⠭⠤⠤⢄⡀⠈⠀⠈⠁⠉⠁⡠⠀⠀⠀⠉⠐⠠⠔⠀⠀⠀⠀⠀⠲⣿⠿⠛⠛⠓⠒⠂⠀⠀⠀⠀⠀⠀⠠⡉⢢⠙⣿⣿⣿
+⣿⠀⢀⠁⠀⠊⠀⠀⠀⠀⠀⠈⠁⠒⠂⠀⠒⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⢀⣀⡠⠔⠒⠒⠂⠀⠈⠀⡇⣿⣿⣿⣿⣿
+⣿⠀⢸⠀⠀⠀⢀⣀⡠⠋⠓⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠈⠢⠤⡀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⡠⠀⡇⣿⣿⣿⣿⣿
+⣿⡀⠘⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠈⠑⡦⢄⣀⠀⠀⠐⠒⠁⢸⠀⠀⠠⠒⠄⠀⠀⠀⠀⠀⢀⠇⠀⣀⡀⠀⠀⢀⢾⡆⠀⠈⡀⠎⣸⣿⣿⣿⣿
+⣿⣿⣄⡈⠢⠀⠀⠀⠀⠘⣶⣄⡀⠀⠀⡇⠀⠀⠈⠉⠒⠢⡤⣀⡀⠀⠀⠀⠀⠀⠐⠦⠤⠒⠁⠀⠀⠀⠀⣀⢴⠁⠀⢷⠀⠀⠀⢰⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣇⠂⠀⠀⠀⠀⠈⢂⠀⠈⠹⡧⣀⠀⠀⠀⠀⠀⡇⠀⠀⠉⠉⠉⢱⠒⠒⠒⠒⢖⠒⠒⠂⠙⠏⠀⠘⡀⠀⢸⠀⠀⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠑⠄⠰⠀⠀⠁⠐⠲⣤⣴⣄⡀⠀⠀⠀⠀⢸⠀⠀⠀⠀⢸⠀⠀⠀⠀⢠⠀⣠⣷⣶⣿⠀⠀⢰⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠁⢀⠀⠀⠀⠀⠀⡙⠋⠙⠓⠲⢤⣤⣷⣤⣤⣤⣤⣾⣦⣤⣤⣶⣿⣿⣿⣿⡟⢹⠀⠀⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠑⠀⢄⠀⡰⠁⠀⠀⠀⠀⠀⠈⠉⠁⠈⠉⠻⠋⠉⠛⢛⠉⠉⢹⠁⢀⢇⠎⠀⠀⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣀⠈⠢⢄⡉⠂⠄⡀⠀⠈⠒⠢⠄⠀⢀⣀⣀⣰⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⢀⣎⠀⠼⠊⠀⠀⠀⠘⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠉⠢⢄⡈⠑⠢⢄⡀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⢀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⡈⠑⠢⢄⡀⠈⠑⠒⠤⠄⣀⣀⠀⠉⠉⠉⠉⠀⠀⠀⣀⡀⠤⠂⠁⠀⢀⠆⠀⠀⢸⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠁⠉⠒⠂⠤⠤⣀⣀⣉⡉⠉⠉⠉⠉⢀⣀⣀⡠⠤⠒⠈⠀⠀⠀⠀⣸⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣤⣤⣤⣤⣀⣀⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿
+hi
+-->
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWFV94XMV9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RWFV94XMV9');
+  </script>
+  <meta name="description" content="Binidle, a cryptography based idle/clicker game" />
+  <meta property="og:image" content="https://binidle.github.io/meta.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="twitter:image" content="https://binidle.github.io/meta.png">
+  <meta name="keywords"
+    content="Binidle,binidle,clicker,incremental,game,clicker game,online game,online,discord,cryptography">
+  <!--
+    <PageMap>
+      <DataObject type="thumbnail">
+        <Attribute name="src" value="./meta.png"/>
+        <Attribute name="width" value="100"/>
+        <Attribute name="height" value="130"/>
+      </DataObject>
+    </PageMap>
+  -->
+  <title>binidle</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="./css2.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="canonical" href="https://binidle.github.io">
+  
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#505273" />
+  
+  <script src="./js/break_infinity.min.js"></script>
+  <script src="./js/binary.js"></script>
+  <script src="./js/swarm-numberformat.min.js"></script>
+  <script src="./js/crypto-js.min.js"></script>
+</head>
+
+<body>
+  <ul class="nav">
+    <li id="m1" class="active"
+      onclick="(this.className='active',cls([m2,m3,m4,m5],''),document.querySelector('#solver').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')"><!-- this was added, i do not know when, nor can i be bothered to look through the github commits to see who added it. it was the cause of many errors. document.querySelector('#L').style.display='')"> -->
+      Solver</li>
+    <li id="m2"
+      onclick="(this.className='active',cls([m1,m3,m4,m5],''),document.querySelector('#upgrades').style.display='',document.querySelector('#solver').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#save').style.display='none')">
+      Upgrades</li>
+    <li id="m3"
+      onclick="(this.className='active',cls([m2,m1,m4,m5],''),document.querySelector('#prestige').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#solver').style.display='none')">
+      Prestige</li>
+    <li id="m4"
+      onclick="(this.className='active',cls([m2,m3,m1,m5],''),document.querySelector('#achievements').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#save').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
+      Achievements</li>
+    <li id="m5"
+      onclick="(this.className='active',cls([m2,m3,m4,m1],''),document.querySelector('#save').style.display='',document.querySelector('#upgrades').style.display='none',document.querySelector('#achievements').style.display='none',document.querySelector('#prestige').style.display='none',document.querySelector('#solver').style.display='none')">
+      Options</li>
+
+    <li class="stats" id="solve">Solves (⚛): </li>
+    <li class="stats" id="qlavramps">QPS: </li>
+    <li class="stats" id="qlavram">Qlavram (β): </li>
+    <li class="stats" id="crackps">CPS: </li>
+    <li class="stats" id="crack">Cracks (Փ): </li>
+    <li class="stats" id="omega">Omegas (ῼ): </li>
+    <li class="stats1" id="bcrack">Base Cracks: </li>
+    <li class="stats1" id="rforcers">Randforcers: </li>
+    <li class="stats1" id="bforcers">Bruteforcers: </li>
+  </ul>
+  <ul class="nav1">
+    <li class="stats1" id="smlt">Solve Multipliers: </li>
+    <li class="stats1" id="qmlt">Qlavram Multipliers: </li>
+    <li class="stats1" id="cmlt">Crack Multipliers: </li>
+  </ul>
+  <ul class="nav1">
+    <li class="stats" id="played">Played: </li>
+    <li class="stats" id="perf">Performance: </li>
+    <li class="stats" id="solavg">Solve Performance: </li>
+  </ul>
+  <br>
+  <div id="alertBoxs">
+    <!-- <div class="alert">
+      <span class="closebtn">&times;</span>  
+      Alert!
+    </div> -->
+  </div>
+
+  <h2>binidle</h2>
+  <hr>
+  <div id="solver">
+    <h3>If you find a bug, press CTRl + SHIFT + I or F12 and show the devs via discord</h3>
+    <h4 id="version">Version: 0.0.1</h4>
+    <p>Crack the codes to gain solves</p>
+    <p>Randforcers generate Qlavrams</p>
+    <p>Base Cracks are gained from lines 6 to 10</p>
+    <P>Further info in options</p>
+    <h4>Quick Start:
+      <br>Click the 1's and 0's to crack the code
+      <br>Buy Randforcers once you have enough solves as they will randomize the sequence to "Bruteforce" it!
+    </h4>
+    <div id="lines">
+      <ul id="bits0" class="bins0">
+        <li class="stats" onclick="buyRandforcer()">Buy Randforcer 10⚛</li>
+        <li class="stats" onclick="buyBruteforcer()">Buy Bruteforcer 100⚛</li>
+        <li id="bitremove" class="stats" onclick="removeBit()">Remove Bit 150Φ</li>
+      </ul>
+    </div>
+    <br>
+    <button id="burh" onclick="buyBin()"> Buy another line 50β</button>
+    <h3> This workis!!!!</h3>
+  </div>
+  <div id="upgrades" style="display: none;">
+    <h3> Multipliers or whatever I care :)</h3>
+    <div style="float: right;">
+      <button onclick="bm(1)">1x</button>
+      <button onclick="bm(10)">10x</button>
+      <button onclick="bm(100)">100x</button>
+      <button onclick="bm(1000)">1000x</button>
+    </div>
+    <button id="multQOL" onclick="sMult()">Buy a Solve Multiplier (1x -> 2x) 150β</button>
+    <br>
+    <button id="qlavmultQOL" onclick="qMult()">Buy a Qlavram Multiplier (1x -> 2x) 150Փ</button>
+    <br>
+    <button id="crackmultQOL" onclick="cMult()">Buy a Crack Multiplier (1x -> 2x) 7500⚛</button>
+    <br>
+    <button id="crackFormUPG" onclick="cForm()">Buy a Crack Formula Multiplier (1x -> 2x) 500Փ</button>
+    <br>
+    <button id="omegamult" onclick="oMult()">Buy a Omega Multiplier (1x -> 2x) 100☸</button>
+    <br>
+  </div>
+  <div id="prestige" style="display: none;">
+    <table>
+      <tr>
+        <h3>Soon</h3>
+        <h4>Get 100000⚛ Solves to prestige</h4>
+        <button onclick="prestige1()" class="presb"> Prestige </button>
+        <br>
+        <p id="csolves">Complex Solves: 0☸</p>
+        <p id="csolvmult">These provide a solve multiplier of: woson (if you see this, something broke) </p>
+        <br>
+        <table class="acheive" align="center" border="3" cellpadding="3" width="10%">
+          <tr>
+            <th><button onclick="CSolveMulti()"> Complex Solve Multiplier 2☸ </button></th>
+            <th><button onclick="PresGain()"> Higher Prestige Gain 5☸</button></th>
+            <th><button onclick="PresQlav()"> Better Qlavram Generation 8☸ </button></th>
+          </tr>
+          <tr>
+            <th><button onclick="bms=3,sMult(true),bms=1"> Solve Destroyer 10☸</button></th>
+            <th><button onclick="bms=3,qMult(true),bms=1"> Qlavram Destroyer 25☸</button></th>
+            <th><button onclick="bms=3,cMult(true),bms=1"> Crack Destroyer 50☸</button></th>
+          </tr>
+          <tr>
+            <th><button onclick="PresLine()"> Lower Line Cost 100☸ </button></th>
+            <th><button onclick="CSolveGain()"> Complex Solve Gain Is Uncapped 250☸ </button></th>
+            <th><button onclick="PresLines()"> Unlock Prestige Lines 10000☸ </button></th>
+          </tr>
+        </table>
+        <br>
+        <h3 align="center">Upgrades explained</h3>
+        <br>
+        <p align="center">Rx means Row x, Uy means Upgrade y
+          <br>
+          R1U1: Complex Solves boost Solve gain
+          <br>
+          R1U2: Prestige gain is multiplied by 2
+          <br>
+          R1U3: Qlavrams now generate to the power of 0.6 instead of 0.5
+          <br>
+          R2U1: 3x Permanant Solve Multipliers (not premanant yet)
+          <br>
+          R2U2: 3x Permanant Qlavram Multipliers (not premanant yet)
+          <br>
+          R2U3: 3x Permanant Crack Multipliers (not premanant yet)
+          <br>
+          R3U1: Line cost is powered by 0.95
+          <br>
+          R3U2: Complex solve softcap is removed
+          <br>
+          R3U3: Unlock a new mechanic </p>
+        <br>
+      </tr>
+      <hr>
+      <tr>
+        <h3>Soon</h3>
+        <h4>Get 100000ῼ Omegas to prestige layer 2</h4>
+        <button onclick="prestige2()" class="presb"> Prestige </button>
+        <p id="plumes">Plumes: 0⚼</p>
+      </tr>
+    </table>
+  </div>
+  <div id="achievements" style="display: none; ">
+    <h2>In progressi</h2>
+    <br>
+    <button onclick="(document.querySelector('#hach').style.display='none',document.querySelector('#pach').style.display='')" align="center"> Achievements </button>
+    <button onclick="(document.querySelector('#hach').style.display='',document.querySelector('#pach').style.display='none')" align="center"> Hidden Achievements </button>
+    <!-- I want to make some of these (e.g. cool rainbow background) not count toward ach multiplier -->
+    <br>
+    <h3 align="center">Achievement multiplier: soon</h3>
+    <table id="pach" class="tcolor acheive" style="user-select: none;" border="1" align="center" cellpadding="1" bgcolor="white"
+      width="70%">
+      <!--Progress Achievements-->
+      <!-- mission accomplishd -->
+      <tr>
+        <th colspan="8">
+          <h1>Progressive Achievements</h1>
+      </tr>
+      <tr>
+        <th class="m0Ach"><b>I did the thing!</b>
+          <h5>Crack a code by clicking on the '0'</h5>
+        </th>
+        <th class="m1Ach"><b>RANDOMISATION</b>
+          <h5>Reach 10 solves and purchase a Randforcer</h5>
+        </th>
+        <th class="m2Ach"><b>MORE RANDOMISATION</b>
+          <h5>Purchase 10 Randforcers</h5>
+        </th>
+        <th class="m3Ach"><b>Where did my money go?</b>
+          <h5>Buy a Bruteforcer</h5>
+        </th>
+        <th class="m4Ach"><b>MORE NUMBERS</b>
+          <h5>Purchase another line</h5>
+        </th>
+        </th>
+        <th class="m5Ach">x2 Multiplier!<h5>Purchase a Solver Multiplier for 150β</h5>
+        </th>
+        <th class="m6Ach">Get Cracking!<h5>Reach 6 lines and start generating Cracks (Փ)</h5>
+        </th>
+        <th class="m7Ach"><b>FASTER!!!</b>
+          <h5>Reach 150Փ and purchase a Qlavram Multiplier</h5>
+        </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th class="m8Ach"><b>FINALLY!</b>
+          <h5>Start generating at least 1 QPT</h5>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </table>
+    <br>
+    <table id="hach" class="tcolor acheive" border="1" align="center" cellpadding="1" bgcolor="white" width="70%"
+      style="display:none;user-select: none;">
+      <!--Hidden Achievements-->
+      <tr>
+        <th colspan="8">
+          <h1>Hidden Achievements</h1>
+        </th>
+      </tr>
+      <tr>
+        <!-- This is a comment! -->
+        <th class="m10Ach"><b> Sneaky peek</b>
+          <h5>Look through all the menus</h5>
+        </th>
+        <th class="m11Ach"><b>100% Effort</b>
+          <h5>Help the Forcers do their job (as in click the 0/1 after having a type of Forcer)</h5>
+        </th>
+        <th class="m12Ach"><b>I regret this...</b>
+          <h5>Use cool rainbow background theme, you cannot turn this off</h5>
+        </th>
+        <th class="m13Ach"><b>How much dedicated wam?</b>
+          <h5>Use "Better Performance"</h5>
+        </th>
+        <th class="m9Ach">
+          <b>Newbie</b>
+          <h5>Play for 10 minutes</h5>
+        </th>
+        <th class="m14Ach">
+          <b>Gamer</b>
+          <h5>Play for 10 hours</h5>
+        </th>
+        <th class="m15Ach">
+          <b>True Gamer</b>
+          <h5>Play for 100 hours</h5>
+        </th>
+        <th class="m16Ach">
+          <b>Faceless</b>
+          <h5>Find the hidden face</h5>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <div id="save" style="display: none;">
+    <!-- <h3> none of these do anything right now. </h3> -->
+    <button onclick="save()"> Download Save </button> This downloads a JSON file that you can use as a backup! We REALLY
+    recommend doing this <br>
+    <button onclick="save(false)">Copy Save </button> This puts the save in you Clipboard. You can save this text in a
+    .txt or .json file <br>
+    <button onclick="load()"> Load Save </button> This is where you can upload your save file <br>
+    <button onclick="loadc()"> Load Save From Clipboard</button> This gets the save from your clipboard <br>
+    <button onclick="rainbow()"> cool rainbow background theme(DON'T USE IF EPILEPTIC, FAST CHANGING COLOURS) </button>
+    This makes the background rainbow and it may or may not be undoable <br>
+    <button onclick="toggleLowP()"> Beter performance </button> This makes the bits displays set to none as rendering
+    takes up the most performance <br>
+    <button onclick="toggleLowPOff()"> Beter performance off </button> This undoes Beter performance <br>
+    <button onclick="themechange()"> Change Theme (Doesn't work right now) </button> <br>
+    <button onclick="volume(1)">Volume Up</button><button onclick="volume(-1)">Volume Down</button> This changes the
+    volume <br>
+    <button onclick="(random=new RNG(performance.now()/100))">New PRNG Seed</button> This sets a new seed for the
+    optimized PRNG (pseudo-random number generator) <br>
+    <button onclick="reset()">Reset Save</button> This resets the save <br>
+    <button onclick="cool_button()">Cool Button</button>I wonder what this does?<br>
+    <h2> Corruption Settings </h2>
+    <ul>
+      <br>
+      <h3>These are hard, optional challenges that are based on your best solves. 
+        They give a small multiplier to qlavrams independent of saves depending on how far you've gotten with a combination. <br>
+        To take effect, you must reset the game. Please export your save vros.</h3>
+      <br>
+      <button onclick="slower(1)">Time Speed Slower</button><button onclick="slower(-1)">Time Speed Faster</button>
+      Effect: Timewalls have less friction and are harder to climb (everything is longer to do) <br>
+      <button onclick="harder(1)">Less currencies</button><button onclick="harder(-1)">More currencies</button> 
+      Effect: the USA experience (You gain less curriences) <br> 
+      <button onclick="hardmult(1)">Less Multiplier Power</button><button onclick="hardmult(-1)">More Multiplier
+        Power</button> Effect: Multipliers have to rely on centerlink to live (less effective) <br>
+      <button onclick="iiiiiiiiii(1)">iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</button><button onclick="iiiiiiiiii(-1)">iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</button>
+      Effect: iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii <br>
+      
+      <button onclick="goaway()">I HATE THE ANTICHRIST</button> No more corruptions! (set all levels to 0) <br>
+      Total multiplier: log(0) * 0/0 (This caps at 2x qlavrams) <br>
+      Total score: -sqrt(i * TREE(3)) <br>
+      There is more to come. Also they do nothing right now lol
+    </ul>
+    <h2> General Help </h2>
+    <ul>
+      <br>
+      Solves: Gain these by messing around with the 0's and 1's.
+      <br>
+      Qlavrams: Generated by Randforcers. Formula is below, but you'll probably just look at the QPT.
+      <br>
+      Cracks: Generated by Base Cracks. Formula is below.
+      <br>
+      Base Cracks: Generated by line's 6-10.
+      <br>
+      Performance: How well the game is doing.
+      <br>
+      QPT: The amount of Qlavrams you get per tick. QPS will be soon once we figure out how to do it.
+      <br>
+      Randforcers: Randomly changes every digit to a 1 or 0, seems good and op but actually pretty wack.
+      <br>
+      Bruteforcers: Tries every single combination possible.
+      <br>
+      Multipliers: If you've played an idle game before you know what these do. They just multiply their specified
+      currencies by themselves.
+      <br>
+      Solver: Main page of the game, where it actually happens.
+      <br>
+      Upgrades: Buy upgrades here that make the game faster.
+      <br>
+      Prestige: Reset everything for a powerful currency & boost.
+      <br>
+      Achievements: Small goals that give rewards and a small boost, optional but makes the game faster so I encourage
+      you to do these.
+      <br>
+      Contacts: maybe? soon? idk
+    </ul>
+    <br>
+    <h2> Implemented </h2>
+    <br>
+    <ul>
+      LEGEND:
+      <br>
+      ✔️ = Implemented and Working
+      <br>
+      ➖ = In Progress
+      <br>
+      ❌ = Postponed
+    </ul>
+    <br>
+    Solves: ✔️
+    <br>
+    Qlavrams:✔️
+    <br>
+    Cracks: ✔️
+    <br>
+    Base Cracks: ✔️
+    <br>
+    Qlavram Generation: ✔️
+    <br>
+    Base Crack and Crack generation: ✔️
+    <br>
+    Upgrades: ➖
+    <br>
+    Prestige: ➖
+    <br>
+    Achievements: ➖
+    <br>
+    Option functions: ➖
+    <br>
+    Randforcers and Bruteforcers: ✔️
+    <br>
+    Multiple-lines: ✔️
+    <br>
+    Different currency generation on specific lines: ✔️
+    <br>
+    Quantum Computer Mechanics: ➖
+    <br>
+    <h2> Generation </h2>
+    Time Multiplier: (milestones: 1hr IGT = 2x, 1d IGT = 3x, 1w IGT = 4x)
+    <!-- Time multiplier -->
+    <br>
+    This doesn't even matter so I'll postpone this
+    <br>
+    <h2> Formulas </h2> <br>
+    Line cost formula (1 to 5): 25 + (5 * 5^lines)
+    <br>
+    Qlavram generation (per tick): (sqrt(Randforcers) * (0.0001 * Qlavram Multipliers))
+    <br>
+    Crack generation (per tick): ((((Base Cracks * (0.025 + (0.005 * (Crack Formula Upgrade - 1 )))) / (1 + Cracks / 1 +
+    Base Cracks))) * Crack Multiplier)
+    <br>
+    God this looks terrible, but we'll fix it later
+  </div>
+  <hr>
+
+  <!-- =================== LOAD UTILITY FILES BEFORE INDEX.JS FOR EVERTHING TO WORK ======================= -->
+  <!-- <script src="https://sheeptester.github.io/javascripts/shepform/colourspace.js"></script> -->
+  <script src="./js/buy.js"></script>
+  <script src="./js/random.js"></script>
+  <script src="./js/utilities_tools.js"></script>
+  <script src="./js/options.js"></script>
+  <!-- ==================================================================================================== -->
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
