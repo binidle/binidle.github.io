@@ -189,16 +189,7 @@ let init = () => {
 }
 
 let loop = () => {
-    avgPerf.push(1000/(1000/(performance.now() - lastRender)));
-    if (avgPerf.length > 300) {
-        avgPerf.splice(0, 1);
-    }
-
-    var total = 0;
-    for (var i = 0; i < avgPerf.length; i++) {
-        total += avgPerf[i];
-    }
-    var progress = total / avgPerf.length;
+    let progress = 1000/(1000/(performance.now() - lastRender)) || 16.66;
     lastRender = performance.now();
 
     var tt = 0;
@@ -259,7 +250,7 @@ let loop = () => {
     }, this);
 
     updateSolves();
-    document.querySelector("#perf").textContent = "Performance: " + (1000 / progress).toFixed(2) + "tps";
+    document.querySelector("#perf").textContent = "Performance: " + (1000 / progress).toFixed(0) + "tps";
     if (player.lowp) {
         player.lowp = false;
         x = document.querySelectorAll("#perfbad");
